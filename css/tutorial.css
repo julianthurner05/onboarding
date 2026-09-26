@@ -275,22 +275,17 @@ body.is-cover .tut__footer { display: none; }
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background: var(--dunkelblau);
-  border: var(--hair-w) solid var(--white-25);
-  transition: background var(--transition), border-color var(--transition),
+  background: color-mix(in srgb, #ffffff 24%, var(--dunkelblau));   /* voll deckend */
+  transition: background var(--transition),
               box-shadow var(--transition), transform var(--transition);
 }
 
-.tl-dot:hover { border-color: var(--text-55); }
+.tl-dot:hover { background: color-mix(in srgb, #ffffff 42%, var(--dunkelblau)); }
 
-.tl-dot.is-done {
-  background: var(--nav-active);
-  border-color: transparent;
-}
+.tl-dot.is-done { background: var(--nav-active); }
 
 .tl-dot.is-current {
   background: var(--nav-active);
-  border-color: transparent;
   box-shadow: 0 0 0 3.5px var(--white-10), 0 0 14px var(--white-14);
   transform: scale(1.15);
 }
@@ -387,7 +382,12 @@ body.is-cover .tut__footer { display: none; }
 .exhibit--title { width: min(480px, 100%); }
 
 /* ---- Text ---- */
-.exhibit--text { width: min(560px, 100%); }
+.exhibit--text {
+  width: min(560px, 100%);
+  display: flex;                 /* streckt den Lang-Toggle wie im creation-block */
+  flex-direction: column;
+}
+
 .exhibit--text .lang-block:first-child { margin-top: 0; }
 
 /* ---- Create Spot ---- */
@@ -580,14 +580,9 @@ body.is-cover .tut__footer { display: none; }
     padding: 0;
   }
 
+  /* am Handy keine Linie, nur Titel und Punkte */
   .timeline__track,
-  .timeline__fill {
-    top: 27px;                    /* Mitte der Punkte unterhalb des Labels */
-    left: -18px;
-    right: -18px;
-  }
-
-  .timeline__fill { top: 26.75px; }
+  .timeline__fill { display: none; }
 
   .tl-group { display: none; }
 
