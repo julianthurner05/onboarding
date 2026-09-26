@@ -36,11 +36,16 @@
     return null;
   }
 
-  /* Fortschrittslinie bis zur Mitte dieses Punkts */
+  /* Fortschrittslinie bis zur Mitte dieses Punkts.
+     Am Handy füllt sie die Gruppenlinie (--mfill), am Desktop die
+     durchgehende Leiste. */
   function paintFill() {
     const dot = displayDot();
+    document.querySelectorAll('.tl-group__dots').forEach(g => g.style.setProperty('--mfill', '0px'));
     if (!dot || dot.offsetParent === null) { fill.style.width = '0px'; return; }
     fill.style.width = `${dot.offsetLeft + dot.offsetWidth / 2 - fill.offsetLeft}px`;
+    const row = dot.closest('.tl-group__dots');
+    if (row) row.style.setProperty('--mfill', `${dot.offsetLeft + dot.offsetWidth / 2 - 4}px`);
   }
 
   function render() {

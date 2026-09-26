@@ -585,16 +585,31 @@ body.is-cover .tut__footer { display: none; }
   .timeline__track,
   .timeline__fill { display: none; }
 
+  .tl-dot { width: 8px; height: 8px; }
+
   .tl-group__dots { position: relative; }
 
   .tl-group__dots::before {
     content: "";
     position: absolute;
     top: 50%;
-    left: 5px;
-    right: 5px;
+    left: 4px;
+    right: 4px;
     height: var(--hair-w);
     background: rgba(255, 255, 255, var(--hair-a));
+  }
+
+  /* abgearbeiteter Teil der Linie wird weiß wie am Desktop */
+  .tl-group__dots::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 0.5px);
+    left: 4px;
+    width: var(--mfill, 0px);
+    max-width: calc(100% - 8px);
+    height: 1.5px;
+    background: var(--nav-active);
+    transition: width var(--dur-slow) var(--ease);
   }
 
   .tl-group { display: none; }
