@@ -29,6 +29,7 @@
     <symbol id="i-user" viewBox="0 0 24 24"><path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><circle cx="12" cy="12" r="10"/></symbol>
     <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
     <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
     <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
     <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></symbol>
@@ -52,10 +53,10 @@
     <!-- ============ TITELBLATT ============ -->
     <section class="step step--cover is-active">
       <img class="cover__logo" src="assets/logo.svg" alt="sounddna">
-      <p class="cover__kicker">Onboarding</p>
-      <h1 class="cover__title">Text-to-Store</h1>
+      <p class="cover__kicker">Text-to-Store</p>
+      <h1 class="cover__title">Service Portal Onboarding</h1>
       <button class="primary-btn cover__start" id="btn-start" type="button">
-        Tutorial starten
+        Onboarding starten
         <svg class="icon"><use href="#i-arrow-right"/></svg>
       </button>
     </section>
@@ -63,12 +64,11 @@
     <!-- 1 · Login -->
     <section class="step" data-group="start" data-dot="1">
       <header class="tut__head">
-        <p class="tut__kicker">Getting started · Schritt 1 von 17</p>
         <h1 class="tut__title">Der Login</h1>
-        <p class="tut__text">Dein Zugang zum Portal – deine Zugangsdaten bekommst du von sounddna.</p>
+        <p class="tut__text">Dein Zugang zum Portal. Deine Zugangsdaten bekommst du von sounddna.</p>
         <ul class="tut__list">
           <li data-part="login-main">Melde dich mit deiner <strong>E-Mail-Adresse</strong> und deinem <strong>Passwort</strong> an.</li>
-          <li data-part="login-forgot">Passwort vergessen? <strong>Forgot password</strong> schickt dir einen Link per E-Mail – aus Sicherheitsgründen nur <strong>30 Minuten</strong> gültig.</li>
+          <li data-part="login-forgot">Passwort vergessen? <strong>Forgot password</strong> schickt dir einen Link per E-Mail. Aus Sicherheitsgründen ist er nur <strong>30 Minuten</strong> gültig.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -101,15 +101,14 @@
     <!-- 2 · Die Bereiche -->
     <section class="step" data-group="start" data-dot="2">
       <header class="tut__head">
-        <p class="tut__kicker">Getting started · Schritt 2 von 17</p>
         <h1 class="tut__title">Die Bereiche</h1>
-        <p class="tut__text">Text-to-Store ist dein Portal für Instore-Durchsagen – vom Text bis zur fertig eingeplanten Ansage. Über das Menü links erreichst du alles:</p>
+        <p class="tut__text">Text-to-Store ist dein Portal für Instore-Durchsagen, vom Text bis zur fertig eingeplanten Ansage. Über das Menü links erreichst du alles:</p>
         <ul class="tut__list">
-          <li data-part="nav-home"><strong>Home</strong> – dein Dashboard mit dem Überblick</li>
-          <li data-part="nav-spot"><strong>SpotTool</strong> – Durchsagen schreiben und generieren</li>
-          <li data-part="nav-sched"><strong>Scheduler</strong> – Sendezeiten planen</li>
-          <li data-part="nav-cal"><strong>Calendar</strong> – deine Woche im Blick</li>
-          <li data-part="nav-acc"><strong>Account</strong> – Profil und Sicherheit</li>
+          <li data-part="nav-home"><strong>Home</strong>: dein Dashboard mit dem Überblick</li>
+          <li data-part="nav-spot"><strong>SpotTool</strong>: Durchsagen schreiben und generieren</li>
+          <li data-part="nav-sched"><strong>Scheduler</strong>: Sendezeiten planen</li>
+          <li data-part="nav-cal"><strong>Calendar</strong>: deine Woche im Blick</li>
+          <li data-part="nav-acc"><strong>Account</strong>: Profil und Sicherheit</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -150,11 +149,10 @@
     <!-- 3 · Dashboard -->
     <section class="step" data-group="start" data-dot="3">
       <header class="tut__head">
-        <p class="tut__kicker">Getting started · Schritt 3 von 17</p>
         <h1 class="tut__title">Das Dashboard</h1>
-        <p class="tut__text">Nach dem Login landest du auf Home – deinem Überblick:</p>
+        <p class="tut__text">Nach dem Login landest du auf Home, deinem Überblick:</p>
         <ul class="tut__list">
-          <li data-part="quota"><strong>Spots left this month</strong> – dein Monatskontingent; der Zähler setzt sich am <strong>Monatsersten</strong> zurück.</li>
+          <li data-part="quota"><strong>Spots left this month</strong> zeigt dein Monatskontingent. Der Zähler setzt sich am <strong>Monatsersten</strong> zurück.</li>
           <li data-part="activity">Daneben siehst du, wie viele Spots generiert wurden und was <strong>heute und diese Woche</strong> ansteht.</li>
           <li data-part="shortcuts">Mit <strong>Create spot</strong> und <strong>Plan schedule</strong> springst du direkt in die Arbeit.</li>
         </ul>
@@ -197,19 +195,17 @@
 
     <!-- ============ KAPITEL · SPOTTOOL ============ -->
     <section class="step step--chapter" data-group="spottool">
-      <p class="chapter__kicker">Bereich 2 von 5</p>
       <h1 class="chapter__title">SpotTool</h1>
-      <p class="chapter__text">Hier entsteht deine Durchsage: Titel vergeben, Text schreiben, mit KI-Stimme generieren – und das Ergebnis direkt anhören.</p>
+      <p class="chapter__text">Hier entsteht deine Durchsage: Titel vergeben, Text schreiben, mit synthetischer Stimme generieren und das Ergebnis direkt anhören.</p>
     </section>
 
     <!-- 4 · Titel vergeben -->
     <section class="step" data-group="spottool" data-dot="4">
       <header class="tut__head">
-        <p class="tut__kicker">SpotTool · Schritt 4 von 17</p>
         <h1 class="tut__title">Titel vergeben</h1>
-        <p class="tut__text">Jeder Spot beginnt mit einem Titel. Er erscheint überall wieder – in der History, im Scheduler und im Kalender.</p>
+        <p class="tut__text">Jeder Spot beginnt mit einem Titel. Er erscheint überall wieder: in der History, im Scheduler und im Kalender.</p>
         <ul class="tut__list">
-          <li data-part="title">Wähle einen Namen, den du <strong>wiedererkennst</strong> – am besten Aktion plus Zeitraum.</li>
+          <li data-part="title">Wähle einen Namen, den du <strong>wiedererkennst</strong>, am besten Aktion plus Zeitraum.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -225,13 +221,10 @@
     <!-- 5 · Text schreiben -->
     <section class="step" data-group="spottool" data-dot="5">
       <header class="tut__head">
-        <p class="tut__kicker">SpotTool · Schritt 5 von 17</p>
         <h1 class="tut__title">Text schreiben</h1>
-        <p class="tut__text">Die KI-Stimme liest deinen Text wörtlich – schreib ihn genau so, wie er klingen soll.</p>
+        <p class="tut__text">Die synthetische Stimme liest deinen Text wörtlich. Schreib ihn genau so, wie er klingen soll.</p>
         <ul class="tut__list">
-          <li data-part="first"><strong>Kurze Sätze</strong> klingen natürlicher als lange Schachtelsätze.</li>
-          <li data-part="first"><strong>Zahlen und Preise</strong> so schreiben, wie sie gesprochen werden sollen – im Zweifel ausschreiben.</li>
-          <li data-part="second">Über <strong>Second Language</strong> ergänzt du dieselbe Durchsage in einer zweiten Sprache – beide landen in einem Spot.</li>
+          <li data-part="first">Hier schreibst du den <strong>Text</strong>, den die synthetische Stimme sprechen soll.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -242,7 +235,23 @@
 Entdecke jede Woche ein neues Angebot für IKEA Family Mitglieder. RIAN, Beistelltisch um nur € 9,99 statt um € 29,99.
 Lebe Smart!</textarea>
           </div>
-          <button class="lang-toggle" type="button" data-part="second">
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 · Second Language -->
+    <section class="step" data-group="spottool" data-dot="6">
+      <header class="tut__head">
+        <h1 class="tut__title">Second Language</h1>
+        <p class="tut__text">Deine Durchsage kann zweisprachig sein.</p>
+        <ul class="tut__list">
+          <li data-part="toggle">Über den <strong>Second Language</strong> Button klappst du den zweiten Textbereich auf und zu.</li>
+          <li data-part="second">Der zweite Text landet im <strong>selben Spot</strong> und wird direkt nach der ersten Sprache gesprochen.</li>
+        </ul>
+      </header>
+      <div class="tut__stage">
+        <div class="exhibit exhibit--text">
+          <button class="lang-toggle" type="button" data-part="toggle" style="margin-top: 0">
             <span class="lang-toggle__line"></span>
             <svg class="icon lang-toggle__icon"><use href="#i-minus"/></svg>
             <span class="lang-toggle__label">Second Language</span>
@@ -259,13 +268,12 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- 6 · Create Spot -->
-    <section class="step" data-group="spottool" data-dot="6">
+    <section class="step" data-group="spottool" data-dot="7">
       <header class="tut__head">
-        <p class="tut__kicker">SpotTool · Schritt 6 von 17</p>
         <h1 class="tut__title">Create Spot drücken</h1>
         <p class="tut__text">Fertig? Dann drück <strong>Create Spot</strong>.</p>
         <ul class="tut__list">
-          <li data-part="create">Die Generierung dauert einen <strong>kurzen Moment</strong> – und jeder Spot zählt gegen dein <strong>Monatskontingent</strong>.</li>
+          <li data-part="create">Die Generierung dauert einen <strong>kurzen Moment</strong>. Jeder Spot zählt gegen dein <strong>Monatskontingent</strong>.</li>
           <li data-part="stats"><strong>Wortzahl</strong> und ungefähre <strong>Sprechdauer</strong> zeigen dir vorab, wie lang der Spot wird.</li>
           <li data-part="clear"><strong>Clear all</strong> leert alle Felder, wenn du neu starten willst.</li>
         </ul>
@@ -293,14 +301,13 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- 7 · Ergebnis anhören -->
-    <section class="step" data-group="spottool" data-dot="7">
+    <section class="step" data-group="spottool" data-dot="8">
       <header class="tut__head">
-        <p class="tut__kicker">SpotTool · Schritt 7 von 17</p>
         <h1 class="tut__title">Ergebnis anhören</h1>
         <p class="tut__text">Der fertige Spot erscheint als helle Karte in der Creation History.</p>
         <ul class="tut__list">
-          <li data-part="player"><strong>Immer gegenhören:</strong> KI-Stimmen können sich bei Namen, Preisen und Daten versprechen.</li>
-          <li data-part="new">Frisch generierte Spots erkennst du am Tag <strong>New</strong> – mehr zu den Tags gleich.</li>
+          <li data-part="player"><strong>Immer gegenhören:</strong> Synthetische Stimmen können sich bei Namen, Preisen und Daten versprechen.</li>
+          <li data-part="new">Frisch generierte Spots erkennst du am Tag <strong>New</strong>. Mehr zu den Tags gleich.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -335,78 +342,80 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- 8 · Das Mini-Menü -->
-    <section class="step" data-group="spottool" data-dot="8">
+    <section class="step" data-group="spottool" data-dot="9">
       <header class="tut__head">
-        <p class="tut__kicker">SpotTool · Schritt 8 von 17</p>
         <h1 class="tut__title">Das Mini-Menü</h1>
         <p class="tut__text">Hinter den drei Punkten steckt alles, was du mit einem fertigen Spot machen kannst.</p>
         <ul class="tut__list">
-          <li data-part="menu"><strong>Receive</strong> schickt dir die Audiodatei, <strong>Schedule</strong> öffnet den Scheduler, <strong>Re-Use</strong> übernimmt den Text, <strong>Delete</strong> löscht.</li>
-          <li data-part="menu">Eingeplante Spots musst du erst <strong>ausplanen</strong>, bevor sie gelöscht werden können.</li>
+          <li data-part="m-receive"><strong>Receive</strong> schickt dir die fertige Audiodatei per E-Mail.</li>
+          <li data-part="m-schedule"><strong>Schedule</strong> öffnet den Scheduler mit diesem Spot.</li>
+          <li data-part="m-reuse"><strong>Re-Use</strong> übernimmt Titel und Text als Vorlage für einen neuen Spot.</li>
+          <li data-part="m-delete"><strong>Delete</strong> löscht den Spot aus der History.</li>
         </ul>
       </header>
       <div class="tut__stage">
         <div class="exhibit exhibit--menu">
-          <article class="card">
-            <div class="card__top">
-              <span class="card__date">Yesterday, 09:41</span>
-              <span class="badge badge--scheduled">
-                <svg class="icon"><use href="#i-gantt"/></svg>
-                Scheduled
-              </span>
-              <div class="card__menu-wrap">
-                <button class="kebab is-open" aria-label="Options">
-                  <svg class="icon"><use href="#i-kebab"/></svg>
-                </button>
-                <div class="context-menu" role="menu" data-part="menu">
-                  <button class="context-menu__item" role="menuitem">
-                    <svg class="icon"><use href="#i-send"/></svg>
-                    Receive
+          <div class="zoom">
+            <article class="card">
+              <div class="card__top">
+                <span class="card__date">Yesterday, 09:41</span>
+                <span class="badge badge--scheduled">
+                  <svg class="icon"><use href="#i-gantt"/></svg>
+                  Scheduled
+                </span>
+                <div class="card__menu-wrap">
+                  <button class="kebab is-open" aria-label="Options">
+                    <svg class="icon"><use href="#i-kebab"/></svg>
                   </button>
-                  <button class="context-menu__item" role="menuitem">
-                    <svg class="icon"><use href="#i-gantt"/></svg>
-                    Schedule
-                  </button>
-                  <button class="context-menu__item" role="menuitem">
-                    <svg class="icon"><use href="#i-reuse"/></svg>
-                    Re-Use
-                  </button>
-                  <button class="context-menu__item" role="menuitem">
-                    <svg class="icon"><use href="#i-trash"/></svg>
-                    Delete
-                  </button>
+                  <div class="context-menu" role="menu">
+                    <button class="context-menu__item" role="menuitem" data-part="m-receive">
+                      <svg class="icon"><use href="#i-send"/></svg>
+                      Receive
+                    </button>
+                    <button class="context-menu__item" role="menuitem" data-part="m-schedule">
+                      <svg class="icon"><use href="#i-gantt"/></svg>
+                      Schedule
+                    </button>
+                    <button class="context-menu__item" role="menuitem" data-part="m-reuse">
+                      <svg class="icon"><use href="#i-reuse"/></svg>
+                      Re-Use
+                    </button>
+                    <button class="context-menu__item" role="menuitem" data-part="m-delete">
+                      <svg class="icon"><use href="#i-trash"/></svg>
+                      Delete
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="card__title-row">
-              <h2 class="card__title">Restaurant Frühstücks-Special</h2>
-            </div>
-            <div class="card__player">
-              <button class="play-btn" aria-label="Play">
-                <svg class="icon icon--filled"><use href="#i-play"/></svg>
-              </button>
-              <div class="slider">
-                <div class="slider__track"></div>
-                <div class="slider__progress" style="width: 35%"></div>
-                <div class="slider__thumb" style="left: 35%"></div>
+              <div class="card__title-row">
+                <h2 class="card__title">Restaurant Frühstücks-Special</h2>
               </div>
-              <span class="card__time">00:12</span>
-            </div>
-          </article>
+              <div class="card__player">
+                <button class="play-btn" aria-label="Play">
+                  <svg class="icon icon--filled"><use href="#i-play"/></svg>
+                </button>
+                <div class="slider">
+                  <div class="slider__track"></div>
+                  <div class="slider__progress" style="width: 35%"></div>
+                  <div class="slider__thumb" style="left: 35%"></div>
+                </div>
+                <span class="card__time">00:12</span>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- 9 · Die Tags -->
-    <section class="step" data-group="spottool" data-dot="9">
+    <section class="step" data-group="spottool" data-dot="10">
       <header class="tut__head">
-        <p class="tut__kicker">SpotTool · Schritt 9 von 17</p>
         <h1 class="tut__title">Die Tags</h1>
         <p class="tut__text">Ein Blick auf den Tag genügt, um den Zustand eines Spots zu erkennen.</p>
         <ul class="tut__list">
-          <li data-part="tag-new"><strong>New</strong> – der Spot wurde gerade generiert.</li>
-          <li data-part="tag-sched"><strong>Scheduled</strong> – der Spot ist im Scheduler eingeplant.</li>
-          <li data-part="tag-rec"><strong>Received</strong> – der Spot wurde dir per E-Mail zugestellt.</li>
+          <li data-part="tag-new"><strong>New</strong>: Der Spot wurde gerade generiert.</li>
+          <li data-part="tag-sched"><strong>Scheduled</strong>: Der Spot ist im Scheduler eingeplant.</li>
+          <li data-part="tag-rec"><strong>Received</strong>: Der Spot wurde dir per E-Mail zugestellt.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -424,12 +433,31 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
-    <!-- 10 · Best Practices SpotTool -->
-    <section class="step" data-group="spottool" data-dot="10">
+    <!-- 10 · Die Blacklist -->
+    <section class="step" data-group="spottool" data-dot="11">
       <header class="tut__head">
-        <p class="tut__kicker">SpotTool · Schritt 10 von 17</p>
+        <h1 class="tut__title">Die Blacklist</h1>
+        <p class="tut__text">Nicht jeder Text darf in den Store.</p>
+        <ul class="tut__list">
+          <li data-part="toast">Bestimmte Begriffe stehen auf der <strong>Blacklist</strong> und dürfen in Durchsagen nicht vorkommen.</li>
+          <li data-part="toast">Enthält dein Text so einen Begriff, wird der Spot <strong>nicht generiert</strong>. Du bekommst direkt einen Hinweis und kannst den Text anpassen.</li>
+        </ul>
+      </header>
+      <div class="tut__stage">
+        <div class="exhibit exhibit--blacklist">
+          <div class="toast toast--error" data-part="toast">
+            <svg class="icon"><use href="#i-alert"/></svg>
+            <span class="toast__text">Your text contains a blocked word. Please adjust it.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 · Best Practices SpotTool -->
+    <section class="step" data-group="spottool" data-dot="12">
+      <header class="tut__head">
         <h1 class="tut__title">Best Practices</h1>
-        <p class="tut__text">Damit deine Spots immer gut klingen – die vier wichtigsten Gewohnheiten beim Erstellen:</p>
+        <p class="tut__text">Die wichtigsten Gewohnheiten beim Erstellen deiner Spots:</p>
       </header>
       <div class="tut__stage">
         <div class="exhibit">
@@ -442,15 +470,15 @@ Lebe Smart!</textarea>
               </div>
               <div class="finale__row">
                 <svg class="icon"><use href="#i-check"/></svg>
-                <span><strong>Klar benennen</strong> – Titel mit Aktion und Zeitraum.</span>
+                <span><strong>Klar benennen:</strong> Titel mit Aktion und Zeitraum.</span>
               </div>
               <div class="finale__row">
                 <svg class="icon"><use href="#i-check"/></svg>
-                <span><strong>Kurze Sätze</strong> schreiben – die Stimme liest wörtlich.</span>
+                <span><strong>Blacklist beachten:</strong> gesperrte Begriffe im Text vermeiden.</span>
               </div>
               <div class="finale__row">
                 <svg class="icon"><use href="#i-check"/></svg>
-                <span><strong>Zahlen und Preise ausschreiben</strong>, wie sie klingen sollen.</span>
+                <span><strong>Re-Use nutzen</strong>, statt ähnliche Spots neu zu tippen.</span>
               </div>
             </div>
           </div>
@@ -460,19 +488,17 @@ Lebe Smart!</textarea>
 
     <!-- ============ KAPITEL · SCHEDULER ============ -->
     <section class="step step--chapter" data-group="scheduler">
-      <p class="chapter__kicker">Bereich 3 von 5</p>
       <h1 class="chapter__title">Scheduler</h1>
-      <p class="chapter__text">Hier bekommt dein Spot seine Sendezeiten – einmalig an einem Tag oder wiederkehrend über Wochen.</p>
+      <p class="chapter__text">Hier bekommt dein Spot seine Sendezeiten, einmalig an einem Tag oder wiederkehrend über Wochen.</p>
     </section>
 
     <!-- 11 · Audio wählen -->
-    <section class="step" data-group="scheduler" data-dot="11">
+    <section class="step" data-group="scheduler" data-dot="13">
       <header class="tut__head">
-        <p class="tut__kicker">Scheduler · Schritt 11 von 17</p>
         <h1 class="tut__title">Audio wählen</h1>
         <p class="tut__text">Die Planung startet mit dem Spot: Über <strong>Choose audio</strong> wählst du, welche Durchsage laufen soll.</p>
         <ul class="tut__list">
-          <li data-part="rows">Der Picker zeigt alle fertigen Spots – <strong>hör sie direkt vor</strong>.</li>
+          <li data-part="rows">Der Picker zeigt alle fertigen Spots. Du kannst sie direkt <strong>vorhören</strong>.</li>
           <li data-part="choose">Mit <strong>Choose</strong> übernimmst du den Spot in die Planung.</li>
         </ul>
       </header>
@@ -531,14 +557,13 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- 12 · Single Day / Weekly -->
-    <section class="step" data-group="scheduler" data-dot="12">
+    <section class="step" data-group="scheduler" data-dot="14">
       <header class="tut__head">
-        <p class="tut__kicker">Scheduler · Schritt 12 von 17</p>
         <h1 class="tut__title">Single Day oder Weekly</h1>
         <p class="tut__text">Leg fest, wann der Spot grundsätzlich läuft.</p>
         <ul class="tut__list">
-          <li data-part="type"><strong>Single Day</strong> – ein einzelner Tag, zum Beispiel für eine Tagesaktion.</li>
-          <li data-part="dates days"><strong>Weekly</strong> – ein Zeitraum mit <strong>Start</strong> und <strong>Ende</strong> plus den gewünschten <strong>Wochentagen</strong>.</li>
+          <li data-part="type"><strong>Single Day</strong>: ein einzelner Tag, zum Beispiel für eine Tagesaktion.</li>
+          <li data-part="dates days"><strong>Weekly</strong>: ein Zeitraum mit <strong>Start</strong> und <strong>Ende</strong> plus den gewünschten <strong>Wochentagen</strong>.</li>
           <li data-part="infinite">Das <strong>∞</strong> im Enddatum-Feld heißt: die Planung läuft, bis du sie beendest.</li>
         </ul>
       </header>
@@ -590,15 +615,14 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- 13 · Die Zeit -->
-    <section class="step" data-group="scheduler" data-dot="13">
+    <section class="step" data-group="scheduler" data-dot="15">
       <header class="tut__head">
-        <p class="tut__kicker">Scheduler · Schritt 13 von 17</p>
         <h1 class="tut__title">Die Zeit</h1>
-        <p class="tut__text">Dann die Uhrzeit – einmal täglich oder wiederholt.</p>
+        <p class="tut__text">Dann die Uhrzeit: einmal täglich oder wiederholt.</p>
         <ul class="tut__list">
-          <li data-part="mode"><strong>Once per Day</strong> – eine feste Uhrzeit.</li>
-          <li data-part="interval"><strong>Repeat</strong> – im Intervall, hier z.&nbsp;B. alle 2 Stunden von 10 bis 18 Uhr.</li>
-          <li data-part="interval">Alle Zeiten liegen im <strong>30-Minuten-Raster</strong> – und jeder Slot hält genau <strong>einen</strong> Spot.</li>
+          <li data-part="mode"><strong>Once per Day</strong>: eine feste Uhrzeit.</li>
+          <li data-part="interval"><strong>Repeat</strong>: im Intervall, hier zum Beispiel alle 2 Stunden von 10 bis 18 Uhr.</li>
+          <li data-part="interval">Alle Zeiten liegen im <strong>30-Minuten-Raster</strong>, und jeder Slot hält genau <strong>einen</strong> Spot.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -643,13 +667,12 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- 14 · Absenden -->
-    <section class="step" data-group="scheduler" data-dot="14">
+    <section class="step" data-group="scheduler" data-dot="16">
       <header class="tut__head">
-        <p class="tut__kicker">Scheduler · Schritt 14 von 17</p>
         <h1 class="tut__title">Absenden</h1>
         <p class="tut__text">Ein Klick, und die Planung ist aktiv.</p>
         <ul class="tut__list">
-          <li data-part="send"><strong>Send to Schedule</strong> schickt deine Planung ab – ab jetzt läuft der Spot zu den gewählten Zeiten im Store.</li>
+          <li data-part="send"><strong>Send to Schedule</strong> schickt deine Planung ab. Ab jetzt läuft der Spot zu den gewählten Zeiten im Store.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -665,11 +688,10 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- 15 · Best Practices Scheduler -->
-    <section class="step" data-group="scheduler" data-dot="15">
+    <section class="step" data-group="scheduler" data-dot="17">
       <header class="tut__head">
-        <p class="tut__kicker">Scheduler · Schritt 15 von 17</p>
         <h1 class="tut__title">Best Practices</h1>
-        <p class="tut__text">So bleibt deine Planung übersichtlich – und deine Kundinnen und Kunden hören genau das Richtige:</p>
+        <p class="tut__text">So bleibt deine Planung übersichtlich:</p>
       </header>
       <div class="tut__stage">
         <div class="exhibit">
@@ -682,11 +704,11 @@ Lebe Smart!</textarea>
               </div>
               <div class="finale__row">
                 <svg class="icon"><use href="#i-check"/></svg>
-                <span><strong>Gezielt takten</strong> – lieber wenige, gut platzierte Wiederholungen.</span>
+                <span><strong>Gezielt takten:</strong> lieber wenige, gut platzierte Wiederholungen.</span>
               </div>
               <div class="finale__row">
                 <svg class="icon"><use href="#i-check"/></svg>
-                <span><strong>Abgelaufene Planungen löschen</strong> – das hält alles übersichtlich.</span>
+                <span><strong>Abgelaufene Planungen löschen</strong>, das hält alles übersichtlich.</span>
               </div>
               <div class="finale__row">
                 <svg class="icon"><use href="#i-check"/></svg>
@@ -700,23 +722,535 @@ Lebe Smart!</textarea>
 
     <!-- ============ KAPITEL · CALENDAR ============ -->
     <section class="step step--chapter" data-group="calendar">
-      <p class="chapter__kicker">Bereich 4 von 5</p>
       <h1 class="chapter__title">Calendar</h1>
-      <p class="chapter__text">Deine Woche auf einen Blick: Der Kalender zeigt alle geplanten Durchsagen – als reine Ansicht.</p>
+      <p class="chapter__text">Deine Woche auf einen Blick: Der Kalender zeigt alle geplanten Durchsagen als reine Ansicht.</p>
     </section>
 
-    <!-- 16 · Die Woche lesen -->
-    <section class="step" data-group="calendar" data-dot="16">
+    <!-- Calendar · Raster / Slots / Woche und Jetzt -->
+    <section class="step" data-group="calendar" data-dot="18">
       <header class="tut__head">
-        <p class="tut__kicker">Calendar · Schritt 16 von 17</p>
-        <h1 class="tut__title">Die Woche lesen</h1>
-        <p class="tut__text">Der Announcement Calendar zeigt deine Woche als Raster – fahr über die belegten Slots!</p>
+        <h1 class="tut__title">Das Raster</h1>
+        <p class="tut__text">Der Announcement Calendar zeigt deine Woche als Raster.</p>
         <ul class="tut__list">
-          <li data-part="axis">Jede <strong>Zeile</strong> ist ein 30-Minuten-Slot, jede <strong>Spalte</strong> ein Tag.</li>
-          <li data-part="spots">Die gefüllten Slots sind deine <strong>geplanten Durchsagen</strong> – beim Überfahren zeigen sie Uhrzeit und Titel.</li>
-          <li data-part="closing">Das <strong>Schloss</strong> markiert die fixe Closing-Ansage von sounddna.</li>
-          <li data-part="closed">Zeiten außerhalb der <strong>Öffnungszeiten</strong> sind ausgeblendet.</li>
-          <li data-part="now week">Die weiße Linie markiert <strong>jetzt</strong> – mit den <strong>Pfeilen</strong> wechselst du die Woche.</li>
+          <li data-part="rows">Jede <strong>Zeile</strong> steht für einen 30-Minuten-Slot.</li>
+          <li data-part="cols">Jede <strong>Spalte</strong> ist ein Tag deiner Woche.</li>
+        </ul>
+      </header>
+      <div class="tut__stage">
+        <div class="exhibit exhibit--cal">
+          <div class="calendar-view">
+            <div class="cal-head">
+              <div class="cal-week" data-part="grid">
+                <button class="cal-week__nav" aria-label="Previous week">
+                  <svg class="icon"><use href="#i-chevron-left"/></svg>
+                </button>
+                <span class="cal-week__label">29 Sep – 05 Oct 2025</span>
+                <button class="cal-week__nav" aria-label="Next week">
+                  <svg class="icon"><use href="#i-chevron-right"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="cal-days" data-part="cols">
+              <button class="cal-days__btn" type="button"><span>Mon</span><span>29</span></button>
+              <button class="cal-days__btn" type="button"><span>Tue</span><span>30</span></button>
+              <button class="cal-days__btn is-active" type="button"><span>Wed</span><span>01</span></button>
+              <button class="cal-days__btn" type="button"><span>Thu</span><span>02</span></button>
+              <button class="cal-days__btn" type="button"><span>Fri</span><span>03</span></button>
+              <button class="cal-days__btn" type="button"><span>Sat</span><span>04</span></button>
+              <button class="cal-days__btn" type="button"><span>Sun</span><span>05</span></button>
+            </div>
+            <div class="cal-grid" id="calgrid-a">
+              <div class="cal-col cal-col--time">
+                <div class="cal-col__head"></div>
+                <div class="cal-col__body">
+                  <div class="cal-time" data-part="rows">09:00</div>
+                  <div class="cal-time" data-part="rows">09:30</div>
+                  <div class="cal-time" data-part="rows">10:00</div>
+                  <div class="cal-time" data-part="rows">10:30</div>
+                  <div class="cal-time" data-part="rows">11:00</div>
+                  <div class="cal-time" data-part="rows">11:30</div>
+                  <div class="cal-time" data-part="rows">12:00</div>
+                </div>
+              </div>
+              <div class="cal-col">
+                <div class="cal-col__head" data-part="cols">Mon <span class="cal-col__date">29</span></div>
+                <div class="cal-col__body">
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">09:00</span>
+                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">09:45</span>
+                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FAMILY Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">10:00</span>
+                        <span class="cal-slot__text">IKEA FAMILY Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">SCAN & PAY Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">10:30</span>
+                        <span class="cal-slot__text">SCAN & PAY Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA Geschenkkarte Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">11:00</span>
+                        <span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">Neuer Gesenkter Preis Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">11:30</span>
+                        <span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">ZLS Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">12:00</span>
+                        <span class="cal-slot__text">ZLS Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cal-col">
+                <div class="cal-col__head" data-part="cols">Tue <span class="cal-col__date">30</span></div>
+                <div class="cal-col__body">
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">09:00</span>
+                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">09:45</span>
+                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FAMILY Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">10:00</span>
+                        <span class="cal-slot__text">IKEA FAMILY Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">SCAN & PAY Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">10:30</span>
+                        <span class="cal-slot__text">SCAN & PAY Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA Geschenkkarte Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">11:00</span>
+                        <span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">Neuer Gesenkter Preis Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">11:30</span>
+                        <span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">ZLS Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">12:00</span>
+                        <span class="cal-slot__text">ZLS Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cal-col cal-col--today">
+                <div class="cal-col__head" data-part="cols">Wed <span class="cal-col__date">01</span></div>
+                <div class="cal-col__body">
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">09:00</span>
+                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">09:45</span>
+                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FAMILY Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">10:00</span>
+                        <span class="cal-slot__text">IKEA FAMILY Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">SCAN & PAY Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">10:30</span>
+                        <span class="cal-slot__text">SCAN & PAY Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA Geschenkkarte Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">11:00</span>
+                        <span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">Neuer Gesenkter Preis Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">11:30</span>
+                        <span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">ZLS Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">12:00</span>
+                        <span class="cal-slot__text">ZLS Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-now" data-part="grid" style="top: 64%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="step" data-group="calendar" data-dot="19">
+      <header class="tut__head">
+        <h1 class="tut__title">Die Slots</h1>
+        <p class="tut__text">Jede Durchsage belegt genau einen Slot. Die Farben kommen aus deiner Planung.</p>
+        <ul class="tut__list">
+          <li data-part="spots">Die gefüllten Slots sind deine <strong>geplanten Durchsagen</strong>.</li>
+          <li data-part="spots">Fahr mit der Maus über einen Slot: Er zeigt dir <strong>Uhrzeit und Titel</strong>.</li>
+          <li data-part="titles">Mit <strong>Show titles</strong> blendest du die Titel dauerhaft in die Slots ein. Probier es aus!</li>
+        </ul>
+      </header>
+      <div class="tut__stage">
+        <div class="exhibit exhibit--cal">
+          <div class="calendar-view">
+            <div class="cal-head">
+              <div class="cal-week" data-part="grid">
+                <button class="cal-week__nav" aria-label="Previous week">
+                  <svg class="icon"><use href="#i-chevron-left"/></svg>
+                </button>
+                <span class="cal-week__label">29 Sep – 05 Oct 2025</span>
+                <button class="cal-week__nav" aria-label="Next week">
+                  <svg class="icon"><use href="#i-chevron-right"/></svg>
+                </button>
+              </div>
+              <label class="cal-toggle" data-part="titles">
+                <span>Show titles</span>
+                <button class="switch" type="button" role="switch" aria-checked="false"><span class="switch__knob"></span></button>
+              </label>
+            </div>
+            <div class="cal-days" data-part="grid">
+              <button class="cal-days__btn" type="button"><span>Mon</span><span>29</span></button>
+              <button class="cal-days__btn" type="button"><span>Tue</span><span>30</span></button>
+              <button class="cal-days__btn is-active" type="button"><span>Wed</span><span>01</span></button>
+              <button class="cal-days__btn" type="button"><span>Thu</span><span>02</span></button>
+              <button class="cal-days__btn" type="button"><span>Fri</span><span>03</span></button>
+              <button class="cal-days__btn" type="button"><span>Sat</span><span>04</span></button>
+              <button class="cal-days__btn" type="button"><span>Sun</span><span>05</span></button>
+            </div>
+            <div class="cal-grid" id="calgrid-b">
+              <div class="cal-col cal-col--time">
+                <div class="cal-col__head"></div>
+                <div class="cal-col__body">
+                  <div class="cal-time" data-part="grid">09:00</div>
+                  <div class="cal-time" data-part="grid">09:30</div>
+                  <div class="cal-time" data-part="grid">10:00</div>
+                  <div class="cal-time" data-part="grid">10:30</div>
+                  <div class="cal-time" data-part="grid">11:00</div>
+                  <div class="cal-time" data-part="grid">11:30</div>
+                  <div class="cal-time" data-part="grid">12:00</div>
+                </div>
+              </div>
+              <div class="cal-col">
+                <div class="cal-col__head" data-part="grid">Mon <span class="cal-col__date">29</span></div>
+                <div class="cal-col__body">
+                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">09:00</span>
+                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">09:45</span>
+                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FAMILY Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">10:00</span>
+                        <span class="cal-slot__text">IKEA FAMILY Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">SCAN & PAY Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">10:30</span>
+                        <span class="cal-slot__text">SCAN & PAY Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA Geschenkkarte Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">11:00</span>
+                        <span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">Neuer Gesenkter Preis Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">11:30</span>
+                        <span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">ZLS Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">12:00</span>
+                        <span class="cal-slot__text">ZLS Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cal-col">
+                <div class="cal-col__head" data-part="grid">Tue <span class="cal-col__date">30</span></div>
+                <div class="cal-col__body">
+                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">09:00</span>
+                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">09:45</span>
+                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FAMILY Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">10:00</span>
+                        <span class="cal-slot__text">IKEA FAMILY Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">SCAN & PAY Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">10:30</span>
+                        <span class="cal-slot__text">SCAN & PAY Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA Geschenkkarte Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">11:00</span>
+                        <span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">Neuer Gesenkter Preis Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">11:30</span>
+                        <span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">ZLS Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">12:00</span>
+                        <span class="cal-slot__text">ZLS Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cal-col cal-col--today">
+                <div class="cal-col__head" data-part="grid">Wed <span class="cal-col__date">01</span></div>
+                <div class="cal-col__body">
+                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">09:00</span>
+                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">09:45</span>
+                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FAMILY Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">10:00</span>
+                        <span class="cal-slot__text">IKEA FAMILY Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">SCAN & PAY Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">10:30</span>
+                        <span class="cal-slot__text">SCAN & PAY Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA Geschenkkarte Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">11:00</span>
+                        <span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">Neuer Gesenkter Preis Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">11:30</span>
+                        <span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">ZLS Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">12:00</span>
+                        <span class="cal-slot__text">ZLS Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-now" data-part="grid" style="top: 64%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="step" data-group="calendar" data-dot="20">
+      <header class="tut__head">
+        <h1 class="tut__title">Woche und Jetzt</h1>
+        <p class="tut__text">Damit du dich zeitlich immer auskennst:</p>
+        <ul class="tut__list">
+          <li data-part="week">Mit den <strong>Pfeilen</strong> wechselst du zwischen den Wochen.</li>
+          <li data-part="now">Die weiße Linie zeigt den <strong>aktuellen Zeitpunkt</strong>.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -733,101 +1267,231 @@ Lebe Smart!</textarea>
                 </button>
               </div>
             </div>
-            <div class="cal-grid">
+            <div class="cal-days" data-part="grid">
+              <button class="cal-days__btn" type="button"><span>Mon</span><span>29</span></button>
+              <button class="cal-days__btn" type="button"><span>Tue</span><span>30</span></button>
+              <button class="cal-days__btn is-active" type="button"><span>Wed</span><span>01</span></button>
+              <button class="cal-days__btn" type="button"><span>Thu</span><span>02</span></button>
+              <button class="cal-days__btn" type="button"><span>Fri</span><span>03</span></button>
+              <button class="cal-days__btn" type="button"><span>Sat</span><span>04</span></button>
+              <button class="cal-days__btn" type="button"><span>Sun</span><span>05</span></button>
+            </div>
+            <div class="cal-grid" id="calgrid-c">
               <div class="cal-col cal-col--time">
                 <div class="cal-col__head"></div>
                 <div class="cal-col__body">
-                  <div class="cal-time" data-part="axis">10:00</div>
-                  <div class="cal-time" data-part="axis">10:30</div>
-                  <div class="cal-time" data-part="axis">11:00</div>
-                  <div class="cal-time" data-part="axis">11:30</div>
-                  <div class="cal-time" data-part="axis">12:00</div>
-                  <div class="cal-time" data-part="axis">12:30</div>
-                  <div class="cal-time" data-part="axis">13:00</div>
-                  <div class="cal-time" data-part="axis">13:30</div>
+                  <div class="cal-time" data-part="grid">09:00</div>
+                  <div class="cal-time" data-part="grid">09:30</div>
+                  <div class="cal-time" data-part="grid">10:00</div>
+                  <div class="cal-time" data-part="grid">10:30</div>
+                  <div class="cal-time" data-part="grid">11:00</div>
+                  <div class="cal-time" data-part="grid">11:30</div>
+                  <div class="cal-time" data-part="grid">12:00</div>
+                </div>
+              </div>
+              <div class="cal-col">
+                <div class="cal-col__head" data-part="grid">Mon <span class="cal-col__date">29</span></div>
+                <div class="cal-col__body">
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">09:00</span>
+                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">09:45</span>
+                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FAMILY Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">10:00</span>
+                        <span class="cal-slot__text">IKEA FAMILY Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">SCAN & PAY Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">10:30</span>
+                        <span class="cal-slot__text">SCAN & PAY Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA Geschenkkarte Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">11:00</span>
+                        <span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">Neuer Gesenkter Preis Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">11:30</span>
+                        <span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">ZLS Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">12:00</span>
+                        <span class="cal-slot__text">ZLS Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cal-col">
+                <div class="cal-col__head" data-part="grid">Tue <span class="cal-col__date">30</span></div>
+                <div class="cal-col__body">
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">09:00</span>
+                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">09:45</span>
+                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FAMILY Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">10:00</span>
+                        <span class="cal-slot__text">IKEA FAMILY Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">SCAN & PAY Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">10:30</span>
+                        <span class="cal-slot__text">SCAN & PAY Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA Geschenkkarte Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">11:00</span>
+                        <span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">Neuer Gesenkter Preis Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">11:30</span>
+                        <span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">ZLS Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">12:00</span>
+                        <span class="cal-slot__text">ZLS Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="cal-col cal-col--today">
-                <div class="cal-col__head" data-part="axis">Wed <span class="cal-col__date">01</span></div>
+                <div class="cal-col__head" data-part="grid">Wed <span class="cal-col__date">01</span></div>
                 <div class="cal-col__body">
-                  <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--blau)">
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
                     <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
                       <div class="cal-slot__title">
-                        <span class="cal-slot__time">10:30</span>
-                        <span class="cal-slot__text">Sommerschluss Aktion</span>
+                        <span class="cal-slot__time">09:00</span>
+                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
                       </div>
                     </div>
                   </div>
-                  <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                  <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                  <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                  <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                  <div class="cal-slot cal-slot--spot" data-part="closing" style="--cat: var(--blau)">
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
                     <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
                       <div class="cal-slot__title">
-                        <span class="cal-slot__time">13:00</span>
-                        <svg class="icon cal-slot__lock"><use href="#i-lock"/></svg>
-                        <span class="cal-slot__text">Closing Announcement</span>
+                        <span class="cal-slot__time">09:45</span>
+                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
                       </div>
                     </div>
                   </div>
-                  <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                  <div class="cal-now" data-part="now" style="top: 30%"></div>
-                </div>
-              </div>
-              <div class="cal-col">
-                <div class="cal-col__head" data-part="axis">Thu <span class="cal-col__date">02</span></div>
-                <div class="cal-col__body">
-                  <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                  <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--blau)">
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
                     <div class="cal-slot__inner">
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">11:00</span>
-                        <span class="cal-slot__text">IKEA Family Angebot RIAN</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                  <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--blau)">
-                    <div class="cal-slot__inner">
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">12:30</span>
-                        <span class="cal-slot__text">Restaurant Frühstücks-Special</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                  <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                </div>
-              </div>
-              <div class="cal-col">
-                <div class="cal-col__head" data-part="axis">Fri <span class="cal-col__date">03</span></div>
-                <div class="cal-col__body">
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--blau)">
-                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA FAMILY Durchsage</span>
                       <div class="cal-slot__title">
                         <span class="cal-slot__time">10:00</span>
-                        <span class="cal-slot__text">Late Night Shopping</span>
+                        <span class="cal-slot__text">IKEA FAMILY Durchsage</span>
                       </div>
                     </div>
                   </div>
-                  <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                  <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                  <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--blau)">
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
                     <div class="cal-slot__inner">
+                      <span class="cal-slot__label">SCAN & PAY Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">10:30</span>
+                        <span class="cal-slot__text">SCAN & PAY Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">IKEA Geschenkkarte Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">11:00</span>
+                        <span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">Neuer Gesenkter Preis Durchsage</span>
+                      <div class="cal-slot__title">
+                        <span class="cal-slot__time">11:30</span>
+                        <span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
+                    <div class="cal-slot__inner">
+                      <span class="cal-slot__label">ZLS Durchsage</span>
                       <div class="cal-slot__title">
                         <span class="cal-slot__time">12:00</span>
-                        <span class="cal-slot__text">Sommerschluss Aktion</span>
+                        <span class="cal-slot__text">ZLS Durchsage</span>
                       </div>
                     </div>
                   </div>
-                  <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                  <div class="cal-slot cal-slot--closed" data-part="closed"><div class="cal-slot__inner"></div></div>
-                  <div class="cal-slot cal-slot--closed" data-part="closed"><div class="cal-slot__inner"></div></div>
+                  <div class="cal-now" data-part="now" style="top: 64%"></div>
                 </div>
               </div>
             </div>
@@ -836,23 +1500,22 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
+
     <!-- ============ KAPITEL · ACCOUNT ============ -->
     <section class="step step--chapter" data-group="account">
-      <p class="chapter__kicker">Bereich 5 von 5</p>
       <h1 class="chapter__title">Account</h1>
       <p class="chapter__text">Alles rund um deinen Zugang: Profil, Passwort und Sicherheit.</p>
     </section>
 
     <!-- 17 · Konto & Sicherheit -->
-    <section class="step" data-group="account" data-dot="17">
+    <section class="step" data-group="account" data-dot="21">
       <header class="tut__head">
-        <p class="tut__kicker">Account · Schritt 17 von 17</p>
         <h1 class="tut__title">Konto &amp; Sicherheit</h1>
         <p class="tut__text">Unter Account verwaltest du dein Profil und die Sicherheit deines Zugangs.</p>
         <ul class="tut__list">
-          <li data-part="profile"><strong>Profil</strong> – Name, E-Mail-Adresse und letzter Login auf einen Blick.</li>
-          <li data-part="password"><strong>Change password</strong> schickt dir einen sicheren Link per E-Mail – gültig für <strong>30 Minuten</strong>.</li>
-          <li data-part="mfa">Die <strong>Zwei-Faktor-Authentifizierung</strong> ist mit einer Authenticator-App in zwei Minuten eingerichtet – sehr empfohlen.</li>
+          <li data-part="profile"><strong>Profil</strong>: Name, E-Mail-Adresse und letzter Login auf einen Blick.</li>
+          <li data-part="password"><strong>Change password</strong> schickt dir einen sicheren Link per E-Mail. Er ist <strong>30 Minuten</strong> gültig.</li>
+          <li data-part="mfa">Die <strong>Zwei-Faktor-Authentifizierung</strong> ist mit einer Authenticator-App in zwei Minuten eingerichtet und sehr empfohlen.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -897,7 +1560,7 @@ Lebe Smart!</textarea>
       <div class="outro__actions">
         <button class="primary-btn" id="restart" type="button">
           <svg class="icon"><use href="#i-reuse"/></svg>
-          Tutorial neu starten
+          Onboarding neu starten
         </button>
       </div>
     </section>
@@ -909,7 +1572,7 @@ Lebe Smart!</textarea>
         Zurück
       </button>
 
-      <nav class="timeline" id="timeline" aria-label="Tutorial-Fortschritt">
+      <nav class="timeline" id="timeline" aria-label="Onboarding-Fortschritt">
         <span class="timeline__track"></span>
         <span class="timeline__fill" id="timeline-fill"></span>
         <div class="tl-group" data-group="start">
@@ -924,33 +1587,37 @@ Lebe Smart!</textarea>
           <div class="tl-group__dots">
             <button class="tl-dot" type="button" data-dot="4" data-tip="Titel vergeben" aria-label="Schritt 4"></button>
             <button class="tl-dot" type="button" data-dot="5" data-tip="Text schreiben" aria-label="Schritt 5"></button>
-            <button class="tl-dot" type="button" data-dot="6" data-tip="Create Spot" aria-label="Schritt 6"></button>
-            <button class="tl-dot" type="button" data-dot="7" data-tip="Ergebnis anhören" aria-label="Schritt 7"></button>
-            <button class="tl-dot" type="button" data-dot="8" data-tip="Das Mini-Menü" aria-label="Schritt 8"></button>
-            <button class="tl-dot" type="button" data-dot="9" data-tip="Die Tags" aria-label="Schritt 9"></button>
-            <button class="tl-dot" type="button" data-dot="10" data-tip="Best Practices" aria-label="Schritt 10"></button>
+            <button class="tl-dot" type="button" data-dot="6" data-tip="Second Language" aria-label="Schritt 6"></button>
+            <button class="tl-dot" type="button" data-dot="7" data-tip="Create Spot" aria-label="Schritt 7"></button>
+            <button class="tl-dot" type="button" data-dot="8" data-tip="Ergebnis anhören" aria-label="Schritt 8"></button>
+            <button class="tl-dot" type="button" data-dot="9" data-tip="Das Mini-Menü" aria-label="Schritt 9"></button>
+            <button class="tl-dot" type="button" data-dot="10" data-tip="Die Tags" aria-label="Schritt 10"></button>
+            <button class="tl-dot" type="button" data-dot="11" data-tip="Die Blacklist" aria-label="Schritt 11"></button>
+            <button class="tl-dot" type="button" data-dot="12" data-tip="Best Practices" aria-label="Schritt 12"></button>
           </div>
           <span class="tl-group__label">SpotTool</span>
         </div>
         <div class="tl-group" data-group="scheduler">
           <div class="tl-group__dots">
-            <button class="tl-dot" type="button" data-dot="11" data-tip="Audio wählen" aria-label="Schritt 11"></button>
-            <button class="tl-dot" type="button" data-dot="12" data-tip="Single Day / Weekly" aria-label="Schritt 12"></button>
-            <button class="tl-dot" type="button" data-dot="13" data-tip="Die Zeit" aria-label="Schritt 13"></button>
-            <button class="tl-dot" type="button" data-dot="14" data-tip="Absenden" aria-label="Schritt 14"></button>
-            <button class="tl-dot" type="button" data-dot="15" data-tip="Best Practices" aria-label="Schritt 15"></button>
+            <button class="tl-dot" type="button" data-dot="13" data-tip="Audio wählen" aria-label="Schritt 13"></button>
+            <button class="tl-dot" type="button" data-dot="14" data-tip="Single Day / Weekly" aria-label="Schritt 14"></button>
+            <button class="tl-dot" type="button" data-dot="15" data-tip="Die Zeit" aria-label="Schritt 15"></button>
+            <button class="tl-dot" type="button" data-dot="16" data-tip="Absenden" aria-label="Schritt 16"></button>
+            <button class="tl-dot" type="button" data-dot="17" data-tip="Best Practices" aria-label="Schritt 17"></button>
           </div>
           <span class="tl-group__label">Scheduler</span>
         </div>
         <div class="tl-group" data-group="calendar">
           <div class="tl-group__dots">
-            <button class="tl-dot" type="button" data-dot="16" data-tip="Die Woche lesen" aria-label="Schritt 16"></button>
+            <button class="tl-dot" type="button" data-dot="18" data-tip="Das Raster" aria-label="Schritt 18"></button>
+            <button class="tl-dot" type="button" data-dot="19" data-tip="Die Slots" aria-label="Schritt 19"></button>
+            <button class="tl-dot" type="button" data-dot="20" data-tip="Woche und Jetzt" aria-label="Schritt 20"></button>
           </div>
           <span class="tl-group__label">Calendar</span>
         </div>
         <div class="tl-group" data-group="account">
           <div class="tl-group__dots">
-            <button class="tl-dot" type="button" data-dot="17" data-tip="Konto &amp; Sicherheit" aria-label="Schritt 17"></button>
+            <button class="tl-dot" type="button" data-dot="21" data-tip="Konto &amp; Sicherheit" aria-label="Schritt 21"></button>
           </div>
           <span class="tl-group__label">Account</span>
         </div>

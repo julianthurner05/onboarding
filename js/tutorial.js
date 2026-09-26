@@ -134,5 +134,14 @@
     slot.addEventListener('mouseleave', () => slot.classList.remove('is-lit'));
   });
 
+  /* Show titles: der Schalter funktioniert wie im Portal */
+  document.querySelectorAll('.exhibit--cal .switch').forEach(sw => {
+    sw.addEventListener('click', () => {
+      const on = sw.classList.toggle('is-on');
+      sw.setAttribute('aria-checked', on);
+      sw.closest('.calendar-view').querySelector('.cal-grid').classList.toggle('show-titles', on);
+    });
+  });
+
   render();
 })();
