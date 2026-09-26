@@ -1,15 +1,16 @@
 /* ================================================================
    TUTORIAL – Shell um die Original-Komponenten des Portals.
-   Erklärung oben, Element mittig, Fortschritts-Timeline unten.
+   Erklärung links, Element rechts, Kapitel-Timeline unten.
    Alle Farben, Größen und Bewegungen kommen aus tokens.css.
    ================================================================ */
 
 /* Das App-Grid aus base.css wird hier nicht gebraucht –
-   das Tutorial ist eine einzige Spalte über die volle Höhe. */
+   das Tutorial ist eine Spalte über die volle Höhe. */
 body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  padding-top: 0;
 }
 
 .tut {
@@ -19,7 +20,7 @@ body {
   flex-direction: column;
 }
 
-/* ---- Logo klein oben links, wie in der Sidebar ---- */
+/* ---- Logo oben links ---- */
 .tut__brand {
   position: fixed;
   top: 30px;
@@ -29,25 +30,27 @@ body {
   z-index: 5;
 }
 
+body.is-cover .tut__brand { display: none; }
+
 /* ================================================================
-   SCHRITTE – jeweils Kopf (Erklärung) + Bühne (Element)
+   SCHRITTE – Erklärung links, Bühne rechts
    ================================================================ */
 .step {
   flex: 1;
   min-height: 0;
   display: none;
-  flex-direction: column;
 }
 
 .step.is-active {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(340px, 460px) minmax(0, 1fr);
   animation: view-in var(--dur) var(--ease);
 }
 
 .tut__head {
-  flex-shrink: 0;
-  padding: 46px 24px 10px;
-  text-align: center;
+  align-self: center;
+  min-width: 0;
+  padding: 80px 28px 60px 72px;
 }
 
 .tut__kicker {
@@ -58,30 +61,56 @@ body {
 
 .tut__title {
   margin-top: 12px;
-  font-size: 26px;
+  font-size: 24px;
   letter-spacing: var(--ls-heading);
   font-weight: 400;
 }
 
 .tut__text {
-  max-width: 640px;
-  margin: 14px auto 0;
+  margin-top: 14px;
   font-size: var(--fs-base);
   letter-spacing: var(--ls-body);
   line-height: 1.7;
   color: var(--text-60);
 }
 
-.tut__text strong { font-weight: 400; color: var(--text-100); }
+.tut__list {
+  margin-top: 16px;
+  list-style: none;
+}
 
-/* ---- Bühne: das Portal-Element mittig ---- */
+.tut__list li {
+  position: relative;
+  padding: 8px 0 8px 21px;
+  font-size: var(--fs-menu);
+  letter-spacing: var(--ls-menu);
+  line-height: 1.65;
+  color: var(--text-55);
+}
+
+.tut__list li::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 17px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--white-25);
+}
+
+.tut__text strong,
+.tut__list strong { font-weight: 400; color: var(--text-100); }
+.tut__list strong { color: var(--text-80); }
+
+/* ---- Bühne: das Portal-Element rechts, mittig ---- */
 .tut__stage {
-  flex: 1;
   min-height: 0;
+  min-width: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 28px 32px 36px;
+  padding: 40px 48px;
   overflow: auto;
 }
 
@@ -91,36 +120,100 @@ body {
 .exhibit { margin: auto; }
 
 /* ================================================================
-   FUSSLEISTE – Timeline mit Fortschritt + Navigation
+   TITELBLATT
+   ================================================================ */
+.step--cover.is-active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  overflow: auto;
+}
+
+.cover__logo { width: 150px; opacity: 0.9; }
+
+.cover__kicker {
+  margin-top: 52px;
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-section);
+  color: var(--text-40);
+}
+
+.cover__title {
+  margin-top: 14px;
+  font-size: 46px;
+  letter-spacing: var(--ls-heading);
+  font-weight: 400;
+}
+
+.cover__sub {
+  margin-top: 18px;
+  max-width: 540px;
+  font-size: var(--fs-base);
+  letter-spacing: var(--ls-body);
+  line-height: 1.7;
+  color: var(--text-60);
+}
+
+.cover__chapters {
+  margin-top: 46px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cover__chip {
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 15px;
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-menu);
+  letter-spacing: var(--ls-menu);
+  color: var(--text-66);
+}
+
+.cover__chip span {
+  font-size: var(--fs-small);
+  color: var(--text-40);
+}
+
+/* ================================================================
+   FUSSLEISTE – Kapitel-Timeline + Navigation
    ================================================================ */
 .tut__footer {
   flex-shrink: 0;
   display: flex;
-  align-items: center;
-  gap: 34px;
-  padding: 20px 34px 24px;
+  align-items: flex-start;
+  gap: 36px;
+  padding: 22px 34px 20px;
   border-top: var(--hairline);
 }
 
 .tut__nav-btn { flex-shrink: 0; }
 .tut__nav-btn.is-hidden { visibility: hidden; pointer-events: none; }
 
-/* ---- Timeline ---- */
 .timeline {
   position: relative;
   flex: 1;
   display: flex;
   justify-content: space-between;
-  padding: 0 10px;
+  gap: 26px;
+  padding: 3px 8px 0;
 }
 
 /* Linie hinter den Punkten */
 .timeline__track,
 .timeline__fill {
   position: absolute;
-  top: 7px;                 /* Mitte der 15px-Punkte */
-  left: 24px;
-  right: 24px;
+  top: 8px;                       /* Mitte der 11px-Punkte (+3px Padding) */
+  left: 14px;
+  right: 14px;
   height: var(--hair-w);
   background: rgba(255, 255, 255, var(--hair-a));
   pointer-events: none;
@@ -128,47 +221,52 @@ body {
 
 .timeline__fill {
   right: auto;
-  width: calc((100% - 48px) * var(--progress, 0));
+  width: 0;
   height: 1.5px;
-  top: 6.75px;
+  top: 7.75px;
   background: var(--nav-active);
   transition: width var(--dur-slow) var(--ease);
 }
 
-.tl-step {
-  position: relative;
-  z-index: 1;
+.tl-group {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  padding: 0 14px;
-  margin: 0 -14px;
 }
 
-.tl-step__dot {
-  width: 15px;
-  height: 15px;
+.tl-group__dots {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 11px;
+}
+
+.tl-dot {
+  position: relative;
+  z-index: 1;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   background: var(--dunkelblau);
   border: var(--hair-w) solid var(--white-25);
-  color: var(--text-inverse);
   transition: background var(--transition), border-color var(--transition),
               box-shadow var(--transition), transform var(--transition);
 }
 
-.tl-step__dot .icon {
-  width: 7px;
-  height: 7px;
-  stroke-width: 3.5;
-  opacity: 0;
-  transition: opacity var(--transition);
+.tl-dot:hover { border-color: var(--text-55); }
+
+.tl-dot.is-done {
+  background: var(--nav-active);
+  border-color: transparent;
 }
 
-.tl-step__label {
+.tl-dot.is-current {
+  background: var(--nav-active);
+  border-color: transparent;
+  box-shadow: 0 0 0 3.5px var(--white-10), 0 0 14px var(--white-14);
+  transform: scale(1.15);
+}
+
+.tl-group__label {
   font-size: var(--fs-small);
   letter-spacing: var(--ls-small);
   color: var(--text-40);
@@ -176,31 +274,21 @@ body {
   transition: color var(--transition);
 }
 
-.tl-step:hover .tl-step__label { color: var(--text-80); }
-
-/* erledigt: gefüllt mit Häkchen */
-.tl-step.is-done .tl-step__dot {
-  background: var(--nav-active);
-  border-color: transparent;
-}
-
-.tl-step.is-done .tl-step__dot .icon { opacity: 1; }
-.tl-step.is-done .tl-step__label { color: var(--text-55); }
-
-/* aktiv: gefüllt + Glow */
-.tl-step.is-current .tl-step__dot {
-  background: var(--nav-active);
-  border-color: transparent;
-  box-shadow: 0 0 0 4px var(--white-10), 0 0 18px var(--white-14);
-  transform: scale(1.1);
-}
-
-.tl-step.is-current .tl-step__label { color: var(--text-100); }
+.tl-group.is-current .tl-group__label { color: var(--text-100); }
+.tl-group.is-done .tl-group__label { color: var(--text-55); }
 
 /* ================================================================
    EXHIBITS – kleine Anpassungen, damit die Original-Komponenten
    freistehend funktionieren (Layout-Regeln der App neutralisieren)
    ================================================================ */
+
+/* Statische Eingaben im Tutorial */
+.exhibit input,
+.exhibit textarea { pointer-events: none; }
+
+/* Aufbau-Choreografie des Scheduler-Formulars neutralisieren */
+.exhibit .sched-form > * { opacity: 1 !important; transform: none !important; }
+.exhibit .sched-form { margin-top: 0; }
 
 /* ---- 1 · Sidebar ---- */
 .exhibit--nav .sidebar {
@@ -221,58 +309,166 @@ body {
 .exhibit--nav .nav-item { pointer-events: none; }
 .exhibit--nav .nav-item__dot { display: block; }
 
-/* ---- 2 · Spot Creation ---- */
-.exhibit--create { width: min(620px, 100%); }
-.exhibit--create .composer__footer { margin-top: 48px; }
-.exhibit--create .lang-block__textarea { pointer-events: none; }
-.exhibit--create .ai-note { margin-top: 30px; }
+/* ---- 2 · Login ---- */
+.exhibit--login { width: min(380px, 100%); }
 
-/* ---- 3 · Creation History ---- */
-.exhibit--history {
+.exhibit--login .login {
+  position: static;
+  inset: auto;
+  z-index: auto;
+  display: block;
+  background: none;
+  transition: none;
+}
+
+.exhibit--login .login__inner {
+  min-height: 0;
+  max-width: none;
+  padding: 0;
+  animation: none;
+}
+
+.exhibit--login .login__title { margin-top: 44px; font-size: 24px; }
+.exhibit--login .login__form { margin-top: 34px; }
+
+/* ---- 3 · Dashboard ---- */
+.exhibit--dash {
+  width: min(600px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.exhibit--dash .home-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.exhibit--dash .home-hero__actions { justify-content: flex-end; }
+
+/* ---- 4 · Titel ---- */
+.exhibit--title {
+  width: min(500px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.exhibit--title .history__search { padding-bottom: 12px; }
+
+/* ---- 5 · Text ---- */
+.exhibit--text { width: min(560px, 100%); }
+.exhibit--text .lang-block:first-child { margin-top: 0; }
+
+/* ---- 6 · Create Spot ---- */
+.exhibit--create { width: min(560px, 100%); }
+.exhibit--create .composer__footer { margin-top: 36px; }
+
+/* ---- 7 · Ergebnis / 8 · Kartenmenü ---- */
+.exhibit--result { width: min(420px, 100%); }
+
+.exhibit--menu {
   width: min(420px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.exhibit--menu .exhibit__badges {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.exhibit--menu .card { margin-bottom: 56px; }   /* Platz für das offene Menü */
+.exhibit--menu .context-menu { animation: none; }
+
+/* ---- 9 · Audio-Picker ---- */
+.exhibit--picker { width: min(520px, 100%); }
+
+.exhibit--picker .lightbox {
+  position: static;
+  inset: auto;
+  z-index: auto;
+  display: block;
+  padding: 0;
+  background: none;
+  animation: none;
+}
+
+.exhibit--picker .lightbox__panel {
+  max-width: none;
+  max-height: none;
+  animation: none;
+  border: var(--hairline);
+}
+
+.exhibit--picker .lightbox__list { padding-bottom: 14px; }
+
+/* ---- 10/11 · Scheduler-Formular-Ausschnitte ---- */
+.exhibit--form { width: min(500px, 100%); }
+
+/* ---- 12 · Kategorie (offenes Dropdown) ---- */
+.exhibit--cat {
+  width: min(340px, 100%);
+  padding-bottom: 158px;          /* Platz für das offene Menü */
+}
+
+.exhibit--cat .dropdown__menu { max-height: none; animation: none; }
+
+/* ---- 13 · Konflikte ---- */
+.exhibit--conflict {
+  width: min(520px, 100%);
   display: flex;
   flex-direction: column;
 }
 
-.exhibit--history .history__list { margin-top: 24px; padding-bottom: 0; }
-.exhibit--history .history__search { padding-bottom: 12px; }
-.exhibit--history .history__search input { pointer-events: none; }
+.exhibit--conflict .conflict-wrap { pointer-events: none; }
 
-/* ---- 4 · Scheduler ---- */
-.exhibit--sched { width: min(620px, 100%); }
-
-.exhibit--sched .title-field {
-  margin: 20px 0 4px;
-  height: 46px;
+/* ---- 14 · Absenden ---- */
+.exhibit--send {
+  width: min(440px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
-.exhibit--sched .title-field__input,
-.exhibit--sched .field__btn,
-.exhibit--sched .dropdown__toggle,
-.exhibit--sched .segmented__option,
-.exhibit--sched .day-chip { pointer-events: none; }
+.exhibit--send .sched-summary { animation: none; }
+.exhibit--send .sched-summary__fill { animation: none; transform: scaleX(0.6); }
 
-/* ---- 5 · Calendar ---- */
-.exhibit--cal {
-  --slot-h: 26px;
-  width: min(960px, 100%);
+/* ---- 15/16 · Kalender-Ausschnitte ---- */
+.exhibit--calx { --slot-h: 30px; width: min(560px, 100%); }
+.exhibit--calw { --slot-h: 30px; width: min(420px, 100%); padding-bottom: 40px; }
+
+.exhibit--calx .cal-grid,
+.exhibit--calw .cal-grid {
+  grid-template-columns: 50px repeat(var(--cal-cols, 3), minmax(112px, 1fr));
+  min-width: 0;
 }
 
-.exhibit--cal .cal-head { margin-bottom: 18px; }
-.exhibit--cal .cal-slot:hover { z-index: 50; }
-.exhibit--cal .cal-legend { display: flex; }      /* auch unter 1240px zeigen */
+.exhibit--calx .cal-col__head,
+.exhibit--calw .cal-col__head { display: flex; }
 
-/* Mobil-Kollaps des App-Kalenders neutralisieren – die Exhibit-Woche
-   bleibt vollständig und scrollt horizontal in der Bühne */
-.exhibit--cal .cal-grid {
-  grid-template-columns: 50px repeat(7, minmax(0, 1fr));
-  min-width: 700px;
+.exhibit--calx .cal-slot:hover,
+.exhibit--calw .cal-slot:hover { z-index: 50; }
+
+.exhibit--calx .cal-head {
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 14px;
 }
 
-.exhibit--cal .cal-col__head { display: flex; }
-.exhibit--cal .cal-hint { display: inline; }
+.exhibit--calx .cal-legend { display: flex; margin-left: 0; }
+.exhibit--calx .cal-toggle { display: flex; margin-left: auto; }
 
-/* ---- 6 · Finale (gedecktes Weiß wie Dialog / New-Karte) ---- */
+.exhibit--calw .cal-slot.has-pop { z-index: 100; }
+.exhibit--calw .cal-pop { animation: none; }
+
+/* ---- 17 · Account ---- */
+.exhibit--account {
+  width: min(640px, 100%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* ---- 18 · Finale (gedecktes Weiß wie Dialog / New-Karte) ---- */
 .finale {
   width: min(460px, 100%);
   padding: var(--pad-panel);
@@ -293,7 +489,7 @@ body {
 }
 
 .finale__list {
-  margin-top: 22px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -302,37 +498,37 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  height: 40px;
+  padding: 11px 0;
   font-size: var(--fs-menu);
   letter-spacing: var(--ls-menu);
+  line-height: 1.5;
   color: var(--ink-70);
   border-top: var(--hair-w) solid var(--ink-6);
 }
 
 .finale__row:first-child { border-top: none; }
+.finale__row strong { font-weight: 400; color: var(--text-inverse); }
 
 .finale__row .icon {
   width: 13px;
   height: 13px;
   stroke-width: 2.4;
   color: var(--ink-50);
+  flex-shrink: 0;
+}
+
+.finale__note {
+  margin-top: 18px;
+  font-size: var(--fs-small);
+  letter-spacing: var(--ls-small);
+  color: var(--ink-50);
 }
 
 .finale__actions {
-  margin-top: 26px;
+  margin-top: 22px;
   display: flex;
-  align-items: center;
   justify-content: flex-end;
-  gap: 20px;
 }
-
-.finale__restart {
-  font-size: var(--fs-menu);
-  color: var(--ink-50);
-  transition: color var(--transition);
-}
-
-.finale__restart:hover { color: var(--text-inverse); }
 
 .finale__cta {
   height: 38px;
@@ -353,26 +549,50 @@ body {
 /* ================================================================
    RESPONSIVE
    ================================================================ */
-@media (max-width: 980px) {
-  body { padding-top: 0; overflow: hidden; }   /* base.css-Mobilregeln neutralisieren */
+@media (max-width: 1240px) {
+  .tut__head { padding-left: 44px; }
+}
 
-  .tut__brand { position: static; margin: 22px auto 0; display: block; }
-  .tut__head { padding: 26px 18px 6px; }
+@media (max-width: 980px) {
+  .tut__brand { display: none; }
+
+  .step.is-active {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  .tut__head {
+    align-self: stretch;
+    padding: 26px 20px 0;
+  }
+
   .tut__title { font-size: 21px; }
-  .tut__text { font-size: var(--fs-menu); }
-  .tut__stage { padding: 20px 16px 24px; justify-content: flex-start; flex-direction: column; }
+
+  .tut__stage {
+    flex: 0 0 auto;
+    overflow: visible;
+    padding: 26px 16px 34px;
+  }
+
+  .exhibit { margin: 0 auto; }
+
+  .cover__title { font-size: 34px; }
 
   .tut__footer {
     flex-wrap: wrap;
     gap: 14px 18px;
-    padding: 14px 18px 18px;
+    padding: 14px 18px 16px;
   }
 
-  .timeline { order: -1; flex-basis: 100%; }
-  .tl-step__label { display: none; }
-  .tl-step { gap: 0; }
-  .timeline__track, .timeline__fill { left: 14px; right: 14px; }
-  .timeline__fill { width: calc((100% - 28px) * var(--progress, 0)); }
-
+  .timeline { order: -1; flex-basis: 100%; gap: 12px; overflow-x: auto; padding-bottom: 4px; }
+  .tl-group__dots { gap: 7px; }
+  .tl-group__label { display: none; }
   .tut__nav-btn--next { margin-left: auto; }
+
+  .exhibit--form .day-chips { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+  .exhibit--form .day-chip { width: auto; }
+
+  .exhibit--account { grid-template-columns: 1fr; }
+  .exhibit--dash .home-stats { grid-template-columns: 1fr 1fr; }
 }
