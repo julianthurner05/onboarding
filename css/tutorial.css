@@ -138,6 +138,10 @@ body.is-cover .tut__footer { display: none; }
 /* ================================================================
    TITELBLATT, KAPITELSEITEN, ABSCHLUSS
    ================================================================ */
+.step--cover.is-active {
+  position: relative;             /* Anker für das Logo oben mittig */
+}
+
 .step--cover.is-active,
 .step--chapter.is-active,
 .step--outro.is-active {
@@ -150,7 +154,24 @@ body.is-cover .tut__footer { display: none; }
   overflow: auto;
 }
 
+.cover__logo {
+  position: absolute;
+  top: 34px;
+  left: 50%;
+  translate: -50%;
+  width: 132px;
+  opacity: 0.9;
+}
+
+.cover__kicker {
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-section);
+  color: var(--text-40);
+  text-transform: uppercase;
+}
+
 .cover__title {
+  margin-top: 14px;
   font-size: 56px;
   letter-spacing: var(--ls-heading);
   font-weight: 400;
@@ -415,17 +436,20 @@ body.is-cover .tut__footer { display: none; }
 .exhibit--form { width: min(500px, 100%); }
 
 /* ---- Absenden ---- */
-.exhibit--send {
-  width: min(440px, 100%);
+.exhibit--send { width: min(440px, 100%); }
+.exhibit--send .schedule-actions { margin-top: 0; justify-content: center; }
+
+/* ---- Tags ---- */
+.exhibit--tags {
   display: flex;
-  flex-direction: column;
-  gap: 22px;
+  align-items: center;
+  gap: 12px;
 }
 
-.exhibit--send .schedule-actions { margin-top: 0; }
-
-/* ---- Kalender (reine Ansicht) ---- */
-.exhibit--cal { --slot-h: 32px; width: min(560px, 100%); }
+/* ---- Kalender (reine Ansicht) – Slot-Höhe fix, Gaps exakt wie im
+        Original (7px aus calendar.css, dort an .calendar-view gebunden) ---- */
+.exhibit--cal { width: min(560px, 100%); }
+.exhibit--cal .calendar-view { --slot-h: 30px; --slot-gap: 7px; margin: 0; }
 
 .exhibit--cal .cal-grid {
   grid-template-columns: 50px repeat(3, minmax(118px, 1fr));

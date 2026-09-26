@@ -20,12 +20,25 @@
   let current = 0;
   let sub = 0;
 
-  /* Fortschrittslinie bis zur Mitte des zuletzt erreichten Punkts */
-  function paintFill() {
-    let dot = null;
-    for (let i = current; i >= 0; i--) {
-      if (dotBySection[i]) { dot = dotBySection[i]; break; }
+  /* Der Punkt, der zum aktuellen Abschnitt gehört: Schritte haben ihren
+     eigenen, Kapitelseiten zeigen schon den ERSTEN Punkt ihres Bereichs,
+     der Abschluss den letzten. */
+  function displayDot() {
+    if (dotBySection[current]) return dotBySection[current];
+    if (sections[current].classList.contains('step--chapter')) {
+      for (let i = current + 1; i < sections.length; i++) {
+        if (dotBySection[i]) return dotBySection[i];
+      }
     }
+    for (let i = current; i >= 0; i--) {
+      if (dotBySection[i]) return dotBySection[i];
+    }
+    return null;
+  }
+
+  /* Fortschrittslinie bis zur Mitte dieses Punkts */
+  function paintFill() {
+    const dot = displayDot();
     if (!dot || dot.offsetParent === null) { fill.style.width = '0px'; return; }
     fill.style.width = `${dot.offsetLeft + dot.offsetWidth / 2 - fill.offsetLeft}px`;
   }
@@ -53,16 +66,16 @@
     }
 
     /* Timeline */
+    const disp = current === 0 || sections[current].classList.contains('step--outro') ? null : displayDot();
     dots.forEach(d => {
-      const idx = sectionByDot[d.dataset.dot];
-      d.classList.toggle('is-done', idx < current);
-      d.classList.toggle('is-current', idx === current);
+      d.classList.toggle('is-done', sectionByDot[d.dataset.dot] < current);
+      d.classList.toggle('is-current', d === disp);
     });
 
     groups.forEach(g => {
       const gDots = [...g.querySelectorAll('.tl-dot')];
-      g.classList.toggle('is-current', g.dataset.group === sec.dataset.group);
-      g.classList.toggle('is-done', gDots.every(d => sectionByDot[d.dataset.dot] < current));
+      g.classList.toggle('is-current', g.dataset.group === sec.dataset.group || gDots.includes(disp));
+      g.classList.toggle('is-done', gDots.every(d => sectionByDot[d.dataset.dot] < current) && !gDots.includes(disp));
     });
 
     requestAnimationFrame(paintFill);
@@ -99,8 +112,9 @@
   const start = document.getElementById('btn-start');
   if (start) start.addEventListener('click', () => goTo(1));
 
+  /* Neu starten führt zum ersten Schritt, nicht zur Titelseite */
   const restart = document.getElementById('restart');
-  if (restart) restart.addEventListener('click', () => goTo(0));
+  if (restart) restart.addEventListener('click', () => goTo(1));
 
   /* Bullet anklicken springt direkt zum Sub-Step */
   sections.forEach((s, i) => {
