@@ -1,70 +1,121 @@
 /* ================================================================
-   TUTORIAL – Schrittsteuerung, Kapitel-Timeline, Kalender-Hover
+   TUTORIAL – Schrittsteuerung mit Sub-Steps (Spotlight),
+   Bereichs-Timeline, Kalender-Hover
    ================================================================ */
 (() => {
-  const steps    = [...document.querySelectorAll('.step')];
+  const sections = [...document.querySelectorAll('.step')];
   const dots     = [...document.querySelectorAll('.tl-dot')];
   const groups   = [...document.querySelectorAll('.tl-group')];
-  const timeline = document.getElementById('timeline');
   const fill     = document.getElementById('timeline-fill');
   const btnBack  = document.getElementById('btn-back');
   const btnNext  = document.getElementById('btn-next');
-  const nextLbl  = document.getElementById('btn-next-label');
-  const last     = steps.length - 1;      /* 0 = Titelblatt, 1–18 = Schritte */
+  const last     = sections.length - 1;
+
+  /* Sub-Steps: Bullets mit data-part im linken Text */
+  const bulletsOf = s => [...s.querySelectorAll('.tut__list li[data-part]')];
+  const dotBySection = sections.map(s => s.dataset.dot ? dots.find(d => d.dataset.dot === s.dataset.dot) : null);
+  const sectionByDot = {};
+  sections.forEach((s, i) => { if (s.dataset.dot) sectionByDot[s.dataset.dot] = i; });
 
   let current = 0;
+  let sub = 0;
 
+  /* Fortschrittslinie bis zur Mitte des zuletzt erreichten Punkts */
   function paintFill() {
-    if (current === 0) { fill.style.width = '0px'; return; }
-    const dot = dots[current - 1];
-    fill.style.width = `${dot.offsetLeft + dot.offsetWidth / 2 - 14}px`;
+    let dot = null;
+    for (let i = current; i >= 0; i--) {
+      if (dotBySection[i]) { dot = dotBySection[i]; break; }
+    }
+    if (!dot || dot.offsetParent === null) { fill.style.width = '0px'; return; }
+    fill.style.width = `${dot.offsetLeft + dot.offsetWidth / 2 - fill.offsetLeft}px`;
   }
 
   function render() {
-    steps.forEach((s, i) => s.classList.toggle('is-active', i === current));
+    const sec = sections[current];
+    sections.forEach((s, i) => s.classList.toggle('is-active', i === current));
     document.body.classList.toggle('is-cover', current === 0);
 
-    dots.forEach((d, i) => {
-      d.classList.toggle('is-done', i < current - 1);
-      d.classList.toggle('is-current', i === current - 1);
+    /* Sub-Step: aktiver Bullet + zugehörige Teil-Elemente */
+    const bullets = bulletsOf(sec);
+    const exhibit = sec.querySelector('.exhibit');
+    sec.classList.toggle('has-focus', bullets.length > 0);
+    if (bullets.length) {
+      bullets.forEach((b, i) => b.classList.toggle('is-active', i === sub));
+      const active = bullets[sub].dataset.part.split(/\s+/);
+      if (exhibit) {
+        exhibit.classList.add('has-focus');
+        exhibit.querySelectorAll('[data-part]').forEach(el => {
+          el.classList.toggle('is-hot', el.dataset.part.split(/\s+/).some(p => active.includes(p)));
+        });
+      }
+    } else if (exhibit) {
+      exhibit.classList.remove('has-focus');
+    }
+
+    /* Timeline */
+    dots.forEach(d => {
+      const idx = sectionByDot[d.dataset.dot];
+      d.classList.toggle('is-done', idx < current);
+      d.classList.toggle('is-current', idx === current);
     });
 
     groups.forEach(g => {
       const gDots = [...g.querySelectorAll('.tl-dot')];
-      g.classList.toggle('is-current', gDots.some(d => d.classList.contains('is-current')));
-      g.classList.toggle('is-done', gDots.every(d => d.classList.contains('is-done')));
+      g.classList.toggle('is-current', g.dataset.group === sec.dataset.group);
+      g.classList.toggle('is-done', gDots.every(d => sectionByDot[d.dataset.dot] < current));
     });
 
-    paintFill();
+    requestAnimationFrame(paintFill);
 
     btnBack.classList.toggle('is-hidden', current === 0);
     btnNext.classList.toggle('is-hidden', current === last);
-    nextLbl.textContent = current === 0 ? "Los geht's" : 'Weiter';
   }
 
-  function go(i) {
-    const next = Math.max(0, Math.min(last, i));
-    if (next === current) return;
-    current = next;
+  function goTo(i, s = 0) {
+    current = Math.max(0, Math.min(last, i));
+    sub = s;
     render();
   }
 
-  btnBack.addEventListener('click', () => go(current - 1));
-  btnNext.addEventListener('click', () => go(current + 1));
-  dots.forEach(d => d.addEventListener('click', () => go(+d.dataset.goto)));
+  function next() {
+    const bullets = bulletsOf(sections[current]);
+    if (bullets.length && sub < bullets.length - 1) { sub += 1; render(); return; }
+    if (current < last) goTo(current + 1);
+  }
+
+  function back() {
+    if (sub > 0) { sub -= 1; render(); return; }
+    if (current > 0) {
+      const prev = current - 1;
+      const bullets = bulletsOf(sections[prev]);
+      goTo(prev, Math.max(0, bullets.length - 1));
+    }
+  }
+
+  btnBack.addEventListener('click', back);
+  btnNext.addEventListener('click', next);
+  dots.forEach(d => d.addEventListener('click', () => goTo(sectionByDot[d.dataset.dot])));
+
+  const start = document.getElementById('btn-start');
+  if (start) start.addEventListener('click', () => goTo(1));
 
   const restart = document.getElementById('restart');
-  if (restart) restart.addEventListener('click', () => go(0));
+  if (restart) restart.addEventListener('click', () => goTo(0));
+
+  /* Bullet anklicken springt direkt zum Sub-Step */
+  sections.forEach((s, i) => {
+    bulletsOf(s).forEach((b, bi) => b.addEventListener('click', () => goTo(i, bi)));
+  });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight') go(current + 1);
-    if (e.key === 'ArrowLeft') go(current - 1);
+    if (e.key === 'ArrowRight') next();
+    if (e.key === 'ArrowLeft') back();
   });
 
   window.addEventListener('resize', paintFill);
 
   /* Kalender: belegte Slots klappen beim Überfahren auf (wie im Portal) */
-  document.querySelectorAll('.cal-slot--spot:not([data-static])').forEach(slot => {
+  document.querySelectorAll('.cal-slot--spot').forEach(slot => {
     slot.addEventListener('mouseenter', () => slot.classList.add('is-lit'));
     slot.addEventListener('mouseleave', () => slot.classList.remove('is-lit'));
   });

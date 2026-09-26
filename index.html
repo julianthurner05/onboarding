@@ -28,7 +28,6 @@
     <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></symbol>
     <symbol id="i-user" viewBox="0 0 24 24"><path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><circle cx="12" cy="12" r="10"/></symbol>
     <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
-    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
     <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
     <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
@@ -36,7 +35,6 @@
     <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
     <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
     <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
-    <symbol id="i-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></symbol>
     <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
     <symbol id="i-kebab" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></symbol>
     <symbol id="i-reuse" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></symbol>
@@ -55,31 +53,32 @@
 
     <!-- ============ TITELBLATT ============ -->
     <section class="step step--cover is-active">
-      <img class="cover__logo" src="assets/logo.svg" alt="sounddna">
-      <p class="cover__kicker">Das SpotTool-Tutorial</p>
       <h1 class="cover__title">Text-to-Store</h1>
-      <p class="cover__sub">Von der Anmeldung bis zur fertig eingeplanten Durchsage: In 18 kurzen Schritten lernst du alles, was du für deine Instore-Announcements brauchst.</p>
-      <div class="cover__chapters">
-        <span class="cover__chip">Getting started <span>3 Schritte</span></span>
-        <span class="cover__chip">Creating a Spot <span>5 Schritte</span></span>
-        <span class="cover__chip">Scheduling <span>6 Schritte</span></span>
-        <span class="cover__chip">Calendar <span>2 Schritte</span></span>
-        <span class="cover__chip">Account <span>2 Schritte</span></span>
-      </div>
+      <button class="primary-btn cover__start" id="btn-start" type="button">
+        Tutorial starten
+        <svg class="icon"><use href="#i-arrow-right"/></svg>
+      </button>
     </section>
 
-    <!-- ============ 1 · WAS SPOTTOOL IST ============ -->
-    <section class="step">
+    <!-- ============ KAPITEL · HOME ============ -->
+    <section class="step step--chapter" data-group="home">
+      <p class="chapter__kicker">Bereich 1 von 5</p>
+      <h1 class="chapter__title">Home</h1>
+      <p class="chapter__text">Dein Startpunkt im Portal: Home zeigt dir auf einen Blick, was heute und diese Woche ansteht – und wie viel von deinem Kontingent übrig ist.</p>
+    </section>
+
+    <!-- 1 · Die Bereiche -->
+    <section class="step" data-group="home" data-dot="1">
       <header class="tut__head">
-        <p class="tut__kicker">Getting started · Schritt 1 von 18</p>
-        <h1 class="tut__title">Was SpotTool ist</h1>
-        <p class="tut__text">SpotTool ist dein Portal für Instore-Durchsagen – vom Text bis zur fertig eingeplanten Ansage. Alles erreichst du über das Menü links im Portal:</p>
+        <p class="tut__kicker">Home · Schritt 1 von 16</p>
+        <h1 class="tut__title">Die Bereiche</h1>
+        <p class="tut__text">Text-to-Store ist dein Portal für Instore-Durchsagen – vom Text bis zur fertig eingeplanten Ansage. Über das Menü links erreichst du alles:</p>
         <ul class="tut__list">
-          <li><strong>Home</strong> – dein Dashboard mit dem Überblick</li>
-          <li><strong>SpotTool</strong> – Durchsagen schreiben und generieren</li>
-          <li><strong>Scheduler</strong> – Sendezeiten planen</li>
-          <li><strong>Calendar</strong> – deine Woche im Blick</li>
-          <li><strong>Account</strong> – Profil und Sicherheit</li>
+          <li data-part="nav-home"><strong>Home</strong> – dein Dashboard mit dem Überblick</li>
+          <li data-part="nav-spot"><strong>SpotTool</strong> – Durchsagen schreiben und generieren</li>
+          <li data-part="nav-sched"><strong>Scheduler</strong> – Sendezeiten planen</li>
+          <li data-part="nav-cal"><strong>Calendar</strong> – deine Woche im Blick</li>
+          <li data-part="nav-acc"><strong>Account</strong> – Profil und Sicherheit</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -87,27 +86,27 @@
           <aside class="sidebar">
             <img class="sidebar__logo" src="assets/logo.svg" alt="sounddna">
             <nav class="sidebar__nav">
-              <button class="nav-item is-active">
+              <button class="nav-item" data-part="nav-home">
                 <svg class="icon icon--filled"><use href="#i-home"/></svg>
                 <span>Home</span>
               </button>
               <p class="sidebar__section-label">Text-to-Store</p>
-              <button class="nav-item">
+              <button class="nav-item" data-part="nav-spot">
                 <svg class="icon"><use href="#i-wave"/></svg>
                 <span>SpotTool</span>
                 <span class="nav-item__dot"></span>
               </button>
-              <button class="nav-item">
+              <button class="nav-item" data-part="nav-sched">
                 <svg class="icon"><use href="#i-gantt"/></svg>
                 <span>Scheduler</span>
               </button>
-              <button class="nav-item">
+              <button class="nav-item" data-part="nav-cal">
                 <svg class="icon"><use href="#i-calendar"/></svg>
                 <span>Calendar</span>
               </button>
             </nav>
             <div class="sidebar__bottom">
-              <button class="nav-item">
+              <button class="nav-item" data-part="nav-acc">
                 <svg class="icon"><use href="#i-user"/></svg>
                 <span>Account</span>
               </button>
@@ -117,15 +116,15 @@
       </div>
     </section>
 
-    <!-- ============ 2 · LOGIN ============ -->
-    <section class="step">
+    <!-- 2 · Login -->
+    <section class="step" data-group="home" data-dot="2">
       <header class="tut__head">
-        <p class="tut__kicker">Getting started · Schritt 2 von 18</p>
+        <p class="tut__kicker">Home · Schritt 2 von 16</p>
         <h1 class="tut__title">Der Login</h1>
-        <p class="tut__text">Melde dich mit deiner <strong>E-Mail-Adresse</strong> und deinem <strong>Passwort</strong> an.</p>
+        <p class="tut__text">Dein Zugang zum Portal – deine Zugangsdaten bekommst du von sounddna.</p>
         <ul class="tut__list">
-          <li>Passwort vergessen? <strong>Forgot password</strong> schickt dir einen Link per E-Mail – er ist aus Sicherheitsgründen nur <strong>30 Minuten</strong> gültig.</li>
-          <li>Richte am besten gleich die <strong>Zwei-Faktor-Authentifizierung</strong> ein – wie das geht, zeigt Schritt 17.</li>
+          <li data-part="login-main">Melde dich mit deiner <strong>E-Mail-Adresse</strong> und deinem <strong>Passwort</strong> an.</li>
+          <li data-part="login-forgot">Passwort vergessen? <strong>Forgot password</strong> schickt dir einen Link per E-Mail – aus Sicherheitsgründen nur <strong>30 Minuten</strong> gültig.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -135,19 +134,19 @@
               <h1 class="login__title">Log into your account</h1>
               <p class="login__sub">Use your e-mail address and password</p>
               <div class="login__form">
-                <div class="login__field">
+                <div class="login__field" data-part="login-main">
                   <span class="login__label">E-Mail</span>
                   <input type="email" placeholder="Enter e-mail" readonly>
                 </div>
-                <div class="login__field">
+                <div class="login__field" data-part="login-main">
                   <span class="login__label">Password</span>
                   <input type="password" placeholder="Enter password" readonly>
                 </div>
-                <button class="login__submit" type="button">
+                <button class="login__submit" type="button" data-part="login-main">
                   <span>Log in</span>
                   <svg class="icon"><use href="#i-arrow-right"/></svg>
                 </button>
-                <button class="login__forgot" type="button">Forgot password?</button>
+                <button class="login__forgot" type="button" data-part="login-forgot">Forgot password?</button>
               </div>
             </div>
           </div>
@@ -155,44 +154,44 @@
       </div>
     </section>
 
-    <!-- ============ 3 · DASHBOARD ============ -->
-    <section class="step">
+    <!-- 3 · Dashboard -->
+    <section class="step" data-group="home" data-dot="3">
       <header class="tut__head">
-        <p class="tut__kicker">Getting started · Schritt 3 von 18</p>
+        <p class="tut__kicker">Home · Schritt 3 von 16</p>
         <h1 class="tut__title">Das Dashboard</h1>
-        <p class="tut__text">Nach dem Login landest du auf <strong>Home</strong> – deinem Überblick:</p>
+        <p class="tut__text">Nach dem Login landest du auf Home – deinem Überblick:</p>
         <ul class="tut__list">
-          <li><strong>Spots left this month</strong> – dein Monatskontingent; der Zähler setzt sich am <strong>Monatsersten</strong> zurück.</li>
-          <li><strong>Announcements this week</strong> – was heute und diese Woche ansteht, samt Auslastung deiner Slots.</li>
-          <li>Mit den Shortcuts <strong>Create spot</strong> und <strong>Plan schedule</strong> springst du direkt in die Arbeit.</li>
+          <li data-part="quota"><strong>Spots left this month</strong> – dein Monatskontingent; der Zähler setzt sich am <strong>Monatsersten</strong> zurück.</li>
+          <li data-part="activity">Daneben siehst du, wie viele Spots generiert wurden und was <strong>heute und diese Woche</strong> ansteht.</li>
+          <li data-part="shortcuts">Mit <strong>Create spot</strong> und <strong>Plan schedule</strong> springst du direkt in die Arbeit.</li>
         </ul>
       </header>
       <div class="tut__stage">
         <div class="exhibit exhibit--dash">
           <div class="home-stats">
-            <div class="home-stat">
+            <div class="home-stat" data-part="quota">
               <p class="home-stat__label">Spots left this month</p>
               <p class="home-stat__value">69</p>
               <div class="home-stat__bar"><div class="home-stat__bar-fill" style="width: 31%"></div></div>
               <p class="home-stat__hint">of 100 in your plan · resets Oct 1</p>
             </div>
-            <div class="home-stat">
+            <div class="home-stat" data-part="activity">
               <p class="home-stat__label">Spots generated</p>
               <p class="home-stat__value">143</p>
               <p class="home-stat__hint">31 this month</p>
             </div>
-            <div class="home-stat">
+            <div class="home-stat" data-part="activity">
               <p class="home-stat__label">Active schedules</p>
               <p class="home-stat__value">5</p>
               <p class="home-stat__hint">2 upcoming</p>
             </div>
-            <div class="home-stat">
+            <div class="home-stat" data-part="activity">
               <p class="home-stat__label">Announcements this week</p>
               <p class="home-stat__value">46</p>
               <p class="home-stat__hint">8 today</p>
             </div>
           </div>
-          <div class="home-hero__actions">
+          <div class="home-hero__actions" data-part="shortcuts">
             <button class="ghost-btn" type="button">Plan schedule</button>
             <button class="primary-btn primary-btn--small" type="button">
               <svg class="icon"><use href="#i-wave"/></svg>
@@ -203,58 +202,60 @@
       </div>
     </section>
 
-    <!-- ============ 4 · TITEL VERGEBEN ============ -->
-    <section class="step">
+    <!-- ============ KAPITEL · SPOTTOOL ============ -->
+    <section class="step step--chapter" data-group="spottool">
+      <p class="chapter__kicker">Bereich 2 von 5</p>
+      <h1 class="chapter__title">SpotTool</h1>
+      <p class="chapter__text">Hier entsteht deine Durchsage: Titel vergeben, Text schreiben, mit KI-Stimme generieren – und das Ergebnis direkt anhören.</p>
+    </section>
+
+    <!-- 4 · Titel vergeben -->
+    <section class="step" data-group="spottool" data-dot="4">
       <header class="tut__head">
-        <p class="tut__kicker">Creating a Spot · Schritt 4 von 18</p>
+        <p class="tut__kicker">SpotTool · Schritt 4 von 16</p>
         <h1 class="tut__title">Titel vergeben</h1>
         <p class="tut__text">Jeder Spot beginnt mit einem Titel. Er erscheint überall wieder – in der History, im Scheduler und im Kalender.</p>
         <ul class="tut__list">
-          <li>Wähle einen Namen, den du <strong>wiedererkennst</strong> – am besten Aktion plus Zeitraum.</li>
-          <li>Über die <strong>Suche</strong> in der History findest du jeden Spot am Titel wieder.</li>
+          <li data-part="title">Wähle einen Namen, den du <strong>wiedererkennst</strong> – am besten Aktion plus Zeitraum.</li>
         </ul>
       </header>
       <div class="tut__stage">
         <div class="exhibit exhibit--title">
-          <div class="title-field">
+          <div class="title-field" data-part="title">
             <label class="title-field__label">Title</label>
             <input class="title-field__input" type="text" value="IKEA Family Angebot RIAN Beistelltisch" readonly>
-          </div>
-          <div class="history__search">
-            <svg class="icon"><use href="#i-search"/></svg>
-            <input type="text" value="RIAN" readonly>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ 5 · TEXT SCHREIBEN ============ -->
-    <section class="step">
+    <!-- 5 · Text schreiben -->
+    <section class="step" data-group="spottool" data-dot="5">
       <header class="tut__head">
-        <p class="tut__kicker">Creating a Spot · Schritt 5 von 18</p>
+        <p class="tut__kicker">SpotTool · Schritt 5 von 16</p>
         <h1 class="tut__title">Text schreiben</h1>
-        <p class="tut__text">Schreib den Text genau so, wie er <strong>gesprochen</strong> werden soll – die KI-Stimme liest ihn wörtlich.</p>
+        <p class="tut__text">Die KI-Stimme liest deinen Text wörtlich – schreib ihn genau so, wie er klingen soll.</p>
         <ul class="tut__list">
-          <li>Kurze Sätze klingen natürlicher als lange Schachtelsätze.</li>
-          <li><strong>Zahlen und Preise</strong> so schreiben, wie sie klingen sollen – im Zweifel ausschreiben.</li>
-          <li>Über <strong>Second Language</strong> ergänzt du dieselbe Durchsage in einer zweiten Sprache – beide landen in einem Spot.</li>
+          <li data-part="first"><strong>Kurze Sätze</strong> klingen natürlicher als lange Schachtelsätze.</li>
+          <li data-part="first"><strong>Zahlen und Preise</strong> so schreiben, wie sie gesprochen werden sollen – im Zweifel ausschreiben.</li>
+          <li data-part="second">Über <strong>Second Language</strong> ergänzt du dieselbe Durchsage in einer zweiten Sprache – beide landen in einem Spot.</li>
         </ul>
       </header>
       <div class="tut__stage">
         <div class="exhibit exhibit--text">
-          <div class="lang-block">
+          <div class="lang-block" data-part="first">
             <p class="lang-block__label">First Language</p>
             <textarea class="lang-block__textarea" rows="4" readonly spellcheck="false">Liebe IKEA Kundin, lieber IKEA Kunde!
 Entdecke jede Woche ein neues Angebot für IKEA Family Mitglieder. RIAN, Beistelltisch um nur € 9,99 statt um € 29,99.
 Lebe Smart!</textarea>
           </div>
-          <button class="lang-toggle" type="button">
+          <button class="lang-toggle" type="button" data-part="second">
             <span class="lang-toggle__line"></span>
             <svg class="icon lang-toggle__icon"><use href="#i-minus"/></svg>
             <span class="lang-toggle__label">Second Language</span>
             <span class="lang-toggle__line"></span>
           </button>
-          <div class="lang-block">
+          <div class="lang-block" data-part="second">
             <p class="lang-block__label">Second Language</p>
             <textarea class="lang-block__textarea" rows="4" readonly spellcheck="false">Dear IKEA customer!
 Discover a new offer for IKEA Family members every week. RIAN side table for only € 9.99 instead of € 29.99.
@@ -264,33 +265,32 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
-    <!-- ============ 6 · CREATE SPOT ============ -->
-    <section class="step">
+    <!-- 6 · Create Spot -->
+    <section class="step" data-group="spottool" data-dot="6">
       <header class="tut__head">
-        <p class="tut__kicker">Creating a Spot · Schritt 6 von 18</p>
+        <p class="tut__kicker">SpotTool · Schritt 6 von 16</p>
         <h1 class="tut__title">Create Spot drücken</h1>
         <p class="tut__text">Fertig? Dann drück <strong>Create Spot</strong>.</p>
         <ul class="tut__list">
-          <li>Die Generierung dauert einen <strong>kurzen Moment</strong> – den Fortschritt siehst du in der History.</li>
-          <li>Unten links zeigen dir <strong>Wortzahl</strong> und ungefähre <strong>Sprechdauer</strong>, wie lang dein Spot wird.</li>
-          <li>Jeder generierte Spot zählt gegen dein <strong>Monatskontingent</strong>.</li>
-          <li><strong>Clear all</strong> leert alle Felder, wenn du neu starten willst.</li>
+          <li data-part="create">Die Generierung dauert einen <strong>kurzen Moment</strong> – und jeder Spot zählt gegen dein <strong>Monatskontingent</strong>.</li>
+          <li data-part="stats"><strong>Wortzahl</strong> und ungefähre <strong>Sprechdauer</strong> zeigen dir vorab, wie lang der Spot wird.</li>
+          <li data-part="clear"><strong>Clear all</strong> leert alle Felder, wenn du neu starten willst.</li>
         </ul>
       </header>
       <div class="tut__stage">
         <div class="exhibit exhibit--create">
           <div class="creation-toolbar">
-            <button class="ghost-btn ghost-btn--sm" type="button">
+            <button class="ghost-btn ghost-btn--sm" type="button" data-part="clear">
               <svg class="icon"><use href="#i-x"/></svg>
               Clear all
             </button>
           </div>
           <div class="composer__footer">
-            <div class="composer__stats">
+            <div class="composer__stats" data-part="stats">
               <span><strong>40</strong> words</span>
               <span>≈ <strong>18 s</strong> speaking time</span>
             </div>
-            <button class="primary-btn" type="button">
+            <button class="primary-btn" type="button" data-part="create">
               <svg class="icon"><use href="#i-wave"/></svg>
               <span>Create Spot</span>
             </button>
@@ -299,15 +299,16 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
-    <!-- ============ 7 · ERGEBNIS ANHÖREN ============ -->
-    <section class="step">
+    <!-- 7 · Ergebnis anhören -->
+    <section class="step" data-group="spottool" data-dot="7">
       <header class="tut__head">
-        <p class="tut__kicker">Creating a Spot · Schritt 7 von 18</p>
+        <p class="tut__kicker">SpotTool · Schritt 7 von 16</p>
         <h1 class="tut__title">Ergebnis anhören</h1>
-        <p class="tut__text">Der fertige Spot erscheint als helle Karte mit dem Badge <strong>New</strong> in der Creation History.</p>
+        <p class="tut__text">Der fertige Spot erscheint als helle Karte in der Creation History.</p>
         <ul class="tut__list">
-          <li><strong>Immer gegenhören:</strong> KI-Stimmen können sich bei Namen, Preisen und Daten versprechen.</li>
-          <li>Passt etwas nicht? Mit <strong>Re-Use</strong> übernimmst du den Text, korrigierst ihn und generierst neu.</li>
+          <li data-part="new">Das Badge <strong>New</strong> markiert frisch generierte Spots.</li>
+          <li data-part="player"><strong>Immer gegenhören:</strong> KI-Stimmen können sich bei Namen, Preisen und Daten versprechen.</li>
+          <li data-part="menu-btn">Passt etwas nicht? Über das Menü übernimmst du mit <strong>Re-Use</strong> den Text, korrigierst ihn und generierst neu.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -315,9 +316,9 @@ Lebe Smart!</textarea>
           <article class="card card--new">
             <div class="card__top">
               <span class="card__date">Today, 14:02</span>
-              <span class="badge badge--new">New</span>
+              <span class="badge badge--new" data-part="new">New</span>
               <div class="card__menu-wrap">
-                <button class="kebab" aria-label="Options">
+                <button class="kebab" aria-label="Options" data-part="menu-btn">
                   <svg class="icon"><use href="#i-kebab"/></svg>
                 </button>
               </div>
@@ -325,7 +326,7 @@ Lebe Smart!</textarea>
             <div class="card__title-row">
               <h2 class="card__title">IKEA Family Angebot RIAN Beistelltisch</h2>
             </div>
-            <div class="card__player">
+            <div class="card__player" data-part="player">
               <button class="play-btn" aria-label="Play">
                 <svg class="icon icon--filled"><use href="#i-play"/></svg>
               </button>
@@ -341,21 +342,21 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
-    <!-- ============ 8 · KARTENMENÜ + ZUSTÄNDE ============ -->
-    <section class="step">
+    <!-- 8 · Karten & Zustände -->
+    <section class="step" data-group="spottool" data-dot="8">
       <header class="tut__head">
-        <p class="tut__kicker">Creating a Spot · Schritt 8 von 18</p>
+        <p class="tut__kicker">SpotTool · Schritt 8 von 16</p>
         <h1 class="tut__title">Karten &amp; Zustände</h1>
         <p class="tut__text">Jede Karte zeigt ihren Zustand – und das Menü bietet alle Aktionen.</p>
         <ul class="tut__list">
-          <li><strong>New</strong> – frisch generiert · <strong>Scheduled</strong> – eingeplant · <strong>Received</strong> – per E-Mail zugestellt.</li>
-          <li><strong>Receive</strong> schickt dir die Audiodatei, <strong>Schedule</strong> öffnet den Scheduler, <strong>Re-Use</strong> übernimmt den Text, <strong>Delete</strong> löscht.</li>
-          <li>Eingeplante Spots musst du erst <strong>ausplanen</strong>, bevor sie gelöscht werden können.</li>
+          <li data-part="badges"><strong>New</strong> – frisch generiert · <strong>Scheduled</strong> – eingeplant · <strong>Received</strong> – per E-Mail zugestellt.</li>
+          <li data-part="menu"><strong>Receive</strong> schickt dir die Audiodatei, <strong>Schedule</strong> öffnet den Scheduler, <strong>Re-Use</strong> übernimmt den Text, <strong>Delete</strong> löscht.</li>
+          <li data-part="menu">Eingeplante Spots musst du erst <strong>ausplanen</strong>, bevor sie gelöscht werden können.</li>
         </ul>
       </header>
       <div class="tut__stage">
         <div class="exhibit exhibit--menu">
-          <div class="exhibit__badges">
+          <div class="exhibit__badges" data-part="badges">
             <span class="badge badge--new">New</span>
             <span class="badge badge--scheduled">
               <svg class="icon"><use href="#i-gantt"/></svg>
@@ -377,7 +378,7 @@ Lebe Smart!</textarea>
                 <button class="kebab is-open" aria-label="Options">
                   <svg class="icon"><use href="#i-kebab"/></svg>
                 </button>
-                <div class="context-menu" role="menu">
+                <div class="context-menu" role="menu" data-part="menu">
                   <button class="context-menu__item" role="menuitem">
                     <svg class="icon"><use href="#i-send"/></svg>
                     Receive
@@ -416,15 +417,56 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
-    <!-- ============ 9 · AUDIO WÄHLEN ============ -->
-    <section class="step">
+    <!-- 9 · Best Practices SpotTool -->
+    <section class="step" data-group="spottool" data-dot="9">
       <header class="tut__head">
-        <p class="tut__kicker">Scheduling · Schritt 9 von 18</p>
+        <p class="tut__kicker">SpotTool · Schritt 9 von 16</p>
+        <h1 class="tut__title">Best Practices</h1>
+        <p class="tut__text">Damit deine Spots immer gut klingen – die vier wichtigsten Gewohnheiten beim Erstellen:</p>
+      </header>
+      <div class="tut__stage">
+        <div class="exhibit">
+          <div class="finale">
+            <p class="finale__title">Best Practices · SpotTool</p>
+            <div class="finale__list">
+              <div class="finale__row">
+                <svg class="icon"><use href="#i-check"/></svg>
+                <span><strong>Immer gegenhören</strong>, bevor du einen Spot einplanst.</span>
+              </div>
+              <div class="finale__row">
+                <svg class="icon"><use href="#i-check"/></svg>
+                <span><strong>Klar benennen</strong> – Titel mit Aktion und Zeitraum.</span>
+              </div>
+              <div class="finale__row">
+                <svg class="icon"><use href="#i-check"/></svg>
+                <span><strong>Kurze Sätze</strong> schreiben – die Stimme liest wörtlich.</span>
+              </div>
+              <div class="finale__row">
+                <svg class="icon"><use href="#i-check"/></svg>
+                <span><strong>Zahlen und Preise ausschreiben</strong>, wie sie klingen sollen.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KAPITEL · SCHEDULER ============ -->
+    <section class="step step--chapter" data-group="scheduler">
+      <p class="chapter__kicker">Bereich 3 von 5</p>
+      <h1 class="chapter__title">Scheduler</h1>
+      <p class="chapter__text">Hier bekommt dein Spot seine Sendezeiten – einmalig an einem Tag oder wiederkehrend über Wochen.</p>
+    </section>
+
+    <!-- 10 · Audio wählen -->
+    <section class="step" data-group="scheduler" data-dot="10">
+      <header class="tut__head">
+        <p class="tut__kicker">Scheduler · Schritt 10 von 16</p>
         <h1 class="tut__title">Audio wählen</h1>
         <p class="tut__text">Die Planung startet mit dem Spot: Über <strong>Choose audio</strong> wählst du, welche Durchsage laufen soll.</p>
         <ul class="tut__list">
-          <li>Der Picker zeigt alle fertigen Spots – mit <strong>Suche</strong> und <strong>Vorhören</strong> direkt in der Liste.</li>
-          <li>Noch schneller: <strong>Schedule</strong> im Kartenmenü der History wählt den Spot direkt aus.</li>
+          <li data-part="rows">Der Picker zeigt alle fertigen Spots – <strong>hör sie direkt vor</strong>.</li>
+          <li data-part="choose">Mit <strong>Choose</strong> übernimmst du den Spot in die Planung.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -437,17 +479,13 @@ Lebe Smart!</textarea>
                   <svg class="icon"><use href="#i-x"/></svg>
                 </button>
               </div>
-              <div class="lightbox__search">
-                <svg class="icon"><use href="#i-search"/></svg>
-                <input type="text" placeholder="Search spots..." readonly>
-              </div>
               <div class="lightbox__list">
                 <div class="picker-row is-current">
-                  <div class="picker-row__info">
+                  <div class="picker-row__info" data-part="rows">
                     <p class="picker-row__title">IKEA Family Angebot RIAN Beistelltisch</p>
                     <p class="picker-row__meta">Today, 14:02</p>
                   </div>
-                  <div class="picker-row__player">
+                  <div class="picker-row__player" data-part="rows">
                     <button class="play-btn" aria-label="Play">
                       <svg class="icon icon--filled"><use href="#i-play"/></svg>
                     </button>
@@ -458,14 +496,14 @@ Lebe Smart!</textarea>
                     </div>
                     <span class="card__time">00:19</span>
                   </div>
-                  <button class="picker-row__choose" type="button">Selected</button>
+                  <button class="picker-row__choose" type="button" data-part="choose">Selected</button>
                 </div>
                 <div class="picker-row">
-                  <div class="picker-row__info">
+                  <div class="picker-row__info" data-part="rows">
                     <p class="picker-row__title">Restaurant Frühstücks-Special</p>
                     <p class="picker-row__meta">Yesterday, 09:41</p>
                   </div>
-                  <div class="picker-row__player">
+                  <div class="picker-row__player" data-part="rows">
                     <button class="play-btn" aria-label="Play">
                       <svg class="icon icon--filled"><use href="#i-play"/></svg>
                     </button>
@@ -476,7 +514,7 @@ Lebe Smart!</textarea>
                     </div>
                     <span class="card__time">00:12</span>
                   </div>
-                  <button class="picker-row__choose" type="button">Choose</button>
+                  <button class="picker-row__choose" type="button" data-part="choose">Choose</button>
                 </div>
               </div>
             </div>
@@ -485,16 +523,16 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
-    <!-- ============ 10 · SINGLE DAY / WEEKLY ============ -->
-    <section class="step">
+    <!-- 11 · Single Day / Weekly -->
+    <section class="step" data-group="scheduler" data-dot="11">
       <header class="tut__head">
-        <p class="tut__kicker">Scheduling · Schritt 10 von 18</p>
+        <p class="tut__kicker">Scheduler · Schritt 11 von 16</p>
         <h1 class="tut__title">Single Day oder Weekly</h1>
         <p class="tut__text">Leg fest, wann der Spot grundsätzlich läuft.</p>
         <ul class="tut__list">
-          <li><strong>Single Day</strong> – ein einzelner Tag, zum Beispiel für eine Tagesaktion.</li>
-          <li><strong>Weekly</strong> – ein Zeitraum mit <strong>Start</strong> und <strong>Ende</strong> plus den gewünschten <strong>Wochentagen</strong>.</li>
-          <li>Das <strong>∞</strong> neben dem Enddatum heißt: die Planung läuft, bis du sie beendest.</li>
+          <li data-part="type"><strong>Single Day</strong> – ein einzelner Tag, zum Beispiel für eine Tagesaktion.</li>
+          <li data-part="dates days"><strong>Weekly</strong> – ein Zeitraum mit <strong>Start</strong> und <strong>Ende</strong> plus den gewünschten <strong>Wochentagen</strong>.</li>
+          <li data-part="infinite">Das <strong>∞</strong> neben dem Enddatum heißt: die Planung läuft, bis du sie beendest.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -502,7 +540,7 @@ Lebe Smart!</textarea>
           <div class="sched-form">
             <div class="sched-form__group">
               <p class="sched-form__label">Schedule Type</p>
-              <div class="segmented at-2">
+              <div class="segmented at-2" data-part="type">
                 <span class="segmented__thumb"></span>
                 <button class="segmented__option" type="button">Single Day</button>
                 <button class="segmented__option is-active" type="button">Weekly</button>
@@ -513,14 +551,14 @@ Lebe Smart!</textarea>
                 <div>
                   <p class="sched-form__label">Start</p>
                   <div class="field field--date">
-                    <button class="field__btn" type="button"><span>Mon, 29 Sep 2025</span></button>
+                    <button class="field__btn" type="button" data-part="dates"><span>Mon, 29 Sep 2025</span></button>
                   </div>
                 </div>
                 <div>
                   <p class="sched-form__label">End</p>
                   <div class="field field--date">
-                    <button class="field__btn" type="button"><span>Sun, 05 Oct 2025</span></button>
-                    <button class="field__aux" type="button" aria-label="Toggle infinite" data-tip="Infinite">
+                    <button class="field__btn" type="button" data-part="dates"><span>Sun, 05 Oct 2025</span></button>
+                    <button class="field__aux" type="button" aria-label="Toggle infinite" data-tip="Infinite" data-part="infinite">
                       <svg class="icon"><use href="#i-infinity"/></svg>
                     </button>
                   </div>
@@ -529,7 +567,7 @@ Lebe Smart!</textarea>
             </div>
             <div class="sched-form__group">
               <p class="sched-form__label">Week Days</p>
-              <div class="day-chips">
+              <div class="day-chips" data-part="days">
                 <button class="day-chip is-active" type="button">Mo</button>
                 <button class="day-chip" type="button">Tu</button>
                 <button class="day-chip" type="button">We</button>
@@ -544,17 +582,16 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
-    <!-- ============ 11 · ZEIT ============ -->
-    <section class="step">
+    <!-- 12 · Die Zeit -->
+    <section class="step" data-group="scheduler" data-dot="12">
       <header class="tut__head">
-        <p class="tut__kicker">Scheduling · Schritt 11 von 18</p>
+        <p class="tut__kicker">Scheduler · Schritt 12 von 16</p>
         <h1 class="tut__title">Die Zeit</h1>
         <p class="tut__text">Dann die Uhrzeit – einmal täglich oder wiederholt.</p>
         <ul class="tut__list">
-          <li><strong>Once per Day</strong> – eine feste Uhrzeit.</li>
-          <li><strong>Repeat</strong> – im Intervall, hier z.&nbsp;B. alle 2 Stunden von 10 bis 18 Uhr.</li>
-          <li>Alle Zeiten liegen im <strong>30-Minuten-Raster</strong> – und jeder Slot hält genau <strong>einen</strong> Spot.</li>
-          <li>Die <strong>Closing</strong>-Durchsagen zum Ladenschluss sind fix von sounddna reserviert.</li>
+          <li data-part="mode"><strong>Once per Day</strong> – eine feste Uhrzeit.</li>
+          <li data-part="interval"><strong>Repeat</strong> – im Intervall, hier z.&nbsp;B. alle 2 Stunden von 10 bis 18 Uhr.</li>
+          <li data-part="interval">Alle Zeiten liegen im <strong>30-Minuten-Raster</strong> – und jeder Slot hält genau <strong>einen</strong> Spot.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -562,14 +599,14 @@ Lebe Smart!</textarea>
           <div class="sched-form">
             <div class="sched-form__group">
               <p class="sched-form__label">Time</p>
-              <div class="segmented at-2">
+              <div class="segmented at-2" data-part="mode">
                 <span class="segmented__thumb"></span>
                 <button class="segmented__option" type="button">Once per Day</button>
                 <button class="segmented__option is-active" type="button">Repeat</button>
               </div>
             </div>
             <div class="sched-form__group">
-              <div class="repeat-row">
+              <div class="repeat-row" data-part="interval">
                 <div class="dropdown dropdown--time">
                   <button class="dropdown__toggle" type="button">
                     <span class="dropdown__value">10:00</span>
@@ -598,121 +635,26 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
-    <!-- ============ 12 · KATEGORIE ============ -->
-    <section class="step">
+    <!-- 13 · Absenden -->
+    <section class="step" data-group="scheduler" data-dot="13">
       <header class="tut__head">
-        <p class="tut__kicker">Scheduling · Schritt 12 von 18</p>
-        <h1 class="tut__title">Die Kategorie</h1>
-        <p class="tut__text">Jede Planung bekommt eine Kategorie – sie bestimmt die <strong>Farbe im Kalender</strong>.</p>
-        <ul class="tut__list">
-          <li><strong>Food</strong>, <strong>Marketing</strong> und <strong>Special</strong> stehen dir für eure Inhalte frei.</li>
-          <li><strong>Closing</strong> ist für die fixen Ladenschluss-Ansagen von sounddna reserviert.</li>
-        </ul>
-      </header>
-      <div class="tut__stage">
-        <div class="exhibit exhibit--cat">
-          <p class="sched-form__label">Category</p>
-          <div class="dropdown dropdown--full is-open">
-            <button class="dropdown__toggle" type="button">
-              <span class="dropdown__value">
-                <span class="dropdown__dot" style="background: var(--cat-marketing)"></span>
-                Marketing
-              </span>
-              <span class="dropdown__chevron"></span>
-            </button>
-            <div class="dropdown__menu">
-              <button class="dropdown__option" type="button">
-                <span class="dropdown__dot" style="background: var(--cat-food)"></span>
-                Food
-              </button>
-              <button class="dropdown__option is-selected" type="button">
-                <span class="dropdown__dot" style="background: var(--cat-marketing)"></span>
-                Marketing
-              </button>
-              <button class="dropdown__option" type="button">
-                <span class="dropdown__dot" style="background: var(--cat-special)"></span>
-                Special
-              </button>
-              <button class="dropdown__option is-taken" data-state="fixed" type="button">
-                <span class="dropdown__dot" style="background: var(--cat-closing)"></span>
-                Closing
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 13 · KONFLIKTE ============ -->
-    <section class="step">
-      <header class="tut__head">
-        <p class="tut__kicker">Scheduling · Schritt 13 von 18</p>
-        <h1 class="tut__title">Konflikte lösen</h1>
-        <p class="tut__text">SpotTool prüft deine Zeiten <strong>live</strong>, noch bevor du absendest.</p>
-        <ul class="tut__list">
-          <li>Belegte Slots, Zeiten außerhalb der <strong>Öffnungszeiten</strong> und die <strong>Quiet Hour</strong> werden sofort angezeigt.</li>
-          <li>Ein Klick auf den Vorschlag verschiebt deine Planung auf die <strong>nächsten freien Slots</strong>.</li>
-          <li>Passt alles, bestätigt das ein <strong>grüner Streifen</strong>.</li>
-        </ul>
-      </header>
-      <div class="tut__stage">
-        <div class="exhibit exhibit--conflict">
-          <div class="conflict-wrap is-open is-blocking">
-            <div class="conflict-strip is-in has-button">
-              <span class="conflict-strip__title" style="--i: 0">2 slots taken</span>
-              <span class="conflict-strip__times" style="--i: 1">
-                <span class="conflict-strip__chip"><span class="conflict-strip__dot" style="background: var(--cat-food)"></span>Mo 10:00</span>
-                <span class="conflict-strip__chip"><span class="conflict-strip__dot" style="background: var(--cat-special)"></span>Fr 10:00</span>
-              </span>
-              <button class="ghost-btn ghost-btn--sm ghost-btn--fill conflict-strip__suggest" style="--i: 2" type="button">
-                <svg class="icon"><use href="#i-arrow-right"/></svg>
-                Move to free slots
-              </button>
-            </div>
-          </div>
-          <div class="conflict-wrap is-open is-ok">
-            <div class="conflict-strip is-in">
-              <span class="conflict-strip__title" style="--i: 0">Moved to free slots · 10:30</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 14 · ABSENDEN ============ -->
-    <section class="step">
-      <header class="tut__head">
-        <p class="tut__kicker">Scheduling · Schritt 14 von 18</p>
+        <p class="tut__kicker">Scheduler · Schritt 13 von 16</p>
         <h1 class="tut__title">Absenden</h1>
-        <p class="tut__text">Mit <strong>Send to Schedule</strong> ist die Planung aktiv – die Zusammenfassung bestätigt alles auf einen Blick.</p>
+        <p class="tut__text">Ein Klick, und die Planung ist aktiv.</p>
         <ul class="tut__list">
-          <li><strong>See in calendar</strong> springt direkt in die passende Woche.</li>
-          <li>Danach liegt die Planung als Karte in der <strong>Schedule-History</strong> – dort kannst du sie <strong>duplizieren</strong>, <strong>bearbeiten</strong> oder <strong>löschen</strong>.</li>
+          <li data-part="send"><strong>Send to Schedule</strong> schickt deine Planung ab – ab jetzt läuft der Spot zu den gewählten Zeiten.</li>
+          <li data-part="card">In der <strong>Schedule-History</strong> liegt die Planung als Karte – dort kannst du sie <strong>duplizieren</strong>, <strong>bearbeiten</strong> oder <strong>löschen</strong>.</li>
         </ul>
       </header>
       <div class="tut__stage">
         <div class="exhibit exhibit--send">
-          <div class="sched-summary" style="--cat: var(--cat-marketing)">
-            <div class="sched-summary__head">
-              <svg class="icon" style="width: 13px; height: 13px"><use href="#i-check"/></svg>
-              Sent to schedule
-            </div>
-            <p class="sched-summary__title">RIAN Angebot – Woche 40</p>
-            <p class="sched-summary__meta">29 Sep – 05 Oct 2025</p>
-            <p class="sched-summary__meta sched-summary__meta--config">Weekly · 10:00 – 18:00 · every 2 hours · Marketing</p>
-            <div class="sched-summary__days">
-              <span class="mini-day is-active">Mo</span><span class="mini-day">Tu</span><span class="mini-day">We</span><span class="mini-day">Th</span><span class="mini-day is-active">Fr</span><span class="mini-day is-active">Sa</span><span class="mini-day">Su</span>
-            </div>
-            <div class="sched-summary__actions">
-              <button class="ghost-btn ghost-btn--sm" type="button">
-                <svg class="icon"><use href="#i-calendar"/></svg>
-                See in calendar
-              </button>
-              <span class="sched-summary__hint">Appears in the history in a moment</span>
-            </div>
-            <div class="sched-summary__bar"><div class="sched-summary__fill"></div></div>
+          <div class="schedule-actions" data-part="send">
+            <button class="primary-btn" type="button">
+              <span>Send to Schedule</span>
+              <svg class="icon"><use href="#i-arrow-up-right"/></svg>
+            </button>
           </div>
-          <article class="sched-card" style="--cat: var(--cat-marketing)">
+          <article class="sched-card" data-part="card">
             <div class="sched-card__head">
               <h2 class="sched-card__title">RIAN Angebot – Woche 40</h2>
               <div class="sched-card__days">
@@ -721,7 +663,7 @@ Lebe Smart!</textarea>
             </div>
             <div class="sched-card__meta">
               <span class="sched-card__meta-dates">29 Sep – 05 Oct 2025</span>
-              <span class="sched-card__meta-config">Weekly · 10:00 – 18:00 · every 2 hours · Marketing</span>
+              <span class="sched-card__meta-config">Weekly · 10:00 – 18:00 · every 2 hours</span>
             </div>
             <div class="sched-card__actions">
               <button class="sched-card__action" data-tip="Duplicate" aria-label="Duplicate schedule">
@@ -739,23 +681,65 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
-    <!-- ============ 15 · WOCHE LESEN ============ -->
-    <section class="step">
+    <!-- 14 · Best Practices Scheduler -->
+    <section class="step" data-group="scheduler" data-dot="14">
       <header class="tut__head">
-        <p class="tut__kicker">Calendar · Schritt 15 von 18</p>
+        <p class="tut__kicker">Scheduler · Schritt 14 von 16</p>
+        <h1 class="tut__title">Best Practices</h1>
+        <p class="tut__text">So bleibt deine Planung übersichtlich – und deine Kundinnen und Kunden hören genau das Richtige:</p>
+      </header>
+      <div class="tut__stage">
+        <div class="exhibit">
+          <div class="finale">
+            <p class="finale__title">Best Practices · Scheduler</p>
+            <div class="finale__list">
+              <div class="finale__row">
+                <svg class="icon"><use href="#i-check"/></svg>
+                <span><strong>Enddatum setzen</strong>, statt Planungen unendlich laufen zu lassen.</span>
+              </div>
+              <div class="finale__row">
+                <svg class="icon"><use href="#i-check"/></svg>
+                <span><strong>Gezielt takten</strong> – lieber wenige, gut platzierte Wiederholungen.</span>
+              </div>
+              <div class="finale__row">
+                <svg class="icon"><use href="#i-check"/></svg>
+                <span><strong>Abgelaufene Planungen löschen</strong> – das hält die History sauber.</span>
+              </div>
+              <div class="finale__row">
+                <svg class="icon"><use href="#i-check"/></svg>
+                <span><strong>Vor dem Absenden</strong> Titel und Zeiten kurz prüfen.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KAPITEL · CALENDAR ============ -->
+    <section class="step step--chapter" data-group="calendar">
+      <p class="chapter__kicker">Bereich 4 von 5</p>
+      <h1 class="chapter__title">Calendar</h1>
+      <p class="chapter__text">Deine Woche auf einen Blick: Der Kalender zeigt alle geplanten Durchsagen – als reine Ansicht.</p>
+    </section>
+
+    <!-- 15 · Die Woche lesen -->
+    <section class="step" data-group="calendar" data-dot="15">
+      <header class="tut__head">
+        <p class="tut__kicker">Calendar · Schritt 15 von 16</p>
         <h1 class="tut__title">Die Woche lesen</h1>
-        <p class="tut__text">Der <strong>Announcement Calendar</strong> zeigt deine Woche als Raster – fahr über die farbigen Slots!</p>
+        <p class="tut__text">Der Announcement Calendar zeigt deine Woche als Raster – fahr über die belegten Slots!</p>
         <ul class="tut__list">
-          <li>Jede <strong>Zeile</strong> ist ein 30-Minuten-Slot, jede <strong>Spalte</strong> ein Tag, die <strong>Farbe</strong> zeigt die Kategorie.</li>
-          <li>Das <strong>Schloss</strong> markiert die fixe Closing-Ansage, die <strong>Quiet Hour</strong> bleibt frei von Durchsagen.</li>
-          <li>Zeiten außerhalb der <strong>Öffnungszeiten</strong> sind ausgeblendet, die weiße Linie markiert <strong>jetzt</strong>.</li>
-          <li>Mit den <strong>Pfeilen</strong> wechselst du die Woche, <strong>Show titles</strong> blendet die Spot-Titel dauerhaft ein.</li>
+          <li data-part="axis">Jede <strong>Zeile</strong> ist ein 30-Minuten-Slot, jede <strong>Spalte</strong> ein Tag.</li>
+          <li data-part="spots">Die gefüllten Slots sind deine <strong>geplanten Durchsagen</strong> – beim Überfahren zeigen sie Uhrzeit und Titel.</li>
+          <li data-part="closing">Das <strong>Schloss</strong> markiert die fixe Closing-Ansage von sounddna.</li>
+          <li data-part="quiet closed">Die <strong>Quiet Hour</strong> bleibt frei von Durchsagen, Zeiten außerhalb der <strong>Öffnungszeiten</strong> sind ausgeblendet.</li>
+          <li data-part="now week">Die weiße Linie markiert <strong>jetzt</strong> – mit den <strong>Pfeilen</strong> wechselst du die Woche.</li>
         </ul>
       </header>
       <div class="tut__stage">
-        <div class="exhibit exhibit--calx" style="--cal-cols: 3">
+        <div class="exhibit exhibit--cal">
           <div class="cal-head">
-            <div class="cal-week">
+            <div class="cal-week" data-part="week">
               <button class="cal-week__nav" aria-label="Previous week">
                 <svg class="icon"><use href="#i-chevron-left"/></svg>
               </button>
@@ -764,40 +748,29 @@ Lebe Smart!</textarea>
                 <svg class="icon"><use href="#i-chevron-right"/></svg>
               </button>
             </div>
-            <div class="cal-legend">
-              <span class="cal-legend__item"><span class="cal-legend__dot" style="background: var(--cat-food)"></span>Food</span>
-              <span class="cal-legend__item"><span class="cal-legend__dot" style="background: var(--cat-marketing)"></span>Marketing</span>
-              <span class="cal-legend__item"><span class="cal-legend__dot" style="background: var(--cat-special)"></span>Special</span>
-              <span class="cal-legend__item"><span class="cal-legend__dot" style="background: var(--cat-closing)"></span>Closing</span>
-            </div>
-            <label class="cal-toggle">
-              <span>Show titles</span>
-              <button class="switch" type="button" role="switch" aria-checked="false"><span class="switch__knob"></span></button>
-            </label>
           </div>
           <div class="cal-grid">
             <div class="cal-col cal-col--time">
               <div class="cal-col__head"></div>
               <div class="cal-col__body">
-                <div class="cal-time">10:00</div>
-                <div class="cal-time">10:30</div>
-                <div class="cal-time">11:00</div>
-                <div class="cal-time">11:30</div>
-                <div class="cal-time">12:00</div>
-                <div class="cal-time">12:30</div>
-                <div class="cal-time">13:00</div>
-                <div class="cal-time">13:30</div>
+                <div class="cal-time" data-part="axis">10:00</div>
+                <div class="cal-time" data-part="axis">10:30</div>
+                <div class="cal-time" data-part="axis">11:00</div>
+                <div class="cal-time" data-part="axis">11:30</div>
+                <div class="cal-time" data-part="axis">12:00</div>
+                <div class="cal-time" data-part="axis">12:30</div>
+                <div class="cal-time" data-part="axis">13:00</div>
+                <div class="cal-time" data-part="axis">13:30</div>
               </div>
             </div>
             <div class="cal-col cal-col--today">
-              <div class="cal-col__head">Wed <span class="cal-col__date">01</span></div>
+              <div class="cal-col__head" data-part="axis">Wed <span class="cal-col__date">01</span></div>
               <div class="cal-col__body">
                 <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                <div class="cal-slot cal-slot--spot" style="--cat: var(--cat-marketing)">
+                <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--blau)">
                   <div class="cal-slot__inner">
                     <div class="cal-slot__title">
                       <span class="cal-slot__time">10:30</span>
-                      <button class="cal-slot__edit" aria-label="Edit schedule"><svg class="icon"><use href="#i-pencil"/></svg></button>
                       <span class="cal-slot__text">Sommerschluss Aktion</span>
                     </div>
                   </div>
@@ -806,7 +779,7 @@ Lebe Smart!</textarea>
                 <div class="cal-slot"><div class="cal-slot__inner"></div></div>
                 <div class="cal-slot"><div class="cal-slot__inner"></div></div>
                 <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                <div class="cal-slot cal-slot--spot" style="--cat: var(--cat-closing)">
+                <div class="cal-slot cal-slot--spot" data-part="closing" style="--cat: var(--blau)">
                   <div class="cal-slot__inner">
                     <div class="cal-slot__title">
                       <span class="cal-slot__time">13:00</span>
@@ -816,37 +789,35 @@ Lebe Smart!</textarea>
                   </div>
                 </div>
                 <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                <div class="cal-now" style="top: 30%"></div>
+                <div class="cal-now" data-part="now" style="top: 30%"></div>
               </div>
             </div>
             <div class="cal-col">
-              <div class="cal-col__head">Thu <span class="cal-col__date">02</span></div>
+              <div class="cal-col__head" data-part="axis">Thu <span class="cal-col__date">02</span></div>
               <div class="cal-col__body">
                 <div class="cal-slot"><div class="cal-slot__inner"></div></div>
                 <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                <div class="cal-slot cal-slot--spot" style="--cat: var(--cat-food)">
+                <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--blau)">
                   <div class="cal-slot__inner">
                     <div class="cal-slot__title">
                       <span class="cal-slot__time">11:00</span>
-                      <button class="cal-slot__edit" aria-label="Edit schedule"><svg class="icon"><use href="#i-pencil"/></svg></button>
                       <span class="cal-slot__text">IKEA Family Angebot RIAN</span>
                     </div>
                   </div>
                 </div>
-                <div class="cal-quiet" style="height: calc(2 * var(--slot-h) + var(--slot-gap))">Quiet Hour</div>
+                <div class="cal-quiet" data-part="quiet" style="height: calc(2 * var(--slot-h) + var(--slot-gap))">Quiet Hour</div>
                 <div class="cal-slot"><div class="cal-slot__inner"></div></div>
                 <div class="cal-slot"><div class="cal-slot__inner"></div></div>
                 <div class="cal-slot"><div class="cal-slot__inner"></div></div>
               </div>
             </div>
             <div class="cal-col">
-              <div class="cal-col__head">Fri <span class="cal-col__date">03</span></div>
+              <div class="cal-col__head" data-part="axis">Fri <span class="cal-col__date">03</span></div>
               <div class="cal-col__body">
-                <div class="cal-slot cal-slot--spot" style="--cat: var(--cat-special)">
+                <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--blau)">
                   <div class="cal-slot__inner">
                     <div class="cal-slot__title">
                       <span class="cal-slot__time">10:00</span>
-                      <button class="cal-slot__edit" aria-label="Edit schedule"><svg class="icon"><use href="#i-pencil"/></svg></button>
                       <span class="cal-slot__text">Late Night Shopping</span>
                     </div>
                   </div>
@@ -856,8 +827,8 @@ Lebe Smart!</textarea>
                 <div class="cal-slot"><div class="cal-slot__inner"></div></div>
                 <div class="cal-slot"><div class="cal-slot__inner"></div></div>
                 <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                <div class="cal-slot cal-slot--closed"><div class="cal-slot__inner"></div></div>
-                <div class="cal-slot cal-slot--closed"><div class="cal-slot__inner"></div></div>
+                <div class="cal-slot cal-slot--closed" data-part="closed"><div class="cal-slot__inner"></div></div>
+                <div class="cal-slot cal-slot--closed" data-part="closed"><div class="cal-slot__inner"></div></div>
               </div>
             </div>
           </div>
@@ -865,90 +836,28 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
-    <!-- ============ 16 · AUS DEM KALENDER ARBEITEN ============ -->
-    <section class="step">
-      <header class="tut__head">
-        <p class="tut__kicker">Calendar · Schritt 16 von 18</p>
-        <h1 class="tut__title">Aus dem Kalender arbeiten</h1>
-        <p class="tut__text">Der Kalender ist nicht nur Ansicht – du planst direkt aus ihm heraus.</p>
-        <ul class="tut__list">
-          <li>Klick auf einen <strong>freien Slot</strong>: <strong>Schedule spot here</strong> übernimmt Tag und Uhrzeit in den Scheduler.</li>
-          <li>Der <strong>Stift</strong> auf einem belegten Slot öffnet die Planung direkt zum <strong>Bearbeiten</strong>.</li>
-        </ul>
-      </header>
-      <div class="tut__stage">
-        <div class="exhibit exhibit--calw" style="--cal-cols: 2">
-          <div class="cal-grid">
-            <div class="cal-col cal-col--time">
-              <div class="cal-col__head"></div>
-              <div class="cal-col__body">
-                <div class="cal-time">10:00</div>
-                <div class="cal-time">10:30</div>
-                <div class="cal-time">11:00</div>
-                <div class="cal-time">11:30</div>
-                <div class="cal-time">12:00</div>
-                <div class="cal-time">12:30</div>
-              </div>
-            </div>
-            <div class="cal-col">
-              <div class="cal-col__head">Mon <span class="cal-col__date">29</span></div>
-              <div class="cal-col__body">
-                <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                <div class="cal-slot has-pop" style="z-index: 100">
-                  <div class="cal-slot__inner" style="background: var(--white-6)"></div>
-                  <div class="cal-pop">
-                    <span class="cal-pop__when">Mon 29 · 10:30</span>
-                    <button class="ghost-btn ghost-btn--sm ghost-btn--invert cal-pop__btn" type="button">
-                      Schedule spot here
-                      <svg class="icon"><use href="#i-arrow-right"/></svg>
-                    </button>
-                  </div>
-                </div>
-                <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-              </div>
-            </div>
-            <div class="cal-col">
-              <div class="cal-col__head">Tue <span class="cal-col__date">30</span></div>
-              <div class="cal-col__body">
-                <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-                <div class="cal-slot cal-slot--spot is-lit" data-static style="--cat: var(--cat-marketing)">
-                  <div class="cal-slot__inner">
-                    <div class="cal-slot__title">
-                      <span class="cal-slot__time">12:00</span>
-                      <button class="cal-slot__edit" aria-label="Edit schedule"><svg class="icon"><use href="#i-pencil"/></svg></button>
-                      <span class="cal-slot__text">Sommerschluss Aktion</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="cal-slot"><div class="cal-slot__inner"></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- ============ KAPITEL · ACCOUNT ============ -->
+    <section class="step step--chapter" data-group="account">
+      <p class="chapter__kicker">Bereich 5 von 5</p>
+      <h1 class="chapter__title">Account</h1>
+      <p class="chapter__text">Alles rund um deinen Zugang: Profil, Passwort und Sicherheit.</p>
     </section>
 
-    <!-- ============ 17 · KONTO & SICHERHEIT ============ -->
-    <section class="step">
+    <!-- 16 · Konto & Sicherheit -->
+    <section class="step" data-group="account" data-dot="16">
       <header class="tut__head">
-        <p class="tut__kicker">Account · Schritt 17 von 18</p>
+        <p class="tut__kicker">Account · Schritt 16 von 16</p>
         <h1 class="tut__title">Konto &amp; Sicherheit</h1>
-        <p class="tut__text">Unter <strong>Account</strong> verwaltest du dein Profil und die Sicherheit deines Zugangs.</p>
+        <p class="tut__text">Unter Account verwaltest du dein Profil und die Sicherheit deines Zugangs.</p>
         <ul class="tut__list">
-          <li><strong>Profil</strong> – Name, E-Mail-Adresse und letzter Login auf einen Blick.</li>
-          <li><strong>Change password</strong> schickt dir einen sicheren Link per E-Mail – gültig für <strong>30 Minuten</strong>.</li>
-          <li>Die <strong>Zwei-Faktor-Authentifizierung</strong> ist mit einer Authenticator-App in zwei Minuten eingerichtet – sehr empfohlen.</li>
+          <li data-part="profile"><strong>Profil</strong> – Name, E-Mail-Adresse und letzter Login auf einen Blick.</li>
+          <li data-part="password"><strong>Change password</strong> schickt dir einen sicheren Link per E-Mail – gültig für <strong>30 Minuten</strong>.</li>
+          <li data-part="mfa">Die <strong>Zwei-Faktor-Authentifizierung</strong> ist mit einer Authenticator-App in zwei Minuten eingerichtet – sehr empfohlen.</li>
         </ul>
       </header>
       <div class="tut__stage">
         <div class="exhibit exhibit--account">
-          <section class="acc-card">
+          <section class="acc-card" data-part="profile">
             <h2 class="acc-card__title">Profile</h2>
             <div class="acc-row"><span class="acc-row__label">Name</span><span class="acc-row__value">Julian Thurner</span></div>
             <div class="acc-row"><span class="acc-row__label">E-Mail</span><span class="acc-row__value">julian.thurner@sound-dna.com</span></div>
@@ -960,14 +869,14 @@ Lebe Smart!</textarea>
               </button>
             </div>
           </section>
-          <section class="acc-card">
+          <section class="acc-card" data-part="password">
             <h2 class="acc-card__title">Password</h2>
             <p class="acc-text">We will send a secure link to your e-mail address. The link is valid for 30 minutes.</p>
             <div class="acc-card__actions">
               <button class="primary-btn primary-btn--small" type="button">Change password</button>
             </div>
           </section>
-          <section class="acc-card acc-card--wide acc-card--attention">
+          <section class="acc-card acc-card--wide acc-card--attention" data-part="mfa">
             <div class="acc-card__head">
               <h2 class="acc-card__title">Two-factor authentication</h2>
               <span class="acc-status">Recommended</span>
@@ -981,48 +890,19 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
-    <!-- ============ 18 · GUTE GEWOHNHEITEN ============ -->
-    <section class="step">
-      <header class="tut__head">
-        <p class="tut__kicker">Account · Schritt 18 von 18</p>
-        <h1 class="tut__title">Gute Gewohnheiten</h1>
-        <p class="tut__text">Das war's! Zum Schluss vier Gewohnheiten, mit denen SpotTool am besten funktioniert. Bei Fragen hilft dir das sounddna-Team jederzeit weiter.</p>
-      </header>
-      <div class="tut__stage">
-        <div class="exhibit">
-          <div class="finale">
-            <p class="finale__title">Vier Dinge, die Profis anders machen.</p>
-            <div class="finale__list">
-              <div class="finale__row">
-                <svg class="icon"><use href="#i-check"/></svg>
-                <span><strong>Immer gegenhören</strong>, bevor du einen Spot einplanst.</span>
-              </div>
-              <div class="finale__row">
-                <svg class="icon"><use href="#i-check"/></svg>
-                <span><strong>Klar benennen</strong> – Titel mit Aktion und Zeitraum.</span>
-              </div>
-              <div class="finale__row">
-                <svg class="icon"><use href="#i-check"/></svg>
-                <span><strong>Enddatum setzen</strong>, statt Planungen unendlich laufen zu lassen.</span>
-              </div>
-              <div class="finale__row">
-                <svg class="icon"><use href="#i-check"/></svg>
-                <span><strong>Regelmäßig aufräumen</strong> – abgelaufene Planungen löschen.</span>
-              </div>
-            </div>
-            <p class="finale__note">Fragen oder Wünsche? Melde dich einfach bei deinem sounddna-Kontakt.</p>
-            <div class="finale__actions">
-              <button class="finale__cta" id="restart" type="button">
-                <svg class="icon"><use href="#i-reuse"/></svg>
-                Tutorial neu starten
-              </button>
-            </div>
-          </div>
-        </div>
+    <!-- ============ ABSCHLUSS ============ -->
+    <section class="step step--outro">
+      <h1 class="chapter__title">Du bist startklar!</h1>
+      <p class="outro__note">Fragen oder Wünsche? Melde dich einfach bei deinem sounddna-Kontakt.</p>
+      <div class="outro__actions">
+        <button class="primary-btn" id="restart" type="button">
+          <svg class="icon"><use href="#i-reuse"/></svg>
+          Tutorial neu starten
+        </button>
       </div>
     </section>
 
-    <!-- ============ FUSSLEISTE: KAPITEL-TIMELINE + NAVIGATION ============ -->
+    <!-- ============ FUSSLEISTE: BEREICHS-TIMELINE + NAVIGATION ============ -->
     <footer class="tut__footer">
       <button class="ghost-btn tut__nav-btn tut__nav-btn--back is-hidden" id="btn-back" type="button">
         <svg class="icon"><use href="#i-arrow-left"/></svg>
@@ -1032,53 +912,51 @@ Lebe Smart!</textarea>
       <nav class="timeline" id="timeline" aria-label="Tutorial-Fortschritt">
         <span class="timeline__track"></span>
         <span class="timeline__fill" id="timeline-fill"></span>
-        <div class="tl-group">
+        <div class="tl-group" data-group="home">
           <div class="tl-group__dots">
-            <button class="tl-dot" type="button" data-goto="1" data-tip="Was SpotTool ist" aria-label="Schritt 1"></button>
-            <button class="tl-dot" type="button" data-goto="2" data-tip="Login" aria-label="Schritt 2"></button>
-            <button class="tl-dot" type="button" data-goto="3" data-tip="Dashboard" aria-label="Schritt 3"></button>
+            <button class="tl-dot" type="button" data-dot="1" data-tip="Die Bereiche" aria-label="Schritt 1"></button>
+            <button class="tl-dot" type="button" data-dot="2" data-tip="Login" aria-label="Schritt 2"></button>
+            <button class="tl-dot" type="button" data-dot="3" data-tip="Dashboard" aria-label="Schritt 3"></button>
           </div>
-          <span class="tl-group__label">Getting started</span>
+          <span class="tl-group__label">Home</span>
         </div>
-        <div class="tl-group">
+        <div class="tl-group" data-group="spottool">
           <div class="tl-group__dots">
-            <button class="tl-dot" type="button" data-goto="4" data-tip="Titel vergeben" aria-label="Schritt 4"></button>
-            <button class="tl-dot" type="button" data-goto="5" data-tip="Text schreiben" aria-label="Schritt 5"></button>
-            <button class="tl-dot" type="button" data-goto="6" data-tip="Create Spot" aria-label="Schritt 6"></button>
-            <button class="tl-dot" type="button" data-goto="7" data-tip="Ergebnis anhören" aria-label="Schritt 7"></button>
-            <button class="tl-dot" type="button" data-goto="8" data-tip="Karten &amp; Zustände" aria-label="Schritt 8"></button>
+            <button class="tl-dot" type="button" data-dot="4" data-tip="Titel vergeben" aria-label="Schritt 4"></button>
+            <button class="tl-dot" type="button" data-dot="5" data-tip="Text schreiben" aria-label="Schritt 5"></button>
+            <button class="tl-dot" type="button" data-dot="6" data-tip="Create Spot" aria-label="Schritt 6"></button>
+            <button class="tl-dot" type="button" data-dot="7" data-tip="Ergebnis anhören" aria-label="Schritt 7"></button>
+            <button class="tl-dot" type="button" data-dot="8" data-tip="Karten &amp; Zustände" aria-label="Schritt 8"></button>
+            <button class="tl-dot" type="button" data-dot="9" data-tip="Best Practices" aria-label="Schritt 9"></button>
           </div>
-          <span class="tl-group__label">Creating a Spot</span>
+          <span class="tl-group__label">SpotTool</span>
         </div>
-        <div class="tl-group">
+        <div class="tl-group" data-group="scheduler">
           <div class="tl-group__dots">
-            <button class="tl-dot" type="button" data-goto="9" data-tip="Audio wählen" aria-label="Schritt 9"></button>
-            <button class="tl-dot" type="button" data-goto="10" data-tip="Single Day / Weekly" aria-label="Schritt 10"></button>
-            <button class="tl-dot" type="button" data-goto="11" data-tip="Zeit" aria-label="Schritt 11"></button>
-            <button class="tl-dot" type="button" data-goto="12" data-tip="Kategorie" aria-label="Schritt 12"></button>
-            <button class="tl-dot" type="button" data-goto="13" data-tip="Konflikte" aria-label="Schritt 13"></button>
-            <button class="tl-dot" type="button" data-goto="14" data-tip="Absenden" aria-label="Schritt 14"></button>
+            <button class="tl-dot" type="button" data-dot="10" data-tip="Audio wählen" aria-label="Schritt 10"></button>
+            <button class="tl-dot" type="button" data-dot="11" data-tip="Single Day / Weekly" aria-label="Schritt 11"></button>
+            <button class="tl-dot" type="button" data-dot="12" data-tip="Die Zeit" aria-label="Schritt 12"></button>
+            <button class="tl-dot" type="button" data-dot="13" data-tip="Absenden" aria-label="Schritt 13"></button>
+            <button class="tl-dot" type="button" data-dot="14" data-tip="Best Practices" aria-label="Schritt 14"></button>
           </div>
-          <span class="tl-group__label">Scheduling</span>
+          <span class="tl-group__label">Scheduler</span>
         </div>
-        <div class="tl-group">
+        <div class="tl-group" data-group="calendar">
           <div class="tl-group__dots">
-            <button class="tl-dot" type="button" data-goto="15" data-tip="Die Woche lesen" aria-label="Schritt 15"></button>
-            <button class="tl-dot" type="button" data-goto="16" data-tip="Aus dem Kalender arbeiten" aria-label="Schritt 16"></button>
+            <button class="tl-dot" type="button" data-dot="15" data-tip="Die Woche lesen" aria-label="Schritt 15"></button>
           </div>
           <span class="tl-group__label">Calendar</span>
         </div>
-        <div class="tl-group">
+        <div class="tl-group" data-group="account">
           <div class="tl-group__dots">
-            <button class="tl-dot" type="button" data-goto="17" data-tip="Konto &amp; Sicherheit" aria-label="Schritt 17"></button>
-            <button class="tl-dot" type="button" data-goto="18" data-tip="Gute Gewohnheiten" aria-label="Schritt 18"></button>
+            <button class="tl-dot" type="button" data-dot="16" data-tip="Konto &amp; Sicherheit" aria-label="Schritt 16"></button>
           </div>
           <span class="tl-group__label">Account</span>
         </div>
       </nav>
 
       <button class="primary-btn primary-btn--small tut__nav-btn tut__nav-btn--next" id="btn-next" type="button">
-        <span id="btn-next-label">Los geht's</span>
+        <span>Weiter</span>
         <svg class="icon"><use href="#i-arrow-right"/></svg>
       </button>
     </footer>
