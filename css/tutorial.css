@@ -580,9 +580,22 @@ body.is-cover .tut__footer { display: none; }
     padding: 0;
   }
 
-  /* am Handy keine Linie, nur Titel und Punkte */
+  /* am Handy verbindet die Linie nur die Punkte des aktuellen
+     Bereichs, sie läuft nicht darüber hinaus */
   .timeline__track,
   .timeline__fill { display: none; }
+
+  .tl-group__dots { position: relative; }
+
+  .tl-group__dots::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    right: 5px;
+    height: var(--hair-w);
+    background: rgba(255, 255, 255, var(--hair-a));
+  }
 
   .tl-group { display: none; }
 
