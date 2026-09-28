@@ -227,6 +227,22 @@ body.is-cover .tut__footer { display: none; }
 .tut__nav-btn { flex-shrink: 0; }
 .tut__nav-btn.is-hidden { visibility: hidden; pointer-events: none; }
 
+/* Navigation dezent: Weiter als Ghost-Button, Zurück nur Text */
+.tut__nav-btn--next.primary-btn {
+  background: none;
+  border: var(--hair-w) solid var(--white-14);
+  color: var(--text-66);
+}
+
+.tut__nav-btn--next.primary-btn:hover {
+  background: var(--hover);
+  color: var(--text-100);
+  box-shadow: none;
+}
+
+.tut__nav-btn--back.ghost-btn { border-color: transparent; color: var(--text-55); }
+.tut__nav-btn--back.ghost-btn:hover { background: var(--hover); color: var(--text-100); }
+
 .timeline {
   position: relative;
   flex: 1;
@@ -251,8 +267,8 @@ body.is-cover .tut__footer { display: none; }
 .timeline__fill {
   right: auto;
   width: 0;
-  height: 1.5px;
-  top: 7.75px;
+  height: 1px;
+  top: 8px;
   background: var(--nav-active);
   transition: width var(--dur-slow) var(--ease);
 }
@@ -275,12 +291,12 @@ body.is-cover .tut__footer { display: none; }
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background: color-mix(in srgb, #ffffff 24%, var(--dunkelblau));   /* voll deckend */
+  background: var(--nav-active);
   transition: background var(--transition),
               box-shadow var(--transition), transform var(--transition);
 }
 
-.tl-dot:hover { background: color-mix(in srgb, #ffffff 42%, var(--dunkelblau)); }
+.tl-dot:hover { background: #ffffff; }
 
 .tl-dot.is-done { background: var(--nav-active); }
 
@@ -607,7 +623,7 @@ body.is-cover .tut__footer { display: none; }
     left: 4px;
     width: var(--mfill, 0px);
     max-width: calc(100% - 8px);
-    height: 1.5px;
+    height: 1px;
     background: var(--nav-active);
     transition: width var(--dur-slow) var(--ease);
   }
