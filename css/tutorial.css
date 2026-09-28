@@ -78,25 +78,26 @@ body.is-cover .tut__footer { display: none; }
 }
 
 .tut__list {
-  margin-top: 14px;
+  margin-top: 16px;
   list-style: none;
 }
 
 .tut__list li {
   position: relative;
-  padding: 9px 0 9px 22px;
+  padding: 10px 0 10px 24px;
   font-size: var(--fs-base);
   letter-spacing: var(--ls-body);
-  line-height: 1.65;
+  line-height: 1.6;
   color: var(--text-55);
-  transition: opacity var(--dur) var(--ease), color var(--dur) var(--ease);
+  transition: opacity var(--dur) var(--ease), color var(--dur) var(--ease),
+              font-size var(--dur) var(--ease);
 }
 
 .tut__list li::before {
   content: "";
   position: absolute;
   left: 3px;
-  top: 19px;
+  top: calc(10px + 0.8em - 2.5px);
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -106,11 +107,19 @@ body.is-cover .tut__footer { display: none; }
 .tut__text strong,
 .tut__list strong { font-weight: 400; color: var(--text-80); }
 
-/* Sub-Steps: aktiver Bullet voll, andere reduziert */
+/* Sub-Steps: die aktive Erklärung ist die Hauptsache – groß und hell,
+   die anderen treten zurück */
 .tut__list li[data-part] { cursor: pointer; }
-.step.has-focus .tut__list li { opacity: 0.35; }
-.step.has-focus .tut__list li:hover { opacity: 0.7; }
-.step.has-focus .tut__list li.is-active { opacity: 1; color: var(--text-80); }
+.step.has-focus .tut__list li { opacity: 0.4; }
+.step.has-focus .tut__list li:hover { opacity: 0.75; }
+
+.step.has-focus .tut__list li.is-active {
+  opacity: 1;
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--text-80);
+}
+
 .step.has-focus .tut__list li.is-active::before { background: var(--nav-active); }
 .step.has-focus .tut__list li.is-active strong { color: var(--text-100); }
 
@@ -567,6 +576,7 @@ body.is-cover .tut__footer { display: none; }
   }
 
   .tut__title { font-size: 21px; }
+  .step.has-focus .tut__list li.is-active { font-size: 17px; }
   .cover__title { font-size: 38px; }
   .chapter__title { font-size: 28px; }
 
