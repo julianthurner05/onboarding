@@ -240,8 +240,6 @@ body.is-cover .tut__footer { display: none; }
   box-shadow: none;
 }
 
-.tut__nav-btn--back.ghost-btn { border-color: transparent; color: var(--text-55); }
-.tut__nav-btn--back.ghost-btn:hover { background: var(--hover); color: var(--text-100); }
 
 .timeline {
   position: relative;
