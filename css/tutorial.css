@@ -291,12 +291,12 @@ body.is-cover .tut__footer { display: none; }
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background: var(--nav-active);
+  background: color-mix(in srgb, #ffffff 24%, var(--dunkelblau));   /* deckend, aber gedeckt */
   transition: background var(--transition),
               box-shadow var(--transition), transform var(--transition);
 }
 
-.tl-dot:hover { background: #ffffff; }
+.tl-dot:hover { background: color-mix(in srgb, #ffffff 42%, var(--dunkelblau)); }
 
 .tl-dot.is-done { background: var(--nav-active); }
 
