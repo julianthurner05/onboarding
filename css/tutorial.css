@@ -309,7 +309,6 @@ body.is-cover .tut__footer { display: none; }
 
 .tl-dot.is-current {
   background: var(--nav-active);
-  box-shadow: 0 0 0 3.5px var(--white-10), 0 0 14px var(--white-14);
   transform: scale(1.15);
 }
 
