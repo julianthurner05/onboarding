@@ -78,7 +78,7 @@ body.is-cover .tut__footer { display: none; }
 }
 
 .tut__list {
-  margin-top: 16px;
+  margin-top: 22px;
   list-style: none;
 }
 
@@ -89,8 +89,7 @@ body.is-cover .tut__footer { display: none; }
   letter-spacing: var(--ls-body);
   line-height: 1.6;
   color: var(--text-55);
-  transition: opacity var(--dur) var(--ease), color var(--dur) var(--ease),
-              font-size var(--dur) var(--ease);
+  transition: opacity var(--dur) var(--ease), color var(--dur) var(--ease);
 }
 
 .tut__list li::before {
@@ -115,8 +114,6 @@ body.is-cover .tut__footer { display: none; }
 
 .step.has-focus .tut__list li.is-active {
   opacity: 1;
-  font-size: 19px;
-  line-height: 1.6;
   color: var(--text-80);
 }
 
@@ -575,7 +572,6 @@ body.is-cover .tut__footer { display: none; }
   }
 
   .tut__title { font-size: 21px; }
-  .step.has-focus .tut__list li.is-active { font-size: 17px; }
   .cover__title { font-size: 38px; }
   .chapter__title { font-size: 28px; }
 
