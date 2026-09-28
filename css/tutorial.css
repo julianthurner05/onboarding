@@ -305,10 +305,10 @@ body.is-cover .tut__footer { display: none; }
 
 .tl-dot:hover { background: color-mix(in srgb, #ffffff 42%, var(--dunkelblau)); }
 
-.tl-dot.is-done { background: var(--nav-active); }
+.tl-dot.is-done { background: #ffffff; }
 
 .tl-dot.is-current {
-  background: var(--nav-active);
+  background: #ffffff;
   transform: scale(1.15);
 }
 
