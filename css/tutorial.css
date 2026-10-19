@@ -233,11 +233,18 @@ body.is-cover .tut__footer { display: none; }
 .tut__nav-btn { flex-shrink: 0; }
 .tut__nav-btn.is-hidden { visibility: hidden; pointer-events: none; }
 
-/* Navigation dezent: Weiter als Ghost-Button, Zurück nur Text */
+/* Navigation: dezente Ghost-Buttons, aber gut sichtbar */
+.tut__nav-btn.ghost-btn,
+.tut__nav-btn--next.primary-btn {
+  border-color: var(--white-25);
+  color: var(--text-80);
+}
+
+.tut__nav-btn .icon { width: 16px; height: 16px; }
+
 .tut__nav-btn--next.primary-btn {
   background: none;
-  border: var(--hair-w) solid var(--white-14);
-  color: var(--text-66);
+  border: var(--hair-w) solid var(--white-25);
 }
 
 .tut__nav-btn--next.primary-btn:hover {
@@ -324,6 +331,27 @@ body.is-cover .tut__footer { display: none; }
    EXHIBITS – kleine Anpassungen, damit die Original-Komponenten
    freistehend funktionieren (Layout-Regeln der App neutralisieren)
    ================================================================ */
+
+/* Kleine Exponate größer und besser lesbar – nur wenn Platz ist */
+@media (min-width: 1241px) {
+  .exhibit--title,
+  .exhibit--create,
+  .exhibit--send,
+  .exhibit--tags,
+  .exhibit--blacklist { transform: scale(1.2); }
+}
+
+@media (min-width: 1500px) {
+  .exhibit--title,
+  .exhibit--create,
+  .exhibit--send,
+  .exhibit--tags,
+  .exhibit--blacklist { transform: scale(1.3); }
+}
+
+.exhibit .composer__stats { color: var(--text-55); }
+.exhibit .composer__stats strong { color: var(--text-100); }
+.exhibit .ghost-btn--sm { color: var(--text-100); border-color: var(--white-25); }
 
 /* Exponate sind Anschauung, nichts ist klickbar: keine Hover,
    keine Tooltips. Nur Kalender-Slots und der Show-titles-Schalter

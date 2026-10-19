@@ -68,6 +68,7 @@
         <ul class="tut__list">
           <li data-part="login-main">Melde dich mit deiner <strong>E-Mail-Adresse</strong> und deinem <strong>Passwort</strong> an.</li>
           <li data-part="login-forgot">Passwort vergessen? <strong>Forgot password</strong> schickt dir einen Link per E-Mail. Aus Sicherheitsgründen ist er nur <strong>30 Minuten</strong> gültig.</li>
+          <li data-part="login-main">Richte nach dem ersten Login am besten gleich die <strong>Zwei-Faktor-Authentifizierung</strong> ein. Wie das geht, zeigt dir der Bereich <strong>Account</strong>.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -147,10 +148,11 @@
     <!-- 3 · Dashboard -->
     <section class="step" data-group="start" data-dot="3">
       <header class="tut__head">
-        <h1 class="tut__title">Das Dashboard</h1>
+        <h1 class="tut__title">Das Home Dashboard</h1>
         <ul class="tut__list">
           <li data-part="quota"><strong>Spots left this month</strong> zeigt dein Monatskontingent. Der Zähler setzt sich am <strong>Monatsersten</strong> zurück.</li>
-          <li data-part="activity">Daneben siehst du, wie viele Spots generiert wurden und was <strong>heute und diese Woche</strong> ansteht.</li>
+          <li data-part="generated">Daneben siehst du, wie viele Spots <strong>insgesamt</strong> und <strong>diesen Monat</strong> generiert wurden.</li>
+          <li data-part="week">Im Feld darunter siehst du, was <strong>heute und diese Woche</strong> ansteht.</li>
           <li data-part="shortcuts">Mit <strong>Create spot</strong> und <strong>Plan schedule</strong> springst du direkt in die Arbeit.</li>
         </ul>
       </header>
@@ -163,17 +165,17 @@
               <div class="home-stat__bar"><div class="home-stat__bar-fill" style="width: 31%"></div></div>
               <p class="home-stat__hint">of 100 in your plan · resets Oct 1</p>
             </div>
-            <div class="home-stat" data-part="activity">
+            <div class="home-stat" data-part="generated">
               <p class="home-stat__label">Spots generated</p>
               <p class="home-stat__value">143</p>
               <p class="home-stat__hint">31 this month</p>
             </div>
-            <div class="home-stat" data-part="activity">
+            <div class="home-stat" data-part="week">
               <p class="home-stat__label">Active schedules</p>
               <p class="home-stat__value">5</p>
               <p class="home-stat__hint">2 upcoming</p>
             </div>
-            <div class="home-stat" data-part="activity">
+            <div class="home-stat" data-part="week">
               <p class="home-stat__label">Announcements this week</p>
               <p class="home-stat__value">46</p>
               <p class="home-stat__hint">8 today</p>
@@ -201,15 +203,15 @@
       <header class="tut__head">
         <h1 class="tut__title">Titel vergeben</h1>
         <ul class="tut__list">
-          <li data-part="title">Jeder Spot beginnt mit einem Titel. Er erscheint überall wieder: in der <strong>History</strong>, im <strong>Scheduler</strong> und im <strong>Kalender</strong>.</li>
-          <li data-part="title">Wähle einen Namen, den du <strong>wiedererkennst</strong>, am besten Aktion plus Zeitraum.</li>
+          <li data-part="title">Jeder Spot beginnt mit der <strong>Titelvergabe</strong>. Er erscheint überall wieder: in der <strong>History</strong>, im <strong>Scheduler</strong> und im <strong>Kalender</strong>.</li>
+          <li data-part="title">Wähle einen <strong>sprechenden Titel</strong>, den du leicht wiedererkennst, zum Beispiel Aktion plus Zeitraum.</li>
         </ul>
       </header>
       <div class="tut__stage">
         <div class="exhibit exhibit--title">
           <div class="title-field" data-part="title">
             <label class="title-field__label">Title</label>
-            <input class="title-field__input" type="text" value="IKEA Family Angebot RIAN Beistelltisch" readonly>
+            <input class="title-field__input" type="text" value="IKEA Family Angebot RIAN Beistelltisch KW 43" readonly>
           </div>
         </div>
       </div>
@@ -220,7 +222,7 @@
       <header class="tut__head">
         <h1 class="tut__title">Text schreiben</h1>
         <ul class="tut__list">
-          <li data-part="first">Hier schreibst du den <strong>Text</strong>, den die synthetische Stimme sprechen soll.</li>
+          <li data-part="first">Hier schreibst du den <strong>Text</strong>, den deine <strong>Brand Voice</strong> sprechen soll.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -240,8 +242,8 @@ Lebe Smart!</textarea>
       <header class="tut__head">
         <h1 class="tut__title">Second Language</h1>
         <ul class="tut__list">
-          <li data-part="toggle">Über den <strong>Second Language</strong> Button klappst du den zweiten Textbereich auf und zu.</li>
-          <li data-part="second">Der zweite Text landet im <strong>selben Spot</strong> und wird direkt nach der ersten Sprache gesprochen.</li>
+          <li data-part="toggle">Über den <strong>Second Language</strong> Button klappst du den Textbereich für die <strong>Zweitsprache</strong> auf und zu.</li>
+          <li data-part="second">Der Text landet im <strong>selben Spot</strong> und wird direkt nach der ersten Sprache angehängt.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -273,8 +275,8 @@ Lebe Smart!</textarea>
       <header class="tut__head">
         <h1 class="tut__title">Create Spot drücken</h1>
         <ul class="tut__list">
-          <li data-part="create">Die Generierung dauert einen <strong>kurzen Moment</strong>. Jeder Spot zählt gegen dein <strong>Monatskontingent</strong>.</li>
-          <li data-part="stats"><strong>Wortzahl</strong> und ungefähre <strong>Sprechdauer</strong> zeigen dir vorab, wie lang der Spot wird.</li>
+          <li data-part="create">Die Generierung dauert einen <strong>kurzen Moment</strong>.</li>
+          <li data-part="stats"><strong>Wortzahl</strong> und ungefähre <strong>Sprechdauer</strong> zeigen dir vorab, wie lang der Spot dauern wird.</li>
           <li data-part="clear"><strong>Clear all</strong> leert alle Felder, wenn du neu starten willst.</li>
         </ul>
       </header>
@@ -413,6 +415,7 @@ Lebe Smart!</textarea>
           <li data-part="tag-new"><strong>New</strong>: Der Spot wurde gerade generiert.</li>
           <li data-part="tag-sched"><strong>Scheduled</strong>: Der Spot ist im Scheduler eingeplant.</li>
           <li data-part="tag-rec"><strong>Received</strong>: Der Spot wurde dir per E-Mail zugestellt.</li>
+          <li data-part="tag-sched tag-rec">Jeder Spot mit dem Tag <strong>Received</strong> oder <strong>Scheduled</strong> zählt gegen dein <strong>Monatskontingent</strong>.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -435,8 +438,10 @@ Lebe Smart!</textarea>
       <header class="tut__head">
         <h1 class="tut__title">Die Blacklist</h1>
         <ul class="tut__list">
-          <li data-part="toast">Bestimmte Begriffe stehen auf der <strong>Blacklist</strong> und dürfen in Durchsagen nicht vorkommen.</li>
-          <li data-part="toast">Enthält dein Text so einen Begriff, wird der Spot <strong>nicht generiert</strong>. Die Meldung zeigt dir, welche Wörter betroffen sind, und du kannst den Text anpassen.</li>
+          <li data-part="toast">Die Blacklist ist <strong>kein sichtbares Feature</strong> im Tool, sie arbeitet im Hintergrund.</li>
+          <li data-part="toast">Bestimmte <strong>Wörter und Phrasen</strong> stehen auf der Blacklist und dürfen in Durchsagen nicht vorkommen.</li>
+          <li data-part="toast">Enthält dein Text einen davon, wird der Spot <strong>nicht generiert</strong>. Die Meldung zeigt dir, welche Wörter betroffen sind, und du kannst den Text anpassen.</li>
+          <li data-part="toast">Die aktuelle Blacklist deines Unternehmens erfragst du intern bei deinem <strong>Product Owner</strong>.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -452,20 +457,24 @@ Lebe Smart!</textarea>
     <!-- 11 · Best Practices SpotTool -->
     <section class="step" data-group="spottool" data-dot="12">
       <header class="tut__head">
-        <h1 class="tut__title">Best Practices</h1>
+        <h1 class="tut__title">Best Practice</h1>
       </header>
       <div class="tut__stage">
         <div class="exhibit">
           <div class="finale">
-            <p class="finale__title">Best Practices · SpotTool</p>
+            <p class="finale__title">Best Practice · SpotTool</p>
             <div class="finale__list">
               <div class="finale__row">
                 <svg class="icon"><use href="#i-check"/></svg>
-                <span><strong>Immer gegenhören</strong>, bevor du einen Spot einplanst.</span>
+                <span><strong>Klar benennen:</strong> Titel mit Aktion und Zeitraum.</span>
               </div>
               <div class="finale__row">
                 <svg class="icon"><use href="#i-check"/></svg>
-                <span><strong>Klar benennen:</strong> Titel mit Aktion und Zeitraum.</span>
+                <span><strong>Immer prüfend gegenhören</strong>, bevor du einen Spot empfängst oder einplanst.</span>
+              </div>
+              <div class="finale__row">
+                <svg class="icon"><use href="#i-check"/></svg>
+                <span><strong>Spots löschen</strong>, die du nicht verwenden willst.</span>
               </div>
               <div class="finale__row">
                 <svg class="icon"><use href="#i-check"/></svg>
@@ -490,9 +499,9 @@ Lebe Smart!</textarea>
     <!-- 11 · Audio wählen -->
     <section class="step" data-group="scheduler" data-dot="13">
       <header class="tut__head">
-        <h1 class="tut__title">Audio wählen</h1>
+        <h1 class="tut__title">Spot zum Einplanen wählen: Choose Audio</h1>
         <ul class="tut__list">
-          <li data-part="rows">Der Picker zeigt alle fertigen Spots. Du kannst sie direkt <strong>vorhören</strong>.</li>
+          <li data-part="rows">Der Picker zeigt alle deine fertigen Spots. Du kannst sie direkt <strong>vorhören</strong>.</li>
           <li data-part="choose">Mit <strong>Choose</strong> übernimmst du den Spot in die Planung.</li>
         </ul>
       </header>
@@ -557,7 +566,7 @@ Lebe Smart!</textarea>
         <ul class="tut__list">
           <li data-part="type"><strong>Single Day</strong>: ein einzelner Tag, zum Beispiel für eine Tagesaktion.</li>
           <li data-part="dates days"><strong>Weekly</strong>: ein Zeitraum mit <strong>Start</strong> und <strong>Ende</strong> plus den gewünschten <strong>Wochentagen</strong>.</li>
-          <li data-part="infinite">Das <strong>∞</strong> im Enddatum-Feld heißt: die Planung läuft, bis du sie beendest.</li>
+          <li data-part="infinite">Das <strong>∞</strong> im Enddatum-Feld heißt: die <strong>Ausspielung</strong> läuft so lange, bis du sie beendest.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -610,7 +619,7 @@ Lebe Smart!</textarea>
     <!-- 13 · Die Zeit -->
     <section class="step" data-group="scheduler" data-dot="15">
       <header class="tut__head">
-        <h1 class="tut__title">Die Zeit</h1>
+        <h1 class="tut__title">Zeit oder Zeitraum festlegen</h1>
         <ul class="tut__list">
           <li data-part="mode"><strong>Once per Day</strong>: eine feste Uhrzeit.</li>
           <li data-part="interval"><strong>Repeat</strong>: im Intervall, hier zum Beispiel alle 2 Stunden von 10 bis 18 Uhr.</li>
@@ -681,16 +690,20 @@ Lebe Smart!</textarea>
     <!-- 15 · Best Practices Scheduler -->
     <section class="step" data-group="scheduler" data-dot="17">
       <header class="tut__head">
-        <h1 class="tut__title">Best Practices</h1>
+        <h1 class="tut__title">Best Practice</h1>
       </header>
       <div class="tut__stage">
         <div class="exhibit">
           <div class="finale">
-            <p class="finale__title">Best Practices · Scheduler</p>
+            <p class="finale__title">Best Practice · Scheduler</p>
             <div class="finale__list">
               <div class="finale__row">
                 <svg class="icon"><use href="#i-check"/></svg>
-                <span><strong>Enddatum setzen</strong>, statt Planungen unendlich laufen zu lassen.</span>
+                <span><strong>Dauerhafte Spots</strong>, wie die Morgendurchsage, ohne Enddatum mit <strong>∞</strong> planen.</span>
+              </div>
+              <div class="finale__row">
+                <svg class="icon"><use href="#i-check"/></svg>
+                <span>Bei <strong>temporären Spots</strong> wie Aktionen nicht vergessen, das korrekte <strong>Enddatum</strong> zu setzen.</span>
               </div>
               <div class="finale__row">
                 <svg class="icon"><use href="#i-check"/></svg>
@@ -721,7 +734,7 @@ Lebe Smart!</textarea>
       <header class="tut__head">
         <h1 class="tut__title">Das Raster</h1>
         <ul class="tut__list">
-          <li data-part="rows">Jede <strong>Zeile</strong> steht für einen 30-Minuten-Slot.</li>
+          <li data-part="rows">Jede <strong>Zeile</strong> steht für einen <strong>Time-Slot</strong>.</li>
           <li data-part="cols">Jede <strong>Spalte</strong> ist ein Tag deiner Woche.</li>
         </ul>
       </header>
@@ -1501,7 +1514,7 @@ Lebe Smart!</textarea>
         <ul class="tut__list">
           <li data-part="profile"><strong>Profil</strong>: Name, E-Mail-Adresse und letzter Login auf einen Blick.</li>
           <li data-part="password"><strong>Change password</strong> schickt dir einen sicheren Link per E-Mail. Er ist <strong>30 Minuten</strong> gültig.</li>
-          <li data-part="mfa">Die <strong>Zwei-Faktor-Authentifizierung</strong> ist mit einer Authenticator-App in zwei Minuten eingerichtet und sehr empfohlen.</li>
+          <li data-part="mfa">Die <strong>Zwei-Faktor-Authentifizierung</strong> ist mit einer Authenticator-App in zwei Minuten eingerichtet.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -1579,17 +1592,17 @@ Lebe Smart!</textarea>
             <button class="tl-dot" type="button" data-dot="9" data-tip="Das Mini-Menü" aria-label="Schritt 9"></button>
             <button class="tl-dot" type="button" data-dot="10" data-tip="Die Tags" aria-label="Schritt 10"></button>
             <button class="tl-dot" type="button" data-dot="11" data-tip="Die Blacklist" aria-label="Schritt 11"></button>
-            <button class="tl-dot" type="button" data-dot="12" data-tip="Best Practices" aria-label="Schritt 12"></button>
+            <button class="tl-dot" type="button" data-dot="12" data-tip="Best Practice" aria-label="Schritt 12"></button>
           </div>
           <span class="tl-group__label">SpotTool</span>
         </div>
         <div class="tl-group" data-group="scheduler">
           <div class="tl-group__dots">
-            <button class="tl-dot" type="button" data-dot="13" data-tip="Audio wählen" aria-label="Schritt 13"></button>
+            <button class="tl-dot" type="button" data-dot="13" data-tip="Choose Audio" aria-label="Schritt 13"></button>
             <button class="tl-dot" type="button" data-dot="14" data-tip="Single Day / Weekly" aria-label="Schritt 14"></button>
-            <button class="tl-dot" type="button" data-dot="15" data-tip="Die Zeit" aria-label="Schritt 15"></button>
+            <button class="tl-dot" type="button" data-dot="15" data-tip="Zeit oder Zeitraum" aria-label="Schritt 15"></button>
             <button class="tl-dot" type="button" data-dot="16" data-tip="Absenden" aria-label="Schritt 16"></button>
-            <button class="tl-dot" type="button" data-dot="17" data-tip="Best Practices" aria-label="Schritt 17"></button>
+            <button class="tl-dot" type="button" data-dot="17" data-tip="Best Practice" aria-label="Schritt 17"></button>
           </div>
           <span class="tl-group__label">Scheduler</span>
         </div>
