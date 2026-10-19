@@ -43,9 +43,11 @@
     const dot = displayDot();
     document.querySelectorAll('.tl-group__dots').forEach(g => g.style.setProperty('--mfill', '0px'));
     if (!dot || dot.offsetParent === null) { fill.style.width = '0px'; return; }
-    fill.style.width = `${dot.offsetLeft + dot.offsetWidth / 2 - fill.offsetLeft}px`;
+    /* nie negativ – ein ungültiger Wert würde still verworfen und die
+       Linie bliebe auf ihrer alten Breite stehen */
+    fill.style.width = `${Math.max(0, dot.offsetLeft + dot.offsetWidth / 2 - fill.offsetLeft)}px`;
     const row = dot.closest('.tl-group__dots');
-    if (row) row.style.setProperty('--mfill', `${dot.offsetLeft + dot.offsetWidth / 2 - 4}px`);
+    if (row) row.style.setProperty('--mfill', `${Math.max(0, dot.offsetLeft + dot.offsetWidth / 2 - 4)}px`);
   }
 
   function render() {
@@ -83,7 +85,8 @@
       g.classList.toggle('is-done', gDots.every(d => sectionByDot[d.dataset.dot] < current) && !gDots.includes(disp));
     });
 
-    requestAnimationFrame(paintFill);
+    paintFill();
+    requestAnimationFrame(paintFill);   /* Sicherheitsnetz nach Layout-Änderungen */
 
     btnBack.classList.toggle('is-hidden', current === 0);
     btnNext.classList.toggle('is-hidden', current === last);
