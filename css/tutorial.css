@@ -338,6 +338,7 @@ body.is-cover .tut__footer { display: none; }
   .exhibit--create,
   .exhibit--send,
   .exhibit--tags,
+  .exhibit--mfa,
   .exhibit--blacklist { transform: scale(1.2); }
 }
 
@@ -346,6 +347,7 @@ body.is-cover .tut__footer { display: none; }
   .exhibit--create,
   .exhibit--send,
   .exhibit--tags,
+  .exhibit--mfa,
   .exhibit--blacklist { transform: scale(1.3); }
 }
 
@@ -524,6 +526,9 @@ body.is-cover .tut__footer { display: none; }
 .exhibit--cal .cal-col__head { display: flex; }
 .exhibit--cal .cal-slot:hover { z-index: 50; }
 .exhibit--cal .cal-head { margin-bottom: 16px; justify-content: center; }
+
+/* ---- MFA ---- */
+.exhibit--mfa { width: min(420px, 100%); }
 
 /* ---- Account ---- */
 .exhibit--account {
