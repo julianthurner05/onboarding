@@ -812,6 +812,9 @@ body.is-cover .tut__footer { display: none; }
 
   .tut__title { font-size: 21px; }
   .cover__title { font-size: 38px; }
+
+  /* am Handy nur der aktive Bullet, damit die Bühne mehr Platz hat */
+  .step.has-focus .tut__list li:not(.is-active) { display: none; }
   .chapter__title { font-size: 28px; }
 
   .tut__stage {
