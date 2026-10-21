@@ -682,8 +682,14 @@ body.is-cover .tut__footer { display: none; }
 }
 
 /* ---- Best Practices (gedecktes Weiß wie Dialog / New-Karte) ---- */
+/* Tipps- und Best-Practice-Karten stehen alle exakt an derselben Stelle:
+   feste Breite der Hülle (sonst passt sie sich der längsten Zeile an)
+   und gleiche Mindesthöhe (die Bühne zentriert vertikal) */
+.exhibit:has(> .finale) { width: min(460px, 100%); }
+
 .finale {
-  width: min(460px, 100%);
+  width: 100%;
+  min-height: 352px;
   padding: var(--pad-panel);
   background: var(--card-new-bg);
   color: var(--text-inverse);
