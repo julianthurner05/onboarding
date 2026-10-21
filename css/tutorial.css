@@ -362,7 +362,6 @@ body.is-cover .tut__footer { display: none; }
   .exhibit--title,
   .exhibit--create,
   .exhibit--send,
-  .exhibit--tags,
   .exhibit--duration,
   .exhibit--blacklist { zoom: 1.2; }
 }
@@ -371,7 +370,6 @@ body.is-cover .tut__footer { display: none; }
   .exhibit--title,
   .exhibit--create,
   .exhibit--send,
-  .exhibit--tags,
   .exhibit--duration,
   .exhibit--blacklist { zoom: 1.3; }
 }
@@ -561,7 +559,10 @@ body.is-cover .tut__footer { display: none; }
   display: flex;
   align-items: center;
   gap: 12px;
+  zoom: 1.4;
 }
+
+@media (min-width: 1241px) { .exhibit--tags { zoom: 1.8; } }
 
 /* ---- Kalender (reine Ansicht) – Live-calendar.css, im Ausschnitt mit
         fester Slot-Höhe statt der Viewport-Formel des IFrames ---- */
