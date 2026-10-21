@@ -402,15 +402,13 @@ body.is-cover .tut__footer { display: none; }
   transform: none;
   width: 250px;
   height: auto;
-  padding: 30px 18px 22px;
+  padding: 0;
   background: none;
-  border: var(--hairline);
-  border-radius: var(--radius-lg);
+  border: none;
   overflow: visible;
 }
 
-.exhibit--nav .sidebar__logo { width: 124px; margin-top: 6px; }
-.exhibit--nav .sidebar__nav { margin-top: 40px; }
+.exhibit--nav .sidebar__nav { margin-top: 0; }
 .exhibit--nav .sidebar__bottom { margin-top: 34px; }
 .exhibit--nav .nav-item { pointer-events: none; }
 .exhibit--nav .nav-item__dot { display: block; }
