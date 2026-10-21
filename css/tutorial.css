@@ -473,14 +473,18 @@ body.is-cover .tut__footer { display: none; }
 
 /* ---- Create Spot ---- */
 .exhibit--create {
-  width: min(420px, 100%);
+  width: min(520px, 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 34px;
 }
 
+/* erst nur der Button, nach dem Klick nur noch die laufende Ladezeile */
 .exhibit--create .card--pending { align-self: stretch; }
+.exhibit--create .card--pending .card__title-row { max-width: 46%; }   /* breite Ladebahn */
+.exhibit--create[data-state="idle"] .card--pending,
+.exhibit--create[data-state="pending"] > .primary-btn { display: none; }
+.exhibit--create[data-state="pending"] .card--pending { animation: view-in var(--dur) var(--ease); }
 
 /* ---- Ergebnis / Kartenmenü ---- */
 .exhibit--result { width: min(420px, 100%); }
