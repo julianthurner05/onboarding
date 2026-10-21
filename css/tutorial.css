@@ -633,6 +633,14 @@ body.is-cover .tut__footer { display: none; }
   background: var(--text-25);
 }
 
+/* Code-Felder heben sich deutlich ab, wenn sie erklärt werden */
+.exhibit.has-focus .mfa-setup__code.is-hot span {
+  background: var(--menu-blau);
+  border: var(--hair-w) solid var(--white-25);
+}
+
+.exhibit.has-focus .mfa-setup__code.is-hot .mfa-setup__dash { background: var(--text-55); }
+
 .exhibit--mfa-setup .login__submit { margin-top: 26px; width: 100%; }
 
 /* gesperrte Buttons wie im Portal: gedecktes Grau, dunkle Schrift */
