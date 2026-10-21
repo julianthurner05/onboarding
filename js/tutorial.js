@@ -136,18 +136,22 @@
 
   window.addEventListener('resize', paintFill);
 
-  /* Kalender: belegte Slots klappen beim Überfahren auf (wie im Portal) */
+  /* Kalender: beim Überfahren leuchten alle Slots derselben Durchsage
+     auf (gleiche data-uid), wie im Live-Kalender */
   document.querySelectorAll('.cal-slot--spot').forEach(slot => {
-    slot.addEventListener('mouseenter', () => slot.classList.add('is-lit'));
-    slot.addEventListener('mouseleave', () => slot.classList.remove('is-lit'));
+    const view = slot.closest('.calendar-view');
+    const same = () => view.querySelectorAll(`.cal-slot--spot[data-uid="${slot.dataset.uid}"]`);
+    slot.addEventListener('mouseenter', () => same().forEach(x => x.classList.add('is-lit')));
+    slot.addEventListener('mouseleave', () => same().forEach(x => x.classList.remove('is-lit')));
   });
 
-  /* Show titles: der Schalter funktioniert wie im Portal */
-  document.querySelectorAll('.exhibit--cal .switch').forEach(sw => {
-    sw.addEventListener('click', () => {
-      const on = sw.classList.toggle('is-on');
-      sw.setAttribute('aria-checked', on);
-      sw.closest('.calendar-view').querySelector('.cal-grid').classList.toggle('show-titles', on);
+  /* Expand/Collapse: der Schalter funktioniert wie im Live-Kalender */
+  document.querySelectorAll('.exhibit--cal .density-toggle').forEach(t => {
+    t.addEventListener('click', () => {
+      const on = t.getAttribute('aria-checked') !== 'true';
+      t.setAttribute('aria-checked', on);
+      t.dataset.tip = on ? 'Collapse' : 'Expand';
+      t.closest('.calendar-view').dataset.density = on ? 'expanded' : 'collapsed';
     });
   });
 

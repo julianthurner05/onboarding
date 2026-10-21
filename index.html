@@ -12,11 +12,11 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/creation.css">
   <link rel="stylesheet" href="css/schedule.css">
-  <link rel="stylesheet" href="css/calendar.css">
+  <link rel="stylesheet" href="css/calendar.css?v=3">
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/login.css">
   <link rel="stylesheet" href="css/account.css">
-  <link rel="stylesheet" href="css/tutorial.css?v=2">
+  <link rel="stylesheet" href="css/tutorial.css?v=3">
 </head>
 <body>
 
@@ -35,6 +35,8 @@
     <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></symbol>
     <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
     <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-chevrons-down-up" viewBox="0 0 24 24"><path d="m7 20 5-5 5 5"/><path d="m7 4 5 5 5-5"/></symbol>
+    <symbol id="i-chevrons-up-down" viewBox="0 0 24 24"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></symbol>
     <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
     <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
     <symbol id="i-kebab" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></symbol>
@@ -102,22 +104,25 @@
       <header class="tut__head">
         <h1 class="tut__title">Zwei-Faktor-Authentifizierung</h1>
         <ul class="tut__list">
-          <li data-part="mfa-card">Schütze deinen Zugang zusätzlich mit einem <strong>Einmalcode</strong> aus einer Authenticator-App.</li>
-          <li data-part="mfa-card">Richte sie am besten gleich nach dem ersten Login ein: im Bereich <strong>Account</strong> über <strong>Set up</strong>, in zwei Minuten erledigt.</li>
+          <li data-part="mfa-qr">Nach dem ersten Login richtest du die <strong>Zwei-Faktor-Authentifizierung</strong> ein. Scanne dazu den QR-Code mit einer Authenticator-App, zum Beispiel <strong>Google</strong> oder <strong>Microsoft Authenticator</strong>.</li>
+          <li data-part="mfa-manual">Kein Scan möglich? Über <strong>Enter key manually</strong> gibst du den Schlüssel von Hand in der App ein.</li>
+          <li data-part="mfa-code">Trag den <strong>sechsstelligen Code</strong> ein, den dir die App anzeigt.</li>
+          <li data-part="mfa-submit">Mit <strong>Complete Setup</strong> schließt du die Einrichtung ab. Ab dann fragt der Login zusätzlich nach dem aktuellen Code aus der App.</li>
         </ul>
       </header>
       <div class="tut__stage">
-        <div class="exhibit exhibit--mfa">
-          <section class="acc-card acc-card--attention" data-part="mfa-card">
-            <div class="acc-card__head">
-              <h2 class="acc-card__title">Two-factor authentication</h2>
-              <span class="acc-status">Recommended</span>
-            </div>
-            <p class="acc-text">Protect your account with a one-time code from an authenticator app.</p>
-            <div class="acc-card__actions">
-              <button class="primary-btn primary-btn--small" type="button">Set up</button>
-            </div>
-          </section>
+        <div class="exhibit exhibit--mfa-setup">
+          <h2 class="mfa-setup__title">MFA Setup</h2>
+          <p class="mfa-setup__sub" data-part="mfa-qr">Scan the QR code with an authenticator app (e.g. Google or Microsoft Authenticator).</p>
+          <div class="mfa-setup__qr" data-part="mfa-qr"><svg viewBox="0 0 25 25" shape-rendering="crispEdges" aria-hidden="true"><g fill="#0c0e29"><rect x="0" y="0" width="1" height="1"/><rect x="1" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="5" y="0" width="1" height="1"/><rect x="6" y="0" width="1" height="1"/><rect x="8" y="0" width="1" height="1"/><rect x="9" y="0" width="1" height="1"/><rect x="10" y="0" width="1" height="1"/><rect x="14" y="0" width="1" height="1"/><rect x="15" y="0" width="1" height="1"/><rect x="18" y="0" width="1" height="1"/><rect x="19" y="0" width="1" height="1"/><rect x="20" y="0" width="1" height="1"/><rect x="21" y="0" width="1" height="1"/><rect x="22" y="0" width="1" height="1"/><rect x="23" y="0" width="1" height="1"/><rect x="24" y="0" width="1" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="6" y="1" width="1" height="1"/><rect x="9" y="1" width="1" height="1"/><rect x="14" y="1" width="1" height="1"/><rect x="18" y="1" width="1" height="1"/><rect x="24" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="6" y="2" width="1" height="1"/><rect x="11" y="2" width="1" height="1"/><rect x="14" y="2" width="1" height="1"/><rect x="15" y="2" width="1" height="1"/><rect x="16" y="2" width="1" height="1"/><rect x="18" y="2" width="1" height="1"/><rect x="20" y="2" width="1" height="1"/><rect x="21" y="2" width="1" height="1"/><rect x="22" y="2" width="1" height="1"/><rect x="24" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="6" y="3" width="1" height="1"/><rect x="14" y="3" width="1" height="1"/><rect x="16" y="3" width="1" height="1"/><rect x="18" y="3" width="1" height="1"/><rect x="20" y="3" width="1" height="1"/><rect x="21" y="3" width="1" height="1"/><rect x="22" y="3" width="1" height="1"/><rect x="24" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/><rect x="6" y="4" width="1" height="1"/><rect x="9" y="4" width="1" height="1"/><rect x="10" y="4" width="1" height="1"/><rect x="11" y="4" width="1" height="1"/><rect x="12" y="4" width="1" height="1"/><rect x="14" y="4" width="1" height="1"/><rect x="15" y="4" width="1" height="1"/><rect x="16" y="4" width="1" height="1"/><rect x="18" y="4" width="1" height="1"/><rect x="20" y="4" width="1" height="1"/><rect x="21" y="4" width="1" height="1"/><rect x="22" y="4" width="1" height="1"/><rect x="24" y="4" width="1" height="1"/><rect x="0" y="5" width="1" height="1"/><rect x="6" y="5" width="1" height="1"/><rect x="8" y="5" width="1" height="1"/><rect x="9" y="5" width="1" height="1"/><rect x="10" y="5" width="1" height="1"/><rect x="11" y="5" width="1" height="1"/><rect x="12" y="5" width="1" height="1"/><rect x="13" y="5" width="1" height="1"/><rect x="14" y="5" width="1" height="1"/><rect x="18" y="5" width="1" height="1"/><rect x="24" y="5" width="1" height="1"/><rect x="0" y="6" width="1" height="1"/><rect x="1" y="6" width="1" height="1"/><rect x="2" y="6" width="1" height="1"/><rect x="3" y="6" width="1" height="1"/><rect x="4" y="6" width="1" height="1"/><rect x="5" y="6" width="1" height="1"/><rect x="6" y="6" width="1" height="1"/><rect x="8" y="6" width="1" height="1"/><rect x="10" y="6" width="1" height="1"/><rect x="12" y="6" width="1" height="1"/><rect x="14" y="6" width="1" height="1"/><rect x="16" y="6" width="1" height="1"/><rect x="18" y="6" width="1" height="1"/><rect x="19" y="6" width="1" height="1"/><rect x="20" y="6" width="1" height="1"/><rect x="21" y="6" width="1" height="1"/><rect x="22" y="6" width="1" height="1"/><rect x="23" y="6" width="1" height="1"/><rect x="24" y="6" width="1" height="1"/><rect x="9" y="7" width="1" height="1"/><rect x="11" y="7" width="1" height="1"/><rect x="12" y="7" width="1" height="1"/><rect x="13" y="7" width="1" height="1"/><rect x="14" y="7" width="1" height="1"/><rect x="15" y="7" width="1" height="1"/><rect x="16" y="7" width="1" height="1"/><rect x="0" y="8" width="1" height="1"/><rect x="1" y="8" width="1" height="1"/><rect x="2" y="8" width="1" height="1"/><rect x="4" y="8" width="1" height="1"/><rect x="6" y="8" width="1" height="1"/><rect x="7" y="8" width="1" height="1"/><rect x="8" y="8" width="1" height="1"/><rect x="11" y="8" width="1" height="1"/><rect x="12" y="8" width="1" height="1"/><rect x="17" y="8" width="1" height="1"/><rect x="20" y="8" width="1" height="1"/><rect x="21" y="8" width="1" height="1"/><rect x="0" y="9" width="1" height="1"/><rect x="2" y="9" width="1" height="1"/><rect x="4" y="9" width="1" height="1"/><rect x="5" y="9" width="1" height="1"/><rect x="7" y="9" width="1" height="1"/><rect x="8" y="9" width="1" height="1"/><rect x="9" y="9" width="1" height="1"/><rect x="10" y="9" width="1" height="1"/><rect x="13" y="9" width="1" height="1"/><rect x="17" y="9" width="1" height="1"/><rect x="19" y="9" width="1" height="1"/><rect x="0" y="10" width="1" height="1"/><rect x="1" y="10" width="1" height="1"/><rect x="2" y="10" width="1" height="1"/><rect x="3" y="10" width="1" height="1"/><rect x="6" y="10" width="1" height="1"/><rect x="8" y="10" width="1" height="1"/><rect x="10" y="10" width="1" height="1"/><rect x="11" y="10" width="1" height="1"/><rect x="13" y="10" width="1" height="1"/><rect x="17" y="10" width="1" height="1"/><rect x="19" y="10" width="1" height="1"/><rect x="20" y="10" width="1" height="1"/><rect x="21" y="10" width="1" height="1"/><rect x="22" y="10" width="1" height="1"/><rect x="2" y="11" width="1" height="1"/><rect x="3" y="11" width="1" height="1"/><rect x="7" y="11" width="1" height="1"/><rect x="9" y="11" width="1" height="1"/><rect x="13" y="11" width="1" height="1"/><rect x="15" y="11" width="1" height="1"/><rect x="16" y="11" width="1" height="1"/><rect x="19" y="11" width="1" height="1"/><rect x="21" y="11" width="1" height="1"/><rect x="22" y="11" width="1" height="1"/><rect x="0" y="12" width="1" height="1"/><rect x="1" y="12" width="1" height="1"/><rect x="2" y="12" width="1" height="1"/><rect x="3" y="12" width="1" height="1"/><rect x="5" y="12" width="1" height="1"/><rect x="6" y="12" width="1" height="1"/><rect x="9" y="12" width="1" height="1"/><rect x="11" y="12" width="1" height="1"/><rect x="12" y="12" width="1" height="1"/><rect x="13" y="12" width="1" height="1"/><rect x="14" y="12" width="1" height="1"/><rect x="15" y="12" width="1" height="1"/><rect x="17" y="12" width="1" height="1"/><rect x="18" y="12" width="1" height="1"/><rect x="19" y="12" width="1" height="1"/><rect x="21" y="12" width="1" height="1"/><rect x="2" y="13" width="1" height="1"/><rect x="4" y="13" width="1" height="1"/><rect x="5" y="13" width="1" height="1"/><rect x="7" y="13" width="1" height="1"/><rect x="9" y="13" width="1" height="1"/><rect x="11" y="13" width="1" height="1"/><rect x="12" y="13" width="1" height="1"/><rect x="13" y="13" width="1" height="1"/><rect x="15" y="13" width="1" height="1"/><rect x="16" y="13" width="1" height="1"/><rect x="17" y="13" width="1" height="1"/><rect x="18" y="13" width="1" height="1"/><rect x="20" y="13" width="1" height="1"/><rect x="21" y="13" width="1" height="1"/><rect x="22" y="13" width="1" height="1"/><rect x="23" y="13" width="1" height="1"/><rect x="0" y="14" width="1" height="1"/><rect x="1" y="14" width="1" height="1"/><rect x="2" y="14" width="1" height="1"/><rect x="4" y="14" width="1" height="1"/><rect x="5" y="14" width="1" height="1"/><rect x="6" y="14" width="1" height="1"/><rect x="9" y="14" width="1" height="1"/><rect x="10" y="14" width="1" height="1"/><rect x="11" y="14" width="1" height="1"/><rect x="14" y="14" width="1" height="1"/><rect x="16" y="14" width="1" height="1"/><rect x="17" y="14" width="1" height="1"/><rect x="18" y="14" width="1" height="1"/><rect x="22" y="14" width="1" height="1"/><rect x="0" y="15" width="1" height="1"/><rect x="3" y="15" width="1" height="1"/><rect x="4" y="15" width="1" height="1"/><rect x="8" y="15" width="1" height="1"/><rect x="9" y="15" width="1" height="1"/><rect x="10" y="15" width="1" height="1"/><rect x="12" y="15" width="1" height="1"/><rect x="17" y="15" width="1" height="1"/><rect x="20" y="15" width="1" height="1"/><rect x="22" y="15" width="1" height="1"/><rect x="0" y="16" width="1" height="1"/><rect x="2" y="16" width="1" height="1"/><rect x="4" y="16" width="1" height="1"/><rect x="6" y="16" width="1" height="1"/><rect x="8" y="16" width="1" height="1"/><rect x="10" y="16" width="1" height="1"/><rect x="11" y="16" width="1" height="1"/><rect x="12" y="16" width="1" height="1"/><rect x="14" y="16" width="1" height="1"/><rect x="15" y="16" width="1" height="1"/><rect x="16" y="16" width="1" height="1"/><rect x="19" y="16" width="1" height="1"/><rect x="21" y="16" width="1" height="1"/><rect x="23" y="16" width="1" height="1"/><rect x="24" y="16" width="1" height="1"/><rect x="8" y="17" width="1" height="1"/><rect x="9" y="17" width="1" height="1"/><rect x="11" y="17" width="1" height="1"/><rect x="18" y="17" width="1" height="1"/><rect x="21" y="17" width="1" height="1"/><rect x="0" y="18" width="1" height="1"/><rect x="1" y="18" width="1" height="1"/><rect x="2" y="18" width="1" height="1"/><rect x="3" y="18" width="1" height="1"/><rect x="4" y="18" width="1" height="1"/><rect x="5" y="18" width="1" height="1"/><rect x="6" y="18" width="1" height="1"/><rect x="8" y="18" width="1" height="1"/><rect x="9" y="18" width="1" height="1"/><rect x="11" y="18" width="1" height="1"/><rect x="12" y="18" width="1" height="1"/><rect x="14" y="18" width="1" height="1"/><rect x="16" y="18" width="1" height="1"/><rect x="17" y="18" width="1" height="1"/><rect x="18" y="18" width="1" height="1"/><rect x="20" y="18" width="1" height="1"/><rect x="21" y="18" width="1" height="1"/><rect x="22" y="18" width="1" height="1"/><rect x="24" y="18" width="1" height="1"/><rect x="0" y="19" width="1" height="1"/><rect x="6" y="19" width="1" height="1"/><rect x="8" y="19" width="1" height="1"/><rect x="9" y="19" width="1" height="1"/><rect x="10" y="19" width="1" height="1"/><rect x="13" y="19" width="1" height="1"/><rect x="14" y="19" width="1" height="1"/><rect x="16" y="19" width="1" height="1"/><rect x="19" y="19" width="1" height="1"/><rect x="21" y="19" width="1" height="1"/><rect x="0" y="20" width="1" height="1"/><rect x="2" y="20" width="1" height="1"/><rect x="3" y="20" width="1" height="1"/><rect x="4" y="20" width="1" height="1"/><rect x="6" y="20" width="1" height="1"/><rect x="9" y="20" width="1" height="1"/><rect x="10" y="20" width="1" height="1"/><rect x="12" y="20" width="1" height="1"/><rect x="15" y="20" width="1" height="1"/><rect x="16" y="20" width="1" height="1"/><rect x="17" y="20" width="1" height="1"/><rect x="18" y="20" width="1" height="1"/><rect x="24" y="20" width="1" height="1"/><rect x="0" y="21" width="1" height="1"/><rect x="2" y="21" width="1" height="1"/><rect x="3" y="21" width="1" height="1"/><rect x="4" y="21" width="1" height="1"/><rect x="6" y="21" width="1" height="1"/><rect x="8" y="21" width="1" height="1"/><rect x="10" y="21" width="1" height="1"/><rect x="13" y="21" width="1" height="1"/><rect x="18" y="21" width="1" height="1"/><rect x="19" y="21" width="1" height="1"/><rect x="21" y="21" width="1" height="1"/><rect x="23" y="21" width="1" height="1"/><rect x="0" y="22" width="1" height="1"/><rect x="2" y="22" width="1" height="1"/><rect x="3" y="22" width="1" height="1"/><rect x="4" y="22" width="1" height="1"/><rect x="6" y="22" width="1" height="1"/><rect x="8" y="22" width="1" height="1"/><rect x="9" y="22" width="1" height="1"/><rect x="11" y="22" width="1" height="1"/><rect x="12" y="22" width="1" height="1"/><rect x="14" y="22" width="1" height="1"/><rect x="18" y="22" width="1" height="1"/><rect x="23" y="22" width="1" height="1"/><rect x="24" y="22" width="1" height="1"/><rect x="0" y="23" width="1" height="1"/><rect x="6" y="23" width="1" height="1"/><rect x="8" y="23" width="1" height="1"/><rect x="9" y="23" width="1" height="1"/><rect x="11" y="23" width="1" height="1"/><rect x="15" y="23" width="1" height="1"/><rect x="16" y="23" width="1" height="1"/><rect x="17" y="23" width="1" height="1"/><rect x="18" y="23" width="1" height="1"/><rect x="23" y="23" width="1" height="1"/><rect x="0" y="24" width="1" height="1"/><rect x="1" y="24" width="1" height="1"/><rect x="2" y="24" width="1" height="1"/><rect x="3" y="24" width="1" height="1"/><rect x="4" y="24" width="1" height="1"/><rect x="5" y="24" width="1" height="1"/><rect x="6" y="24" width="1" height="1"/><rect x="10" y="24" width="1" height="1"/><rect x="11" y="24" width="1" height="1"/><rect x="12" y="24" width="1" height="1"/><rect x="13" y="24" width="1" height="1"/><rect x="15" y="24" width="1" height="1"/><rect x="18" y="24" width="1" height="1"/><rect x="19" y="24" width="1" height="1"/><rect x="20" y="24" width="1" height="1"/><rect x="22" y="24" width="1" height="1"/></g></svg></div>
+          <p class="mfa-setup__link" data-part="mfa-manual">Can't scan QR code? Enter key manually</p>
+          <div class="mfa-setup__code" data-part="mfa-code">
+            <span></span><span></span><span></span><i class="mfa-setup__dash"></i><span></span><span></span><span></span>
+          </div>
+          <button class="login__submit is-disabled" type="button" data-part="mfa-submit">
+            <span>Complete Setup</span>
+            <svg class="icon"><use href="#i-arrow-right"/></svg>
+          </button>
         </div>
       </div>
     </section>
@@ -300,7 +305,6 @@ Lebe Smart!</textarea>
         <h1 class="tut__title">Create Spot drücken</h1>
         <ul class="tut__list">
           <li data-part="create">Die Generierung dauert einen <strong>kurzen Moment</strong>.</li>
-          <li data-part="stats"><strong>Wortzahl</strong> und ungefähre <strong>Sprechdauer</strong> zeigen dir vorab, wie lang der Spot dauern wird.</li>
           <li data-part="clear"><strong>Clear all</strong> leert alle Felder, wenn du neu starten willst.</li>
         </ul>
       </header>
@@ -314,8 +318,8 @@ Lebe Smart!</textarea>
           </div>
           <div class="composer__footer">
             <div class="composer__stats" data-part="stats">
-              <span><strong>40</strong> words</span>
-              <span>≈ <strong>18 s</strong> speaking time</span>
+              <span><strong>40</strong> words · 40 / 0</span>
+              <span>~ <strong>0:18</strong> / 0:50 spoken</span>
             </div>
             <button class="primary-btn" type="button" data-part="create">
               <svg class="icon"><use href="#i-wave"/></svg>
@@ -326,8 +330,44 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
-    <!-- 7 · Ergebnis anhören -->
+    <!-- Spotlänge -->
     <section class="step" data-group="spottool" data-dot="9">
+      <header class="tut__head">
+        <h1 class="tut__title">Die Spotlänge</h1>
+        <ul class="tut__list">
+          <li data-part="d-words">Unten links siehst du die <strong>Wortzahl</strong>, gesamt und pro Sprache.</li>
+          <li data-part="d-time">Daneben steht die ungefähre <strong>Sprechdauer</strong>. Ein Spot darf höchstens <strong>0:50</strong> lang sein.</li>
+          <li data-part="d-over">Ist der Text zu lang, wird die Dauer <strong>rot</strong> und <strong>Create Spot</strong> ist gesperrt. Kürze den Text, bis du wieder unter 0:50 liegst.</li>
+        </ul>
+      </header>
+      <div class="tut__stage">
+        <div class="exhibit exhibit--duration">
+          <div class="composer__footer" data-part="d-words d-time">
+            <div class="composer__stats">
+              <span data-part="d-words"><strong>40</strong> words · 40 / 0</span>
+              <span data-part="d-time">~ <strong>0:18</strong> / 0:50 spoken</span>
+            </div>
+            <button class="primary-btn" type="button">
+              <svg class="icon"><use href="#i-wave"/></svg>
+              <span>Create Spot</span>
+            </button>
+          </div>
+          <div class="composer__footer" data-part="d-over">
+            <div class="composer__stats">
+              <span><strong>101</strong> words · 23 / 78</span>
+              <span class="composer__time--over">~ <strong>0:55</strong> / 0:50 spoken</span>
+            </div>
+            <button class="primary-btn is-disabled" type="button">
+              <svg class="icon"><use href="#i-wave"/></svg>
+              <span>Create Spot</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 · Ergebnis anhören -->
+    <section class="step" data-group="spottool" data-dot="10">
       <header class="tut__head">
         <h1 class="tut__title">Ergebnis anhören</h1>
         <ul class="tut__list">
@@ -367,7 +407,7 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- 8 · Das Mini-Menü -->
-    <section class="step" data-group="spottool" data-dot="10">
+    <section class="step" data-group="spottool" data-dot="11">
       <header class="tut__head">
         <h1 class="tut__title">Das Mini-Menü</h1>
         <ul class="tut__list">
@@ -432,7 +472,7 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- 9 · Die Tags -->
-    <section class="step" data-group="spottool" data-dot="11">
+    <section class="step" data-group="spottool" data-dot="12">
       <header class="tut__head">
         <h1 class="tut__title">Die Tags</h1>
         <ul class="tut__list">
@@ -458,14 +498,13 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- 10 · Die Blacklist -->
-    <section class="step" data-group="spottool" data-dot="12">
+    <section class="step" data-group="spottool" data-dot="13">
       <header class="tut__head">
         <h1 class="tut__title">Die Blacklist</h1>
         <ul class="tut__list">
           <li data-part="toast">Die Blacklist ist <strong>kein sichtbares Feature</strong> im Tool, sie arbeitet im Hintergrund.</li>
           <li data-part="toast">Bestimmte <strong>Wörter und Phrasen</strong> stehen auf der Blacklist und dürfen in Durchsagen nicht vorkommen.</li>
           <li data-part="toast">Enthält dein Text einen davon, wird der Spot <strong>nicht generiert</strong>. Die Meldung zeigt dir, welche Wörter betroffen sind, und du kannst den Text anpassen.</li>
-          <li data-part="toast">Die aktuelle Blacklist deines Unternehmens erfragst du intern bei deinem <strong>Product Owner</strong>.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -478,8 +517,40 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
+    <!-- Tipps & Tricks -->
+    <section class="step" data-group="spottool" data-dot="14">
+      <header class="tut__head">
+        <h1 class="tut__title">Tipps &amp; Tricks</h1>
+      </header>
+      <div class="tut__stage">
+        <div class="exhibit">
+          <div class="finale">
+            <p class="finale__title">Tipps &amp; Tricks · Aussprache</p>
+            <div class="finale__list">
+              <div class="finale__row">
+                <svg class="icon"><use href="#i-check"/></svg>
+                <span><strong>Auf Produktnamen achten.</strong> Klingt etwas nicht richtig, generier den Spot einfach noch einmal. Die Aussprache fällt jedes Mal ein wenig anders aus.</span>
+              </div>
+              <div class="finale__row">
+                <svg class="icon"><use href="#i-check"/></svg>
+                <span><strong>Beistriche steuern den Rhythmus.</strong> An jedem Beistrich setzt die Stimme eine kurze Pause.</span>
+              </div>
+              <div class="finale__row">
+                <svg class="icon"><use href="#i-check"/></svg>
+                <span><strong>Pause an der falschen Stelle?</strong> Teil den Satz mit Beistrichen oder verbinde zusammengehörige Wörter mit Bindestrichen.</span>
+              </div>
+              <div class="finale__row">
+                <svg class="icon"><use href="#i-check"/></svg>
+                <span><strong>Kürzere Sätze</strong> funktionieren generell besser.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 11 · Best Practices SpotTool -->
-    <section class="step" data-group="spottool" data-dot="13">
+    <section class="step" data-group="spottool" data-dot="15">
       <header class="tut__head">
         <h1 class="tut__title">Best Practice</h1>
       </header>
@@ -521,7 +592,7 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- 11 · Audio wählen -->
-    <section class="step" data-group="scheduler" data-dot="14">
+    <section class="step" data-group="scheduler" data-dot="16">
       <header class="tut__head">
         <h1 class="tut__title">Spot zum Einplanen wählen: Choose Audio</h1>
         <ul class="tut__list">
@@ -584,7 +655,7 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- 12 · Single Day / Weekly -->
-    <section class="step" data-group="scheduler" data-dot="15">
+    <section class="step" data-group="scheduler" data-dot="17">
       <header class="tut__head">
         <h1 class="tut__title">Single Day oder Weekly</h1>
         <ul class="tut__list">
@@ -641,7 +712,7 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- 13 · Die Zeit -->
-    <section class="step" data-group="scheduler" data-dot="16">
+    <section class="step" data-group="scheduler" data-dot="18">
       <header class="tut__head">
         <h1 class="tut__title">Zeit oder Zeitraum festlegen</h1>
         <ul class="tut__list">
@@ -692,7 +763,7 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- 14 · Absenden -->
-    <section class="step" data-group="scheduler" data-dot="17">
+    <section class="step" data-group="scheduler" data-dot="19">
       <header class="tut__head">
         <h1 class="tut__title">Absenden</h1>
         <ul class="tut__list">
@@ -712,7 +783,7 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- 15 · Best Practices Scheduler -->
-    <section class="step" data-group="scheduler" data-dot="18">
+    <section class="step" data-group="scheduler" data-dot="20">
       <header class="tut__head">
         <h1 class="tut__title">Best Practice</h1>
       </header>
@@ -754,776 +825,397 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- Calendar · Raster / Slots / Woche und Jetzt -->
-    <section class="step" data-group="calendar" data-dot="19">
+    <section class="step" data-group="calendar" data-dot="21">
       <header class="tut__head">
         <h1 class="tut__title">Das Raster</h1>
         <ul class="tut__list">
-          <li data-part="rows">Jede <strong>Zeile</strong> steht für einen <strong>Time-Slot</strong>.</li>
+          <li data-part="rows">Jede <strong>Zeile</strong> steht für einen Time-Slot von <strong>15 Minuten</strong>.</li>
           <li data-part="cols">Jede <strong>Spalte</strong> ist ein Tag deiner Woche.</li>
         </ul>
       </header>
       <div class="tut__stage">
         <div class="exhibit exhibit--cal">
-          <div class="calendar-view">
+          <div class="calendar-view" data-density="collapsed">
             <div class="cal-head">
               <div class="cal-week" data-part="grid">
-                <button class="cal-week__nav" aria-label="Previous week">
-                  <svg class="icon"><use href="#i-chevron-left"/></svg>
-                </button>
-                <span class="cal-week__label">29 Sep – 05 Oct 2025</span>
-                <button class="cal-week__nav" aria-label="Next week">
-                  <svg class="icon"><use href="#i-chevron-right"/></svg>
-                </button>
+                <button class="cal-week__nav" type="button" aria-label="Previous week"><svg class="icon"><use href="#i-chevron-left"/></svg></button>
+                <span class="cal-week__label">Oct 19 – 24, 2026</span>
+                <button class="cal-week__nav" type="button" aria-label="Next week"><svg class="icon"><use href="#i-chevron-right"/></svg></button>
               </div>
+              <button class="cal-today" type="button" data-part="grid">Today</button>
+              <div class="cal-legend" data-part="grid">
+                <span class="cal-legend__item"><span class="cal-legend__dot" style="background:var(--cat-closing)"></span>Opening/Closing</span>
+                <span class="cal-legend__item"><span class="cal-legend__dot" style="background:var(--cat-standard)"></span>Standard</span>
+                <span class="cal-legend__item"><span class="cal-legend__dot" style="background:var(--cat-commercial)"></span>Commercial</span>
+                <span class="cal-legend__item"><span class="cal-legend__dot" style="background:var(--cat-special)"></span>Special</span>
+              </div>
+              <button class="density-toggle" type="button" role="switch" aria-checked="false" aria-label="Expanded view" data-tip="Expand" data-tip-pos="bottom" data-part="grid">
+                <span class="density-toggle__knob"></span>
+                <svg class="icon density-toggle__icon density-toggle__icon--collapsed"><use href="#i-chevrons-down-up"/></svg>
+                <svg class="icon density-toggle__icon density-toggle__icon--expanded"><use href="#i-chevrons-up-down"/></svg>
+              </button>
             </div>
             <div class="cal-days" data-part="cols">
-              <button class="cal-days__btn" type="button"><span>Mon</span><span>29</span></button>
-              <button class="cal-days__btn" type="button"><span>Tue</span><span>30</span></button>
-              <button class="cal-days__btn is-active" type="button"><span>Wed</span><span>01</span></button>
-              <button class="cal-days__btn" type="button"><span>Thu</span><span>02</span></button>
-              <button class="cal-days__btn" type="button"><span>Fri</span><span>03</span></button>
-              <button class="cal-days__btn" type="button"><span>Sat</span><span>04</span></button>
-              <button class="cal-days__btn" type="button"><span>Sun</span><span>05</span></button>
+              <button class="cal-days__btn" type="button"><span>Mo</span><span>19</span></button>
+              <button class="cal-days__btn" type="button"><span>Tu</span><span>20</span></button>
+              <button class="cal-days__btn is-active" type="button"><span>We</span><span>21</span></button>
+              <button class="cal-days__btn" type="button"><span>Th</span><span>22</span></button>
+              <button class="cal-days__btn" type="button"><span>Fr</span><span>23</span></button>
+              <button class="cal-days__btn" type="button"><span>Sa</span><span>24</span></button>
             </div>
-            <div class="cal-grid" id="calgrid-a">
+            <div class="cal-grid" style="--cal-cols: 3">
               <div class="cal-col cal-col--time">
                 <div class="cal-col__head"></div>
                 <div class="cal-col__body">
-                  <div class="cal-time" data-part="rows">09:00</div>
-                  <div class="cal-time" data-part="rows">09:30</div>
-                  <div class="cal-time" data-part="rows">10:00</div>
-                  <div class="cal-time" data-part="rows">10:30</div>
-                  <div class="cal-time" data-part="rows">11:00</div>
-                  <div class="cal-time" data-part="rows">11:30</div>
-                  <div class="cal-time" data-part="rows">12:00</div>
+                    <div class="cal-time" data-part="rows">10:00</div>
+                    <div class="cal-time"></div>
+                    <div class="cal-time cal-time--half" data-part="rows">10:30</div>
+                    <div class="cal-time"></div>
+                    <div class="cal-time" data-part="rows">11:00</div>
+                    <div class="cal-time"></div>
+                    <div class="cal-time cal-time--half" data-part="rows">11:30</div>
+                    <div class="cal-time"></div>
+                    <div class="cal-time" data-part="rows">12:00</div>
+                    <div class="cal-time"></div>
+                    <div class="cal-time cal-time--half" data-part="rows">12:30</div>
+                    <div class="cal-time"></div>
+                    <div class="cal-time" data-part="rows">13:00</div>
+                    <div class="cal-time"></div>
+                    <div class="cal-time cal-time--half" data-part="rows">13:30</div>
+                    <div class="cal-time"></div>
                 </div>
               </div>
-              <div class="cal-col">
-                <div class="cal-col__head" data-part="cols">Mon <span class="cal-col__date">29</span></div>
-                <div class="cal-col__body">
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">09:00</span>
-                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">09:45</span>
-                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FAMILY Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">10:00</span>
-                        <span class="cal-slot__text">IKEA FAMILY Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">SCAN & PAY Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">10:30</span>
-                        <span class="cal-slot__text">SCAN & PAY Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA Geschenkkarte Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">11:00</span>
-                        <span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">Neuer Gesenkter Preis Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">11:30</span>
-                        <span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">ZLS Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">12:00</span>
-                        <span class="cal-slot__text">ZLS Durchsage</span>
-                      </div>
-                    </div>
+                <div class="cal-col">
+                  <div class="cal-col__head" data-part="cols">Mon<span class="cal-col__date">19</span></div>
+                  <div class="cal-col__body">
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="47" style="--cat:var(--cat-standard);z-index:51"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">10:00</span><span class="cal-slot__text">IKEA FAMILY Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:50"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="50" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:49"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">10:30</span><span class="cal-slot__text">Weihnachtsmarkt Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:48"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="54" style="--cat:var(--cat-standard);z-index:47"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">11:00</span><span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:46"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="56" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:45"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">11:30</span><span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:44"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="59" style="--cat:var(--cat-standard);z-index:43"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">12:00</span><span class="cal-slot__text">Zweite Chance Markt Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:42"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="50" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:41"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">12:30</span><span class="cal-slot__text">Weihnachtsmarkt Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:40"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="47" style="--cat:var(--cat-standard);z-index:39"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">13:00</span><span class="cal-slot__text">IKEA FAMILY Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:38"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="56" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:37"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">13:30</span><span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:36"><div class="cal-slot__inner"></div></div>
                   </div>
                 </div>
-              </div>
-              <div class="cal-col">
-                <div class="cal-col__head" data-part="cols">Tue <span class="cal-col__date">30</span></div>
-                <div class="cal-col__body">
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">09:00</span>
-                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">09:45</span>
-                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FAMILY Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">10:00</span>
-                        <span class="cal-slot__text">IKEA FAMILY Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">SCAN & PAY Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">10:30</span>
-                        <span class="cal-slot__text">SCAN & PAY Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA Geschenkkarte Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">11:00</span>
-                        <span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">Neuer Gesenkter Preis Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">11:30</span>
-                        <span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">ZLS Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">12:00</span>
-                        <span class="cal-slot__text">ZLS Durchsage</span>
-                      </div>
-                    </div>
+                <div class="cal-col">
+                  <div class="cal-col__head" data-part="cols">Tue<span class="cal-col__date">20</span></div>
+                  <div class="cal-col__body">
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="47" style="--cat:var(--cat-standard);z-index:51"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">10:00</span><span class="cal-slot__text">IKEA FAMILY Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:50"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="50" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:49"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">10:30</span><span class="cal-slot__text">Weihnachtsmarkt Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:48"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="54" style="--cat:var(--cat-standard);z-index:47"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">11:00</span><span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:46"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="56" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:45"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">11:30</span><span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:44"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="59" style="--cat:var(--cat-standard);z-index:43"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">12:00</span><span class="cal-slot__text">Zweite Chance Markt Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:42"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="50" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:41"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">12:30</span><span class="cal-slot__text">Weihnachtsmarkt Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:40"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="47" style="--cat:var(--cat-standard);z-index:39"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">13:00</span><span class="cal-slot__text">IKEA FAMILY Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:38"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="56" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:37"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">13:30</span><span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:36"><div class="cal-slot__inner"></div></div>
                   </div>
                 </div>
-              </div>
-              <div class="cal-col cal-col--today">
-                <div class="cal-col__head" data-part="cols">Wed <span class="cal-col__date">01</span></div>
-                <div class="cal-col__body">
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">09:00</span>
-                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
-                      </div>
-                    </div>
+                <div class="cal-col cal-col--today">
+                  <div class="cal-col__head" data-part="cols">Wed<span class="cal-col__date">21</span></div>
+                  <div class="cal-col__body">
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="48" style="--cat:var(--cat-standard);z-index:51"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">10:00</span><span class="cal-slot__text">IKEA FAMILY Durchsage (Mittwoch &amp; Samstag)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:50"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="51" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:49"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">10:30</span><span class="cal-slot__text">Weihnachtsmarkt Durchsage (Mittwoch &amp; Samstag)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:48"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="55" style="--cat:var(--cat-standard);z-index:47"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">11:00</span><span class="cal-slot__text">IKEA Geschenkkarte Durchsage (Mittwoch)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:46"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="57" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:45"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">11:30</span><span class="cal-slot__text">Neuer Gesenkter Preis Durchsage (Mittwoch &amp; Samstag)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:44"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="60" style="--cat:var(--cat-standard);z-index:43"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">12:00</span><span class="cal-slot__text">Zweite Chance Markt Durchsage (Mittwoch &amp; Samstag)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:42"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="51" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:41"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">12:30</span><span class="cal-slot__text">Weihnachtsmarkt Durchsage (Mittwoch &amp; Samstag)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:40"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="48" style="--cat:var(--cat-standard);z-index:39"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">13:00</span><span class="cal-slot__text">IKEA FAMILY Durchsage (Mittwoch &amp; Samstag)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:38"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="57" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:37"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">13:30</span><span class="cal-slot__text">Neuer Gesenkter Preis Durchsage (Mittwoch &amp; Samstag)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:36"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-now" data-part="grid" style="top: calc(7.47 * (var(--slot-h) + var(--slot-gap)))"></div>
                   </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">09:45</span>
-                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FAMILY Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">10:00</span>
-                        <span class="cal-slot__text">IKEA FAMILY Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">SCAN & PAY Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">10:30</span>
-                        <span class="cal-slot__text">SCAN & PAY Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA Geschenkkarte Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">11:00</span>
-                        <span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">Neuer Gesenkter Preis Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">11:30</span>
-                        <span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">ZLS Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">12:00</span>
-                        <span class="cal-slot__text">ZLS Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-now" data-part="grid" style="top: 64%"></div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="step" data-group="calendar" data-dot="20">
+    <section class="step" data-group="calendar" data-dot="22">
       <header class="tut__head">
         <h1 class="tut__title">Die Slots</h1>
         <ul class="tut__list">
-          <li data-part="spots">Die gefüllten Slots sind deine <strong>geplanten Durchsagen</strong>.</li>
-          <li data-part="spots">Fahr mit der Maus über einen Slot: Er zeigt dir <strong>Uhrzeit und Titel</strong>.</li>
-          <li data-part="titles">Mit <strong>Show titles</strong> blendest du die Titel dauerhaft in die Slots ein. Probier es aus!</li>
+          <li data-part="spots">Die gefüllten Slots sind deine <strong>eingeplanten Durchsagen</strong>.</li>
+          <li data-part="spots">Fahr mit der Maus über einen Slot: Er zeigt dir <strong>Uhrzeit und Titel</strong>, und alle Slots derselben Durchsage leuchten mit auf.</li>
+          <li data-part="legend">Die <strong>Farbe</strong> zeigt die Kategorie: Opening/Closing, Standard, Commercial oder Special.</li>
+          <li data-part="density">Mit <strong>Expand</strong> klappst du den Kalender auf: Die Slots werden größer und zeigen ihre Titel dauerhaft. <strong>Collapse</strong> bringt dich zurück zur kompakten Ansicht. Probier es aus!</li>
         </ul>
       </header>
       <div class="tut__stage">
         <div class="exhibit exhibit--cal">
-          <div class="calendar-view">
+          <div class="calendar-view" data-density="collapsed">
             <div class="cal-head">
               <div class="cal-week" data-part="grid">
-                <button class="cal-week__nav" aria-label="Previous week">
-                  <svg class="icon"><use href="#i-chevron-left"/></svg>
-                </button>
-                <span class="cal-week__label">29 Sep – 05 Oct 2025</span>
-                <button class="cal-week__nav" aria-label="Next week">
-                  <svg class="icon"><use href="#i-chevron-right"/></svg>
-                </button>
+                <button class="cal-week__nav" type="button" aria-label="Previous week"><svg class="icon"><use href="#i-chevron-left"/></svg></button>
+                <span class="cal-week__label">Oct 19 – 24, 2026</span>
+                <button class="cal-week__nav" type="button" aria-label="Next week"><svg class="icon"><use href="#i-chevron-right"/></svg></button>
               </div>
-              <label class="cal-toggle" data-part="titles">
-                <span>Show titles</span>
-                <button class="switch" type="button" role="switch" aria-checked="false"><span class="switch__knob"></span></button>
-              </label>
+              <button class="cal-today" type="button" data-part="grid">Today</button>
+              <div class="cal-legend" data-part="legend">
+                <span class="cal-legend__item"><span class="cal-legend__dot" style="background:var(--cat-closing)"></span>Opening/Closing</span>
+                <span class="cal-legend__item"><span class="cal-legend__dot" style="background:var(--cat-standard)"></span>Standard</span>
+                <span class="cal-legend__item"><span class="cal-legend__dot" style="background:var(--cat-commercial)"></span>Commercial</span>
+                <span class="cal-legend__item"><span class="cal-legend__dot" style="background:var(--cat-special)"></span>Special</span>
+              </div>
+              <button class="density-toggle" type="button" role="switch" aria-checked="false" aria-label="Expanded view" data-tip="Expand" data-tip-pos="bottom" data-part="density">
+                <span class="density-toggle__knob"></span>
+                <svg class="icon density-toggle__icon density-toggle__icon--collapsed"><use href="#i-chevrons-down-up"/></svg>
+                <svg class="icon density-toggle__icon density-toggle__icon--expanded"><use href="#i-chevrons-up-down"/></svg>
+              </button>
             </div>
             <div class="cal-days" data-part="grid">
-              <button class="cal-days__btn" type="button"><span>Mon</span><span>29</span></button>
-              <button class="cal-days__btn" type="button"><span>Tue</span><span>30</span></button>
-              <button class="cal-days__btn is-active" type="button"><span>Wed</span><span>01</span></button>
-              <button class="cal-days__btn" type="button"><span>Thu</span><span>02</span></button>
-              <button class="cal-days__btn" type="button"><span>Fri</span><span>03</span></button>
-              <button class="cal-days__btn" type="button"><span>Sat</span><span>04</span></button>
-              <button class="cal-days__btn" type="button"><span>Sun</span><span>05</span></button>
+              <button class="cal-days__btn" type="button"><span>Mo</span><span>19</span></button>
+              <button class="cal-days__btn" type="button"><span>Tu</span><span>20</span></button>
+              <button class="cal-days__btn is-active" type="button"><span>We</span><span>21</span></button>
+              <button class="cal-days__btn" type="button"><span>Th</span><span>22</span></button>
+              <button class="cal-days__btn" type="button"><span>Fr</span><span>23</span></button>
+              <button class="cal-days__btn" type="button"><span>Sa</span><span>24</span></button>
             </div>
-            <div class="cal-grid" id="calgrid-b">
+            <div class="cal-grid" style="--cal-cols: 3">
               <div class="cal-col cal-col--time">
                 <div class="cal-col__head"></div>
                 <div class="cal-col__body">
-                  <div class="cal-time" data-part="grid">09:00</div>
-                  <div class="cal-time" data-part="grid">09:30</div>
-                  <div class="cal-time" data-part="grid">10:00</div>
-                  <div class="cal-time" data-part="grid">10:30</div>
-                  <div class="cal-time" data-part="grid">11:00</div>
-                  <div class="cal-time" data-part="grid">11:30</div>
-                  <div class="cal-time" data-part="grid">12:00</div>
+                    <div class="cal-time" data-part="grid">10:00</div>
+                    <div class="cal-time"></div>
+                    <div class="cal-time cal-time--half" data-part="grid">10:30</div>
+                    <div class="cal-time"></div>
+                    <div class="cal-time" data-part="grid">11:00</div>
+                    <div class="cal-time"></div>
+                    <div class="cal-time cal-time--half" data-part="grid">11:30</div>
+                    <div class="cal-time"></div>
+                    <div class="cal-time" data-part="grid">12:00</div>
+                    <div class="cal-time"></div>
+                    <div class="cal-time cal-time--half" data-part="grid">12:30</div>
+                    <div class="cal-time"></div>
+                    <div class="cal-time" data-part="grid">13:00</div>
+                    <div class="cal-time"></div>
+                    <div class="cal-time cal-time--half" data-part="grid">13:30</div>
+                    <div class="cal-time"></div>
                 </div>
               </div>
-              <div class="cal-col">
-                <div class="cal-col__head" data-part="grid">Mon <span class="cal-col__date">29</span></div>
-                <div class="cal-col__body">
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">09:00</span>
-                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">09:45</span>
-                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FAMILY Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">10:00</span>
-                        <span class="cal-slot__text">IKEA FAMILY Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">SCAN & PAY Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">10:30</span>
-                        <span class="cal-slot__text">SCAN & PAY Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA Geschenkkarte Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">11:00</span>
-                        <span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">Neuer Gesenkter Preis Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">11:30</span>
-                        <span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">ZLS Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">12:00</span>
-                        <span class="cal-slot__text">ZLS Durchsage</span>
-                      </div>
-                    </div>
+                <div class="cal-col">
+                  <div class="cal-col__head" data-part="grid">Mon<span class="cal-col__date">19</span></div>
+                  <div class="cal-col__body">
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="47" style="--cat:var(--cat-standard);z-index:51"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">10:00</span><span class="cal-slot__text">IKEA FAMILY Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:50"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="50" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:49"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">10:30</span><span class="cal-slot__text">Weihnachtsmarkt Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:48"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="54" style="--cat:var(--cat-standard);z-index:47"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">11:00</span><span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:46"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="56" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:45"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">11:30</span><span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:44"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="59" style="--cat:var(--cat-standard);z-index:43"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">12:00</span><span class="cal-slot__text">Zweite Chance Markt Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:42"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="50" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:41"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">12:30</span><span class="cal-slot__text">Weihnachtsmarkt Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:40"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="47" style="--cat:var(--cat-standard);z-index:39"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">13:00</span><span class="cal-slot__text">IKEA FAMILY Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:38"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="56" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:37"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">13:30</span><span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:36"><div class="cal-slot__inner"></div></div>
                   </div>
                 </div>
-              </div>
-              <div class="cal-col">
-                <div class="cal-col__head" data-part="grid">Tue <span class="cal-col__date">30</span></div>
-                <div class="cal-col__body">
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">09:00</span>
-                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">09:45</span>
-                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FAMILY Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">10:00</span>
-                        <span class="cal-slot__text">IKEA FAMILY Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">SCAN & PAY Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">10:30</span>
-                        <span class="cal-slot__text">SCAN & PAY Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA Geschenkkarte Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">11:00</span>
-                        <span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">Neuer Gesenkter Preis Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">11:30</span>
-                        <span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">ZLS Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">12:00</span>
-                        <span class="cal-slot__text">ZLS Durchsage</span>
-                      </div>
-                    </div>
+                <div class="cal-col">
+                  <div class="cal-col__head" data-part="grid">Tue<span class="cal-col__date">20</span></div>
+                  <div class="cal-col__body">
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="47" style="--cat:var(--cat-standard);z-index:51"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">10:00</span><span class="cal-slot__text">IKEA FAMILY Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:50"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="50" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:49"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">10:30</span><span class="cal-slot__text">Weihnachtsmarkt Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:48"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="54" style="--cat:var(--cat-standard);z-index:47"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">11:00</span><span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:46"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="56" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:45"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">11:30</span><span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:44"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="59" style="--cat:var(--cat-standard);z-index:43"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">12:00</span><span class="cal-slot__text">Zweite Chance Markt Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:42"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="50" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:41"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">12:30</span><span class="cal-slot__text">Weihnachtsmarkt Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:40"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="47" style="--cat:var(--cat-standard);z-index:39"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">13:00</span><span class="cal-slot__text">IKEA FAMILY Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:38"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="56" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:37"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">13:30</span><span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:36"><div class="cal-slot__inner"></div></div>
                   </div>
                 </div>
-              </div>
-              <div class="cal-col cal-col--today">
-                <div class="cal-col__head" data-part="grid">Wed <span class="cal-col__date">01</span></div>
-                <div class="cal-col__body">
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">09:00</span>
-                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
-                      </div>
-                    </div>
+                <div class="cal-col cal-col--today">
+                  <div class="cal-col__head" data-part="grid">Wed<span class="cal-col__date">21</span></div>
+                  <div class="cal-col__body">
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="48" style="--cat:var(--cat-standard);z-index:51"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">10:00</span><span class="cal-slot__text">IKEA FAMILY Durchsage (Mittwoch &amp; Samstag)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:50"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="51" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:49"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">10:30</span><span class="cal-slot__text">Weihnachtsmarkt Durchsage (Mittwoch &amp; Samstag)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:48"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="55" style="--cat:var(--cat-standard);z-index:47"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">11:00</span><span class="cal-slot__text">IKEA Geschenkkarte Durchsage (Mittwoch)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:46"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="57" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:45"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">11:30</span><span class="cal-slot__text">Neuer Gesenkter Preis Durchsage (Mittwoch &amp; Samstag)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:44"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="60" style="--cat:var(--cat-standard);z-index:43"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">12:00</span><span class="cal-slot__text">Zweite Chance Markt Durchsage (Mittwoch &amp; Samstag)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:42"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="51" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:41"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">12:30</span><span class="cal-slot__text">Weihnachtsmarkt Durchsage (Mittwoch &amp; Samstag)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:40"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="48" style="--cat:var(--cat-standard);z-index:39"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">13:00</span><span class="cal-slot__text">IKEA FAMILY Durchsage (Mittwoch &amp; Samstag)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:38"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="spots" data-uid="57" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:37"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">13:30</span><span class="cal-slot__text">Neuer Gesenkter Preis Durchsage (Mittwoch &amp; Samstag)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:36"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-now" data-part="grid" style="top: calc(7.47 * (var(--slot-h) + var(--slot-gap)))"></div>
                   </div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">09:45</span>
-                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FAMILY Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">10:00</span>
-                        <span class="cal-slot__text">IKEA FAMILY Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">SCAN & PAY Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">10:30</span>
-                        <span class="cal-slot__text">SCAN & PAY Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA Geschenkkarte Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">11:00</span>
-                        <span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">Neuer Gesenkter Preis Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">11:30</span>
-                        <span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="spots" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">ZLS Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">12:00</span>
-                        <span class="cal-slot__text">ZLS Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-now" data-part="grid" style="top: 64%"></div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="step" data-group="calendar" data-dot="21">
+    <section class="step" data-group="calendar" data-dot="23">
       <header class="tut__head">
         <h1 class="tut__title">Woche und Jetzt</h1>
         <ul class="tut__list">
-          <li data-part="week">Mit den <strong>Pfeilen</strong> wechselst du zwischen den Wochen.</li>
+          <li data-part="week">Mit den <strong>Pfeilen</strong> wechselst du zwischen den Wochen, <strong>Today</strong> bringt dich zur aktuellen Woche zurück.</li>
           <li data-part="now">Die weiße Linie zeigt den <strong>aktuellen Zeitpunkt</strong>.</li>
         </ul>
       </header>
       <div class="tut__stage">
         <div class="exhibit exhibit--cal">
-          <div class="calendar-view">
+          <div class="calendar-view" data-density="collapsed">
             <div class="cal-head">
               <div class="cal-week" data-part="week">
-                <button class="cal-week__nav" aria-label="Previous week">
-                  <svg class="icon"><use href="#i-chevron-left"/></svg>
-                </button>
-                <span class="cal-week__label">29 Sep – 05 Oct 2025</span>
-                <button class="cal-week__nav" aria-label="Next week">
-                  <svg class="icon"><use href="#i-chevron-right"/></svg>
-                </button>
+                <button class="cal-week__nav" type="button" aria-label="Previous week"><svg class="icon"><use href="#i-chevron-left"/></svg></button>
+                <span class="cal-week__label">Oct 19 – 24, 2026</span>
+                <button class="cal-week__nav" type="button" aria-label="Next week"><svg class="icon"><use href="#i-chevron-right"/></svg></button>
               </div>
+              <button class="cal-today" type="button" data-part="week">Today</button>
+              <div class="cal-legend" data-part="grid">
+                <span class="cal-legend__item"><span class="cal-legend__dot" style="background:var(--cat-closing)"></span>Opening/Closing</span>
+                <span class="cal-legend__item"><span class="cal-legend__dot" style="background:var(--cat-standard)"></span>Standard</span>
+                <span class="cal-legend__item"><span class="cal-legend__dot" style="background:var(--cat-commercial)"></span>Commercial</span>
+                <span class="cal-legend__item"><span class="cal-legend__dot" style="background:var(--cat-special)"></span>Special</span>
+              </div>
+              <button class="density-toggle" type="button" role="switch" aria-checked="false" aria-label="Expanded view" data-tip="Expand" data-tip-pos="bottom" data-part="grid">
+                <span class="density-toggle__knob"></span>
+                <svg class="icon density-toggle__icon density-toggle__icon--collapsed"><use href="#i-chevrons-down-up"/></svg>
+                <svg class="icon density-toggle__icon density-toggle__icon--expanded"><use href="#i-chevrons-up-down"/></svg>
+              </button>
             </div>
             <div class="cal-days" data-part="grid">
-              <button class="cal-days__btn" type="button"><span>Mon</span><span>29</span></button>
-              <button class="cal-days__btn" type="button"><span>Tue</span><span>30</span></button>
-              <button class="cal-days__btn is-active" type="button"><span>Wed</span><span>01</span></button>
-              <button class="cal-days__btn" type="button"><span>Thu</span><span>02</span></button>
-              <button class="cal-days__btn" type="button"><span>Fri</span><span>03</span></button>
-              <button class="cal-days__btn" type="button"><span>Sat</span><span>04</span></button>
-              <button class="cal-days__btn" type="button"><span>Sun</span><span>05</span></button>
+              <button class="cal-days__btn" type="button"><span>Mo</span><span>19</span></button>
+              <button class="cal-days__btn" type="button"><span>Tu</span><span>20</span></button>
+              <button class="cal-days__btn is-active" type="button"><span>We</span><span>21</span></button>
+              <button class="cal-days__btn" type="button"><span>Th</span><span>22</span></button>
+              <button class="cal-days__btn" type="button"><span>Fr</span><span>23</span></button>
+              <button class="cal-days__btn" type="button"><span>Sa</span><span>24</span></button>
             </div>
-            <div class="cal-grid" id="calgrid-c">
+            <div class="cal-grid" style="--cal-cols: 3">
               <div class="cal-col cal-col--time">
                 <div class="cal-col__head"></div>
                 <div class="cal-col__body">
-                  <div class="cal-time" data-part="grid">09:00</div>
-                  <div class="cal-time" data-part="grid">09:30</div>
-                  <div class="cal-time" data-part="grid">10:00</div>
-                  <div class="cal-time" data-part="grid">10:30</div>
-                  <div class="cal-time" data-part="grid">11:00</div>
-                  <div class="cal-time" data-part="grid">11:30</div>
-                  <div class="cal-time" data-part="grid">12:00</div>
+                    <div class="cal-time" data-part="grid">10:00</div>
+                    <div class="cal-time"></div>
+                    <div class="cal-time cal-time--half" data-part="grid">10:30</div>
+                    <div class="cal-time"></div>
+                    <div class="cal-time" data-part="grid">11:00</div>
+                    <div class="cal-time"></div>
+                    <div class="cal-time cal-time--half" data-part="grid">11:30</div>
+                    <div class="cal-time"></div>
+                    <div class="cal-time" data-part="grid">12:00</div>
+                    <div class="cal-time"></div>
+                    <div class="cal-time cal-time--half" data-part="grid">12:30</div>
+                    <div class="cal-time"></div>
+                    <div class="cal-time" data-part="grid">13:00</div>
+                    <div class="cal-time"></div>
+                    <div class="cal-time cal-time--half" data-part="grid">13:30</div>
+                    <div class="cal-time"></div>
                 </div>
               </div>
-              <div class="cal-col">
-                <div class="cal-col__head" data-part="grid">Mon <span class="cal-col__date">29</span></div>
-                <div class="cal-col__body">
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">09:00</span>
-                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">09:45</span>
-                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FAMILY Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">10:00</span>
-                        <span class="cal-slot__text">IKEA FAMILY Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">SCAN & PAY Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">10:30</span>
-                        <span class="cal-slot__text">SCAN & PAY Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA Geschenkkarte Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">11:00</span>
-                        <span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">Neuer Gesenkter Preis Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">11:30</span>
-                        <span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">ZLS Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">12:00</span>
-                        <span class="cal-slot__text">ZLS Durchsage</span>
-                      </div>
-                    </div>
+                <div class="cal-col">
+                  <div class="cal-col__head" data-part="grid">Mon<span class="cal-col__date">19</span></div>
+                  <div class="cal-col__body">
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="47" style="--cat:var(--cat-standard);z-index:51"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">10:00</span><span class="cal-slot__text">IKEA FAMILY Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:50"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="50" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:49"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">10:30</span><span class="cal-slot__text">Weihnachtsmarkt Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:48"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="54" style="--cat:var(--cat-standard);z-index:47"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">11:00</span><span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:46"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="56" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:45"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">11:30</span><span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:44"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="59" style="--cat:var(--cat-standard);z-index:43"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">12:00</span><span class="cal-slot__text">Zweite Chance Markt Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:42"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="50" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:41"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">12:30</span><span class="cal-slot__text">Weihnachtsmarkt Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:40"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="47" style="--cat:var(--cat-standard);z-index:39"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">13:00</span><span class="cal-slot__text">IKEA FAMILY Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:38"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="56" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:37"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">13:30</span><span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:36"><div class="cal-slot__inner"></div></div>
                   </div>
                 </div>
-              </div>
-              <div class="cal-col">
-                <div class="cal-col__head" data-part="grid">Tue <span class="cal-col__date">30</span></div>
-                <div class="cal-col__body">
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">09:00</span>
-                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">09:45</span>
-                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FAMILY Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">10:00</span>
-                        <span class="cal-slot__text">IKEA FAMILY Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">SCAN & PAY Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">10:30</span>
-                        <span class="cal-slot__text">SCAN & PAY Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA Geschenkkarte Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">11:00</span>
-                        <span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">Neuer Gesenkter Preis Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">11:30</span>
-                        <span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">ZLS Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">12:00</span>
-                        <span class="cal-slot__text">ZLS Durchsage</span>
-                      </div>
-                    </div>
+                <div class="cal-col">
+                  <div class="cal-col__head" data-part="grid">Tue<span class="cal-col__date">20</span></div>
+                  <div class="cal-col__body">
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="47" style="--cat:var(--cat-standard);z-index:51"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">10:00</span><span class="cal-slot__text">IKEA FAMILY Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:50"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="50" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:49"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">10:30</span><span class="cal-slot__text">Weihnachtsmarkt Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:48"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="54" style="--cat:var(--cat-standard);z-index:47"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">11:00</span><span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:46"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="56" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:45"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">11:30</span><span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:44"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="59" style="--cat:var(--cat-standard);z-index:43"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">12:00</span><span class="cal-slot__text">Zweite Chance Markt Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:42"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="50" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:41"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">12:30</span><span class="cal-slot__text">Weihnachtsmarkt Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:40"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="47" style="--cat:var(--cat-standard);z-index:39"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">13:00</span><span class="cal-slot__text">IKEA FAMILY Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:38"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="56" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:37"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">13:30</span><span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span></div></div></div>
+                    <div class="cal-slot" style="z-index:36"><div class="cal-slot__inner"></div></div>
                   </div>
                 </div>
-              </div>
-              <div class="cal-col cal-col--today">
-                <div class="cal-col__head" data-part="grid">Wed <span class="cal-col__date">01</span></div>
-                <div class="cal-col__body">
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">09:00</span>
-                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
-                      </div>
-                    </div>
+                <div class="cal-col cal-col--today">
+                  <div class="cal-col__head" data-part="grid">Wed<span class="cal-col__date">21</span></div>
+                  <div class="cal-col__body">
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="48" style="--cat:var(--cat-standard);z-index:51"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">10:00</span><span class="cal-slot__text">IKEA FAMILY Durchsage (Mittwoch &amp; Samstag)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:50"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="51" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:49"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">10:30</span><span class="cal-slot__text">Weihnachtsmarkt Durchsage (Mittwoch &amp; Samstag)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:48"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="55" style="--cat:var(--cat-standard);z-index:47"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">11:00</span><span class="cal-slot__text">IKEA Geschenkkarte Durchsage (Mittwoch)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:46"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="57" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:45"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">11:30</span><span class="cal-slot__text">Neuer Gesenkter Preis Durchsage (Mittwoch &amp; Samstag)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:44"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="60" style="--cat:var(--cat-standard);z-index:43"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">12:00</span><span class="cal-slot__text">Zweite Chance Markt Durchsage (Mittwoch &amp; Samstag)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:42"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="51" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:41"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">12:30</span><span class="cal-slot__text">Weihnachtsmarkt Durchsage (Mittwoch &amp; Samstag)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:40"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="48" style="--cat:var(--cat-standard);z-index:39"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">13:00</span><span class="cal-slot__text">IKEA FAMILY Durchsage (Mittwoch &amp; Samstag)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:38"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-slot cal-slot--spot" data-part="grid" data-uid="57" style="--cat:var(--cat-commercial);--cat-tint:var(--cat-tint-commercial);--cat-tint-strong:var(--cat-tint-commercial-strong);z-index:37"><div class="cal-slot__inner"><div class="cal-slot__title"><span class="cal-slot__time">13:30</span><span class="cal-slot__text">Neuer Gesenkter Preis Durchsage (Mittwoch &amp; Samstag)</span></div></div></div>
+                    <div class="cal-slot" style="z-index:36"><div class="cal-slot__inner"></div></div>
+                    <div class="cal-now" data-part="now" style="top: calc(7.47 * (var(--slot-h) + var(--slot-gap)))"></div>
                   </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-food); --cat-tint: var(--cat-tint-food); --cat-tint-strong: var(--cat-tint-food-strong)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FOOD Frühstücksangebot</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">09:45</span>
-                        <span class="cal-slot__text">IKEA FOOD Frühstücksangebot</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA FAMILY Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">10:00</span>
-                        <span class="cal-slot__text">IKEA FAMILY Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">SCAN & PAY Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">10:30</span>
-                        <span class="cal-slot__text">SCAN & PAY Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">IKEA Geschenkkarte Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">11:00</span>
-                        <span class="cal-slot__text">IKEA Geschenkkarte Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">Neuer Gesenkter Preis Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">11:30</span>
-                        <span class="cal-slot__text">Neuer Gesenkter Preis Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-slot cal-slot--spot" data-part="grid" style="--cat: var(--cat-marketing)">
-                    <div class="cal-slot__inner">
-                      <span class="cal-slot__label">ZLS Durchsage</span>
-                      <div class="cal-slot__title">
-                        <span class="cal-slot__time">12:00</span>
-                        <span class="cal-slot__text">ZLS Durchsage</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cal-now" data-part="now" style="top: 64%"></div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
 
     <!-- ============ KAPITEL · ACCOUNT ============ -->
     <section class="step step--chapter" data-group="account">
@@ -1532,12 +1224,13 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- 17 · Konto & Sicherheit -->
-    <section class="step" data-group="account" data-dot="22">
+    <section class="step" data-group="account" data-dot="24">
       <header class="tut__head">
         <h1 class="tut__title">Konto &amp; Sicherheit</h1>
         <ul class="tut__list">
           <li data-part="profile"><strong>Profil</strong>: Name, E-Mail-Adresse und letzter Login auf einen Blick.</li>
           <li data-part="password"><strong>Change password</strong> schickt dir einen sicheren Link per E-Mail. Er ist <strong>30 Minuten</strong> gültig.</li>
+          <li data-part="mfa-on">Unter <strong>Two-factor authentication</strong> siehst du, ob die Zwei-Faktor-Authentifizierung aktiv ist. Über <strong>Manage</strong> verwaltest du sie.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -1561,6 +1254,44 @@ Lebe Smart!</textarea>
               <button class="primary-btn primary-btn--small" type="button">Change password</button>
             </div>
           </section>
+          <section class="acc-card acc-card--wide" data-part="mfa-on">
+            <div class="acc-card__head">
+              <h2 class="acc-card__title">Two-factor authentication</h2>
+              <span class="acc-status is-on">On</span>
+            </div>
+            <p class="acc-text">Two-factor authentication is active. Keep these backup codes somewhere safe:</p>
+            <div class="acc-card__actions">
+              <button class="ghost-btn" type="button">Manage</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- MFA verwalten -->
+    <section class="step" data-group="account" data-dot="25">
+      <header class="tut__head">
+        <h1 class="tut__title">MFA verwalten</h1>
+        <ul class="tut__list">
+          <li data-part="conf-entry">Über <strong>Manage</strong> öffnest du die <strong>MFA Configuration</strong>. Dort siehst du deinen eingerichteten Authenticator und wann er angelegt wurde.</li>
+          <li data-part="conf-remove">Mit <strong>Remove</strong> entfernst du ihn. Danach musst du <strong>sofort einen neuen Authenticator einrichten</strong>.</li>
+        </ul>
+      </header>
+      <div class="tut__stage">
+        <div class="exhibit exhibit--mfa-conf">
+          <h2 class="mfa-setup__title">MFA Configuration</h2>
+          <p class="mfa-setup__sub">Authenticator is already set up. Use the existing entry in your app to sign in.</p>
+          <div class="mfa-conf__card">
+            <div data-part="conf-entry">
+              <p class="mfa-conf__name">Authenticator</p>
+              <p class="mfa-conf__meta">TOTP · 16.10.2026, 17:41:05</p>
+            </div>
+            <button class="ghost-btn" type="button" data-part="conf-remove">
+              <svg class="icon"><use href="#i-trash"/></svg>
+              Remove
+            </button>
+          </div>
+          <p class="mfa-setup__link">Back to Account</p>
         </div>
       </div>
     </section>
@@ -1602,35 +1333,38 @@ Lebe Smart!</textarea>
             <button class="tl-dot" type="button" data-dot="6" data-tip="Text schreiben" aria-label="Schritt 6"></button>
             <button class="tl-dot" type="button" data-dot="7" data-tip="Second Language" aria-label="Schritt 7"></button>
             <button class="tl-dot" type="button" data-dot="8" data-tip="Create Spot" aria-label="Schritt 8"></button>
-            <button class="tl-dot" type="button" data-dot="9" data-tip="Ergebnis anhören" aria-label="Schritt 9"></button>
-            <button class="tl-dot" type="button" data-dot="10" data-tip="Das Mini-Menü" aria-label="Schritt 10"></button>
-            <button class="tl-dot" type="button" data-dot="11" data-tip="Die Tags" aria-label="Schritt 11"></button>
-            <button class="tl-dot" type="button" data-dot="12" data-tip="Die Blacklist" aria-label="Schritt 12"></button>
-            <button class="tl-dot" type="button" data-dot="13" data-tip="Best Practice" aria-label="Schritt 13"></button>
+            <button class="tl-dot" type="button" data-dot="9" data-tip="Die Spotlänge" aria-label="Schritt 9"></button>
+            <button class="tl-dot" type="button" data-dot="10" data-tip="Ergebnis anhören" aria-label="Schritt 10"></button>
+            <button class="tl-dot" type="button" data-dot="11" data-tip="Das Mini-Menü" aria-label="Schritt 11"></button>
+            <button class="tl-dot" type="button" data-dot="12" data-tip="Die Tags" aria-label="Schritt 12"></button>
+            <button class="tl-dot" type="button" data-dot="13" data-tip="Die Blacklist" aria-label="Schritt 13"></button>
+            <button class="tl-dot" type="button" data-dot="14" data-tip="Tipps &amp; Tricks" aria-label="Schritt 14"></button>
+            <button class="tl-dot" type="button" data-dot="15" data-tip="Best Practice" aria-label="Schritt 15"></button>
           </div>
           <span class="tl-group__label">SpotTool</span>
         </div>
         <div class="tl-group" data-group="scheduler">
           <div class="tl-group__dots">
-            <button class="tl-dot" type="button" data-dot="14" data-tip="Choose Audio" aria-label="Schritt 14"></button>
-            <button class="tl-dot" type="button" data-dot="15" data-tip="Single Day / Weekly" aria-label="Schritt 15"></button>
-            <button class="tl-dot" type="button" data-dot="16" data-tip="Zeit oder Zeitraum" aria-label="Schritt 16"></button>
-            <button class="tl-dot" type="button" data-dot="17" data-tip="Absenden" aria-label="Schritt 17"></button>
-            <button class="tl-dot" type="button" data-dot="18" data-tip="Best Practice" aria-label="Schritt 18"></button>
+            <button class="tl-dot" type="button" data-dot="16" data-tip="Choose Audio" aria-label="Schritt 16"></button>
+            <button class="tl-dot" type="button" data-dot="17" data-tip="Single Day / Weekly" aria-label="Schritt 17"></button>
+            <button class="tl-dot" type="button" data-dot="18" data-tip="Zeit oder Zeitraum" aria-label="Schritt 18"></button>
+            <button class="tl-dot" type="button" data-dot="19" data-tip="Absenden" aria-label="Schritt 19"></button>
+            <button class="tl-dot" type="button" data-dot="20" data-tip="Best Practice" aria-label="Schritt 20"></button>
           </div>
           <span class="tl-group__label">Scheduler</span>
         </div>
         <div class="tl-group" data-group="calendar">
           <div class="tl-group__dots">
-            <button class="tl-dot" type="button" data-dot="19" data-tip="Das Raster" aria-label="Schritt 19"></button>
-            <button class="tl-dot" type="button" data-dot="20" data-tip="Die Slots" aria-label="Schritt 20"></button>
-            <button class="tl-dot" type="button" data-dot="21" data-tip="Woche und Jetzt" aria-label="Schritt 21"></button>
+            <button class="tl-dot" type="button" data-dot="21" data-tip="Das Raster" aria-label="Schritt 21"></button>
+            <button class="tl-dot" type="button" data-dot="22" data-tip="Die Slots" aria-label="Schritt 22"></button>
+            <button class="tl-dot" type="button" data-dot="23" data-tip="Woche und Jetzt" aria-label="Schritt 23"></button>
           </div>
           <span class="tl-group__label">Calendar</span>
         </div>
         <div class="tl-group" data-group="account">
           <div class="tl-group__dots">
-            <button class="tl-dot" type="button" data-dot="22" data-tip="Konto &amp; Sicherheit" aria-label="Schritt 22"></button>
+            <button class="tl-dot" type="button" data-dot="24" data-tip="Konto &amp; Sicherheit" aria-label="Schritt 24"></button>
+            <button class="tl-dot" type="button" data-dot="25" data-tip="MFA verwalten" aria-label="Schritt 25"></button>
           </div>
           <span class="tl-group__label">Account</span>
         </div>
@@ -1644,6 +1378,6 @@ Lebe Smart!</textarea>
 
   </main>
 
-  <script src="js/tutorial.js?v=2"></script>
+  <script src="js/tutorial.js?v=3"></script>
 </body>
 </html>

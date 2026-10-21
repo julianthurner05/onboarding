@@ -45,6 +45,10 @@
   --cat-food:       var(--gelb);
   --cat-marketing:  var(--gruen);
   --cat-special:    var(--rot);
+  --cat-standard:   var(--gruen);    /* Live-Kalender */
+  --cat-commercial: var(--gelb);     /* Live-Kalender */
+  --cat-tint-commercial:        22%;
+  --cat-tint-commercial-strong: 58%;
   --cat-closing:    var(--blau);
   --cat-tint:        14%;   /* Kategoriefarbe auf Flächen (Karten, Editor, Kalender-Slots) */
   --cat-tint-strong: 46%;   /* hervorgehobener Slot im Kalender */
