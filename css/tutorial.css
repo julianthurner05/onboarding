@@ -817,8 +817,9 @@ body.is-cover .tut__footer { display: none; }
   .step.has-focus .tut__list li:not(.is-active) { display: none; }
   .chapter__title { font-size: 28px; }
 
+  /* Bühne füllt die restliche Höhe, die Grafik sitzt darin mittig */
   .tut__stage {
-    flex: 0 0 auto;
+    flex: 1 0 auto;
     overflow: visible;
     padding: 26px 16px 34px;
   }
