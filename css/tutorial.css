@@ -472,8 +472,15 @@ body.is-cover .tut__footer { display: none; }
 .exhibit--text .lang-block:first-child { margin-top: 0; }
 
 /* ---- Create Spot ---- */
-.exhibit--create { width: min(560px, 100%); }
-.exhibit--create .composer__footer { margin-top: 36px; }
+.exhibit--create {
+  width: min(420px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 34px;
+}
+
+.exhibit--create .card--pending { align-self: stretch; }
 
 /* ---- Ergebnis / Kartenmenü ---- */
 .exhibit--result { width: min(420px, 100%); }

@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="/css/home.css">
   <link rel="stylesheet" href="/css/login.css">
   <link rel="stylesheet" href="/css/account.css">
-  <link rel="stylesheet" href="/css/tutorial.css?v=11">
+  <link rel="stylesheet" href="/css/tutorial.css?v=12">
 </head>
 <body>
 
@@ -273,10 +273,17 @@
         <h1 class="tut__title">Text schreiben</h1>
         <ul class="tut__list">
           <li data-part="first">Hier schreibst du den <strong>Text</strong>, den deine <strong>Brand Voice</strong> sprechen soll.</li>
+          <li data-part="clear"><strong>Clear all</strong> leert alle Felder, wenn du neu starten willst.</li>
         </ul>
       </header>
       <div class="tut__stage">
         <div class="exhibit exhibit--text">
+          <div class="creation-toolbar">
+            <button class="ghost-btn ghost-btn--sm" type="button" data-part="clear">
+              <svg class="icon"><use href="#i-x"/></svg>
+              Clear all
+            </button>
+          </div>
           <div class="lang-block" data-part="first">
             <p class="lang-block__label">Announcement Text</p>
             <textarea class="lang-block__textarea" rows="4" readonly spellcheck="false">Liebe IKEA Kundin, lieber IKEA Kunde!
@@ -320,39 +327,8 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
-    <!-- 6 · Create Spot -->
-    <section class="step" data-group="spottool" data-dot="8">
-      <header class="tut__head">
-        <h1 class="tut__title">Create Spot drücken</h1>
-        <ul class="tut__list">
-          <li data-part="create">Die Generierung dauert einen <strong>kurzen Moment</strong>.</li>
-          <li data-part="clear"><strong>Clear all</strong> leert alle Felder, wenn du neu starten willst.</li>
-        </ul>
-      </header>
-      <div class="tut__stage">
-        <div class="exhibit exhibit--create">
-          <div class="creation-toolbar">
-            <button class="ghost-btn ghost-btn--sm" type="button" data-part="clear">
-              <svg class="icon"><use href="#i-x"/></svg>
-              Clear all
-            </button>
-          </div>
-          <div class="composer__footer">
-            <div class="composer__stats" data-part="stats">
-              <span><strong>40</strong> words · 40 / 0</span>
-              <span>~ <strong>0:18</strong> / 0:50 spoken</span>
-            </div>
-            <button class="primary-btn" type="button" data-part="create">
-              <svg class="icon"><use href="#i-wave"/></svg>
-              <span>Create Spot</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Spotlänge -->
-    <section class="step" data-group="spottool" data-dot="9">
+    <section class="step" data-group="spottool" data-dot="8">
       <header class="tut__head">
         <h1 class="tut__title">Die Spotlänge</h1>
         <ul class="tut__list">
@@ -383,6 +359,31 @@ Lebe Smart!</textarea>
               <span>Create Spot</span>
             </button>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 · Create Spot -->
+    <section class="step" data-group="spottool" data-dot="9">
+      <header class="tut__head">
+        <h1 class="tut__title">Create Spot drücken</h1>
+        <ul class="tut__list">
+          <li data-part="create">Fertig? Mit <strong>Create Spot</strong> wird deine Durchsage generiert.</li>
+          <li data-part="pending">Während der Generierung erscheint der Spot mit einem <strong>Ladebalken</strong> in der Creation History. Das dauert nur einen kurzen Moment.</li>
+        </ul>
+      </header>
+      <div class="tut__stage">
+        <div class="exhibit exhibit--create">
+          <button class="primary-btn" type="button" data-part="create">
+            <svg class="icon"><use href="#i-wave"/></svg>
+            <span>Create Spot</span>
+          </button>
+          <article class="card card--pending" data-part="pending">
+            <div class="card__title-row">
+              <h2 class="card__title">IKEA Family Angebot RIAN Beistelltisch KW 43</h2>
+            </div>
+            <div class="card__pending"><div class="card__pending-bar"></div></div>
+          </article>
         </div>
       </div>
     </section>
@@ -1222,8 +1223,8 @@ Lebe Smart!</textarea>
             <button class="tl-dot" type="button" data-dot="5" data-tip="Titel vergeben" aria-label="Schritt 5"></button>
             <button class="tl-dot" type="button" data-dot="6" data-tip="Text schreiben" aria-label="Schritt 6"></button>
             <button class="tl-dot" type="button" data-dot="7" data-tip="Second Language" aria-label="Schritt 7"></button>
-            <button class="tl-dot" type="button" data-dot="8" data-tip="Create Spot" aria-label="Schritt 8"></button>
-            <button class="tl-dot" type="button" data-dot="9" data-tip="Die Spotlänge" aria-label="Schritt 9"></button>
+            <button class="tl-dot" type="button" data-dot="8" data-tip="Die Spotlänge" aria-label="Schritt 8"></button>
+            <button class="tl-dot" type="button" data-dot="9" data-tip="Create Spot" aria-label="Schritt 9"></button>
             <button class="tl-dot" type="button" data-dot="10" data-tip="Ergebnis anhören" aria-label="Schritt 10"></button>
             <button class="tl-dot" type="button" data-dot="11" data-tip="Das Mini-Menü" aria-label="Schritt 11"></button>
             <button class="tl-dot" type="button" data-dot="12" data-tip="Die Tags" aria-label="Schritt 12"></button>
