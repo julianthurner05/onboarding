@@ -136,10 +136,12 @@ body.is-cover .tut__footer { display: none; }
 
 .exhibit { margin: auto; }
 
-/* Spotlight: aktives Teil-Element voll, andere reduziert */
-.exhibit [data-part] { transition: opacity var(--dur) var(--ease); }
-.exhibit.has-focus [data-part] { opacity: 0.3; }
-.exhibit.has-focus [data-part].is-hot { opacity: 1; }
+/* Spotlight: alles, was nicht zum aktiven Teil gehört, tritt deutlich
+   zurück (auch Überschriften ohne data-part, is-dim setzt das JS);
+   der aktive Teil wird zusätzlich aufgehellt */
+.exhibit * { transition: opacity var(--dur) var(--ease), filter var(--dur) var(--ease); }
+.exhibit.has-focus .is-dim { opacity: 0.16; }
+.exhibit.has-focus .is-hot { filter: brightness(1.35); }
 
 /* ================================================================
    TITELBLATT, KAPITELSEITEN, ABSCHLUSS

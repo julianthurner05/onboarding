@@ -50,6 +50,20 @@
     if (row) row.style.setProperty('--mfill', `${Math.max(0, dot.offsetLeft + dot.offsetWidth / 2 - 4)}px`);
   }
 
+  /* Abdunkeln: jeder Teilbaum ohne aktives Element wird an seiner
+     obersten Stelle gedimmt; Vorfahren des aktiven Teils bleiben hell,
+     damit sich die Deckkraft nicht verschachtelt multipliziert */
+  function markDim(root) {
+    root.querySelectorAll('.is-dim').forEach(el => el.classList.remove('is-dim'));
+    (function walk(node) {
+      for (const child of node.children) {
+        if (child.classList.contains('is-hot')) continue;
+        if (child.querySelector('.is-hot')) walk(child);
+        else child.classList.add('is-dim');
+      }
+    })(root);
+  }
+
   function render() {
     const sec = sections[current];
     sections.forEach((s, i) => s.classList.toggle('is-active', i === current));
@@ -67,9 +81,11 @@
         exhibit.querySelectorAll('[data-part]').forEach(el => {
           el.classList.toggle('is-hot', el.dataset.part.split(/\s+/).some(p => active.includes(p)));
         });
+        markDim(exhibit);
       }
     } else if (exhibit) {
       exhibit.classList.remove('has-focus');
+      exhibit.querySelectorAll('.is-dim').forEach(el => el.classList.remove('is-dim'));
     }
 
     /* Timeline */
