@@ -165,6 +165,34 @@ body.is-cover .tut__footer { display: none; }
 .exhibit.has-focus[data-state="single"] .state-hide-single,
 .exhibit.has-focus[data-state="once"] .repeat-extra { opacity: 0; }
 
+/* Bewegungen wie im Dummy: die allgemeine Überblend-Regel der Exponate
+   würde Daumen und Schrift sonst ohne Animation springen lassen */
+.exhibit .segmented .segmented__thumb { transition: transform var(--dur-sched) var(--ease), opacity var(--dur) var(--ease); }
+.exhibit .segmented .segmented__option { transition: color var(--dur-sched) var(--ease), opacity var(--dur) var(--ease); }
+.exhibit .sched-form .state-hide-single,
+.exhibit .sched-form .repeat-extra { transition: opacity var(--dur-sched) var(--ease); }
+
+/* Wochentage klappen wie im Dummy (reveal) auf: erst wächst die Höhe,
+   ab etwa 80 % blendet der Inhalt ein; beim Zuklappen umgekehrt */
+.exhibit.exhibit--form .sched-form > .sched-form__group.state-hide-single {
+  max-height: 72px;               /* knapp über der echten Höhe: gleichmäßiges Aufklappen */
+  overflow: hidden;
+  transition:
+    max-height var(--t-reveal) var(--ease),
+    margin-top var(--t-reveal) var(--ease),
+    opacity var(--t-fade) var(--ease) calc(var(--t-reveal) * 0.8);
+}
+
+.exhibit.exhibit--form[data-state="single"] .sched-form > .sched-form__group.state-hide-single {
+  max-height: 0;
+  margin-top: 0;
+  opacity: 0;
+  transition:
+    opacity var(--t-fade-out) var(--ease),
+    max-height var(--t-reveal-close) var(--ease) var(--t-fade-out),
+    margin-top var(--t-reveal-close) var(--ease) var(--t-fade-out);
+}
+
 /* ================================================================
    TITELBLATT, KAPITELSEITEN, ABSCHLUSS
    ================================================================ */
