@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<!-- Muss existieren: Ohne index.html auf oberster Ebene erkennt der
+     Cloudflare-Worker beim Build einen Unterordner (z. B. ikea/) als
+     Website und veröffentlicht css/, js/ und assets/ nicht mehr. -->
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="refresh" content="0; url=https://sound-dna.com/">
+  <title>sounddna</title>
+  <script>location.replace('https://sound-dna.com/');</script>
+</head>
+<body style="background:#0c0e29"></body>
+</html>
