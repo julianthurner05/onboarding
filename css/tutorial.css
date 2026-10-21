@@ -525,8 +525,8 @@ body.is-cover .tut__footer { display: none; }
 .exhibit--cal .cal-head,
 .exhibit--cal .cal-col__head { position: static; }
 
-.exhibit--cal .cal-head { flex-wrap: wrap; row-gap: 12px; background: none; }
-.exhibit--cal .cal-legend { display: flex; }
+.exhibit--cal .cal-head { background: none; }
+.exhibit--cal .density-toggle { margin-left: auto; }
 
 /* Collapse/Expand gleitet weich (der Live-Kalender macht das per FLIP) */
 .exhibit--cal .cal-slot,
