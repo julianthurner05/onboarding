@@ -139,9 +139,31 @@ body.is-cover .tut__footer { display: none; }
 /* Spotlight: alles, was nicht zum aktiven Teil gehört, tritt deutlich
    zurück (auch Überschriften ohne data-part, is-dim setzt das JS);
    der aktive Teil wird zusätzlich aufgehellt */
-.exhibit * { transition: opacity var(--dur) var(--ease), filter var(--dur) var(--ease); }
+.exhibit *:not(.cal-slot__inner):not(.cal-slot__title) { transition: opacity var(--dur) var(--ease); }
 .exhibit.has-focus .is-dim { opacity: 0.16; }
-.exhibit.has-focus .is-hot { filter: brightness(1.35); }
+
+/* gedämpfte Schriften leuchten auf, wenn sie das aktive Thema sind */
+.exhibit.has-focus .is-hot:is(.mfa-setup__link, .mfa-setup__sub, .login__forgot, .cal-time, .lightbox__title),
+.exhibit.has-focus .is-hot .composer__stats,
+.exhibit.has-focus .composer__stats .is-hot,
+.exhibit.has-focus .is-hot .home-stat__label,
+.exhibit.has-focus .is-hot .home-card__title--soft { color: var(--text-100); }
+
+/* Bereiche, Dashboard, Tags: sanfter Kontrast wie zuvor – nur markierte
+   Teile treten zurück, der Rahmen bleibt stehen */
+.exhibit--soft.has-focus .is-dim { opacity: 1; }
+.exhibit--soft.has-focus [data-part]:not(.is-hot) { opacity: 0.3; }
+
+/* Zustandswechsel im Scheduler-Formular wie im Dummy:
+   Single Day blendet Ende und Wochentage aus, Once die Repeat-Felder */
+.exhibit[data-state="single"] .segmented--state .segmented__thumb,
+.exhibit[data-state="once"] .segmented--state .segmented__thumb { transform: none; }
+.exhibit[data-state="single"] .segmented--state .segmented__option:first-of-type,
+.exhibit[data-state="once"] .segmented--state .segmented__option:first-of-type { color: var(--text-inverse); }
+.exhibit[data-state="single"] .segmented--state .segmented__option.is-active,
+.exhibit[data-state="once"] .segmented--state .segmented__option.is-active { color: var(--text-60); }
+.exhibit.has-focus[data-state="single"] .state-hide-single,
+.exhibit.has-focus[data-state="once"] .repeat-extra { opacity: 0; }
 
 /* ================================================================
    TITELBLATT, KAPITELSEITEN, ABSCHLUSS
@@ -334,14 +356,15 @@ body.is-cover .tut__footer { display: none; }
    freistehend funktionieren (Layout-Regeln der App neutralisieren)
    ================================================================ */
 
-/* Kleine Exponate größer und besser lesbar – nur wenn Platz ist */
+/* Kleine Exponate größer und besser lesbar – nur wenn Platz ist.
+   zoom statt transform: kein Subpixel-Versatz, Icons wackeln nicht */
 @media (min-width: 1241px) {
   .exhibit--title,
   .exhibit--create,
   .exhibit--send,
   .exhibit--tags,
   .exhibit--duration,
-  .exhibit--blacklist { transform: scale(1.2); }
+  .exhibit--blacklist { zoom: 1.2; }
 }
 
 @media (min-width: 1500px) {
@@ -350,7 +373,7 @@ body.is-cover .tut__footer { display: none; }
   .exhibit--send,
   .exhibit--tags,
   .exhibit--duration,
-  .exhibit--blacklist { transform: scale(1.3); }
+  .exhibit--blacklist { zoom: 1.3; }
 }
 
 .exhibit .composer__stats { color: var(--text-55); }
@@ -363,12 +386,14 @@ body.is-cover .tut__footer { display: none; }
    keine Tooltips. Nur Kalender-Slots und der Expand/Collapse-Schalter
    reagieren auf die Maus. */
 .exhibit, .exhibit * { pointer-events: none; }
-.exhibit .cal-slot--spot,
+.exhibit--cal .cal-slot,
 .exhibit .density-toggle { pointer-events: auto; }
 .exhibit .density-toggle { cursor: pointer; }
 
 /* Aufbau-Choreografie des Scheduler-Formulars neutralisieren */
-.exhibit .sched-form > * { opacity: 1 !important; transform: none !important; }
+/* ohne !important bei opacity, sonst greifen Abdunkeln und
+   Zustandswechsel im Formular nicht */
+.exhibit .sched-form > * { opacity: 1; transform: none !important; }
 .exhibit .sched-form { margin-top: 0; }
 
 /* ---- Sidebar ---- */
@@ -420,16 +445,21 @@ body.is-cover .tut__footer { display: none; }
 .exhibit--login .login__title { margin-top: 0; font-size: 24px; }
 .exhibit--login .login__form { margin-top: 34px; }
 
-/* ---- Dashboard ---- */
-.exhibit--dash {
-  width: min(600px, 100%);
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+/* ---- Dashboard (Aufbau wie im Portal) ---- */
+.exhibit--dash { width: min(680px, 100%); }
+
+.dash-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
 }
 
-.exhibit--dash .home-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.exhibit--dash .home-hero__actions { justify-content: flex-end; }
+.dash-news-empty {
+  padding: 18px 0 10px;
+  text-align: center;
+  font-size: var(--fs-menu);
+  color: var(--text-40);
+}
 
 /* ---- Titel ---- */
 .exhibit--title { width: min(480px, 100%); }
@@ -455,6 +485,9 @@ body.is-cover .tut__footer { display: none; }
 .exhibit--menu { width: min(500px, 100%); }
 
 .exhibit--menu .zoom {
+  display: flex;
+  justify-content: flex-end;          /* Karte rechtsbündig, ragt links hinaus */
+  align-items: flex-start;
   width: 100%;
   height: 360px;
   overflow: hidden;
@@ -467,10 +500,9 @@ body.is-cover .tut__footer { display: none; }
 }
 
 .exhibit--menu .card {
+  flex: none;
   width: 420px;
-  margin-left: calc(100% - 420px);   /* rechtsbündig, darf links überstehen */
-  transform: scale(1.5);
-  transform-origin: top right;
+  zoom: 1.5;
 }
 
 .exhibit--menu .context-menu { animation: none; }
@@ -798,8 +830,8 @@ body.is-cover .tut__footer { display: none; }
   .exhibit--cal .cal-col:not(.cal-col--time):not(.cal-col--today) { display: none; }
 
   .exhibit--menu .zoom { height: 300px; }
-  .exhibit--menu .card { width: 340px; margin-left: calc(100% - 340px); transform: scale(1.2); }
-  .exhibit--dash .home-stats { grid-template-columns: 1fr 1fr; }
+  .exhibit--menu .card { width: 340px; zoom: 1.2; }
+  .exhibit--dash .home-grid { grid-template-columns: 1fr; }
   .exhibit--form .day-chips { grid-template-columns: repeat(7, minmax(0, 1fr)); }
   .exhibit--form .day-chip { width: auto; }
 }

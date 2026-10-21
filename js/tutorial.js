@@ -78,6 +78,7 @@
       const active = bullets[sub].dataset.part.split(/\s+/);
       if (exhibit) {
         exhibit.classList.add('has-focus');
+        exhibit.dataset.state = bullets[sub].dataset.state || '';
         exhibit.querySelectorAll('[data-part]').forEach(el => {
           el.classList.toggle('is-hot', el.dataset.part.split(/\s+/).some(p => active.includes(p)));
         });
@@ -152,13 +153,23 @@
 
   window.addEventListener('resize', paintFill);
 
-  /* Kalender: beim Überfahren leuchten alle Slots derselben Durchsage
-     auf (gleiche data-uid), wie im Live-Kalender */
-  document.querySelectorAll('.cal-slot--spot').forEach(slot => {
-    const view = slot.closest('.calendar-view');
-    const same = () => view.querySelectorAll(`.cal-slot--spot[data-uid="${slot.dataset.uid}"]`);
-    slot.addEventListener('mouseenter', () => same().forEach(x => x.classList.add('is-lit')));
-    slot.addEventListener('mouseleave', () => same().forEach(x => x.classList.remove('is-lit')));
+  /* Kalender-Hover wie im Live-Kalender (embed.js): das Raster verfolgt
+     die Maus und lässt alle Slots derselben Durchsage aufleuchten */
+  document.querySelectorAll('.exhibit--cal .cal-grid').forEach(grid => {
+    let lit = null;
+    const setLit = uid => {
+      if (uid === lit) return;
+      lit = uid;
+      grid.querySelectorAll('.cal-hit').forEach(x =>
+        x.classList.toggle('is-lit', uid !== null && x.dataset.uid === uid));
+    };
+    grid.style.pointerEvents = 'auto';
+    grid.addEventListener('mousemove', e => {
+      const hit = e.target.closest('.cal-hit');
+      if (hit) { setLit(hit.dataset.uid); return; }
+      if (e.target.closest('.cal-slot, .cal-col__head')) setLit(null);
+    });
+    grid.addEventListener('mouseleave', () => setLit(null));
   });
 
   /* Expand/Collapse: der Schalter funktioniert wie im Live-Kalender */
