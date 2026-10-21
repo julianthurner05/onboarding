@@ -53,12 +53,15 @@
   /* Abdunkeln: jeder Teilbaum ohne aktives Element wird an seiner
      obersten Stelle gedimmt; Vorfahren des aktiven Teils bleiben hell,
      damit sich die Deckkraft nicht verschachtelt multipliziert */
+  /* Formular-Labels bleiben immer lesbar, sonst verschwinden sie */
+  const KEEP = '.sched-form__label';
+
   function markDim(root) {
     root.querySelectorAll('.is-dim').forEach(el => el.classList.remove('is-dim'));
     (function walk(node) {
       for (const child of node.children) {
-        if (child.classList.contains('is-hot')) continue;
-        if (child.querySelector('.is-hot')) walk(child);
+        if (child.classList.contains('is-hot') || child.matches(KEEP)) continue;
+        if (child.querySelector('.is-hot') || child.querySelector(KEEP)) walk(child);
         else child.classList.add('is-dim');
       }
     })(root);
