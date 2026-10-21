@@ -514,6 +514,11 @@ body.is-cover .tut__footer { display: none; }
 /* ---- Audio-Picker ---- */
 .exhibit--picker { width: min(520px, 100%); }
 
+/* erst das kleine Feld aus dem Scheduler, danach die offene Liste */
+.exhibit--picker .preview { display: none; }
+.exhibit--picker[data-state="field"] .preview { display: flex; }
+.exhibit--picker[data-state="field"] .lightbox { display: none; }
+
 .exhibit--picker .lightbox {
   position: static;
   inset: auto;
