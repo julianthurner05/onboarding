@@ -633,6 +633,10 @@ body.is-cover .tut__footer { display: none; }
   background: var(--text-25);
 }
 
+/* Second-Language-Button hell, wenn er erklärt wird */
+.exhibit.has-focus .lang-toggle.is-hot { color: var(--text-100); }
+.exhibit.has-focus .lang-toggle.is-hot .lang-toggle__line { background: var(--white-25); }
+
 /* Code-Felder heben sich deutlich ab, wenn sie erklärt werden */
 .exhibit.has-focus .mfa-setup__code.is-hot span {
   background: var(--menu-blau);
