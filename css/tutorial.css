@@ -488,7 +488,11 @@ body.is-cover .tut__footer { display: none; }
 /* ---- Titel ---- */
 .exhibit--title { width: min(480px, 100%); }
 
-/* ---- Mehrere Uhrzeiten: Titel und Startzeit wechseln mit dem Bullet ---- */
+/* ---- Scheduling Title: das _2 kommt erst mit dem zweiten Bullet ---- */
+.exhibit--title .val--suffix { display: none; }
+.exhibit--title[data-state="suffix"] .val--suffix { display: inline; }
+
+/* ---- Beispielschedule: Titel und Startzeit wechseln mit dem Bullet ---- */
 .exhibit--times .title-field { margin-bottom: 34px; }
 .exhibit--times .val--once,
 .exhibit--times[data-state="once"] .val--repeat { display: none; }

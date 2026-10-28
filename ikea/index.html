@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="/css/home.css">
   <link rel="stylesheet" href="/css/login.css">
   <link rel="stylesheet" href="/css/account.css">
-  <link rel="stylesheet" href="/css/tutorial.css?v=17">
+  <link rel="stylesheet" href="/css/tutorial.css?v=18">
 </head>
 <body>
 
@@ -714,15 +714,15 @@ Lebe Smart!</textarea>
       <header class="tut__head">
         <h1 class="tut__title">Scheduling Title</h1>
         <ul class="tut__list">
-          <li data-part="title">Mit dem <strong>Scheduling Title</strong> gibst du deiner Planung einen Namen.</li>
-          <li data-part="title">Er ist <strong>unabhängig vom Spot-Titel</strong>. Planst du denselben Spot mehrmals ein, hängst du zum Beispiel ein <strong>_2</strong> an.</li>
+          <li data-part="title">Mit dem <strong>Scheduling Title</strong> gibst du deiner Planung einen Namen. Vorerst wird der <strong>Titel deines Spots</strong> aus dem SpotTool übernommen.</li>
+          <li data-part="title" data-state="suffix">Du kannst ihn aber <strong>unabhängig vom Spot-Titel</strong> ändern. Planst du denselben Spot mehrmals ein, hängst du zum Beispiel ein <strong>_2</strong> an.</li>
         </ul>
       </header>
       <div class="tut__stage">
         <div class="exhibit exhibit--title">
           <div class="title-field" data-part="title">
             <label class="title-field__label">Scheduling Title</label>
-            <input class="title-field__input" type="text" value="IKEA Family RIAN_2" readonly>
+            <span class="title-field__input">IKEA Family Angebot RIAN Beistelltisch KW 43<span class="val--suffix">_2</span></span>
           </div>
         </div>
       </div>
@@ -836,13 +836,13 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
-    <!-- Mehrere Uhrzeiten: zwei Schedules mit demselben Spot -->
+    <!-- Eine Beispielschedule: zwei Schedules mit demselben Spot -->
     <section class="step" data-group="scheduler" data-dot="20">
       <header class="tut__head">
-        <h1 class="tut__title">Mehrere Uhrzeiten</h1>
+        <h1 class="tut__title">Eine Beispielschedule</h1>
         <ul class="tut__list">
-          <li data-part="title mode time interval">Du willst um <strong>10:00, 12:00 und 15:00</strong>? Der Abstand bei <strong>Repeat</strong> ist starr, also legst du <strong>zwei Schedules</strong> an. Der erste läuft von 10 bis 12 Uhr alle 2 Stunden.</li>
-          <li data-part="title mode time" data-state="once">Der zweite läuft <strong>Once per Day</strong> um 15:00. Am <strong>_2</strong> im Scheduling Title erkennst du ihn wieder.</li>
+          <li data-part="title mode time interval">Du willst um <strong>10:00, 12:00 und 15:00</strong>? Der Abstand bei <strong>Repeat</strong> ist starr, also legst du <strong>zwei Schedules</strong> an. Die erste läuft von 10 bis 12 Uhr alle 2 Stunden.</li>
+          <li data-part="title mode time" data-state="once">Die zweite läuft <strong>Once per Day</strong> um 15:00. Am <strong>_2</strong> im Scheduling Title erkennst du sie wieder.</li>
           <li data-part="title" data-state="once">Einen zweiten Spot brauchst du dafür nicht: Jeden Spot aus dem <strong>SpotTool</strong> kannst du <strong>mehrmals einplanen</strong>.</li>
         </ul>
       </header>
@@ -850,7 +850,7 @@ Lebe Smart!</textarea>
         <div class="exhibit exhibit--form exhibit--times">
           <div class="title-field" data-part="title">
             <label class="title-field__label">Scheduling Title</label>
-            <span class="title-field__input"><span class="val--repeat">IKEA Family RIAN</span><span class="val--once">IKEA Family RIAN_2</span></span>
+            <span class="title-field__input">IKEA Family Angebot RIAN Beistelltisch KW 43<span class="val--once">_2</span></span>
           </div>
           <div class="sched-form">
             <div class="sched-form__group">
@@ -897,6 +897,7 @@ Lebe Smart!</textarea>
         <h1 class="tut__title">Absenden</h1>
         <ul class="tut__list">
           <li data-part="send"><strong>Send to Schedule</strong> schickt deine Planung ab. Der Spot wird zu den gewählten Zeiten im Store laufen.</li>
+          <li data-part="send"><strong>Achtung:</strong> Deine Schedule erscheint <strong>nicht sofort</strong> im Kalender. sounddna prüft jede Anfrage und trägt sie erst danach ein.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -1336,7 +1337,7 @@ Lebe Smart!</textarea>
             <button class="tl-dot" type="button" data-dot="17" data-tip="Scheduling Title" aria-label="Schritt 17"></button>
             <button class="tl-dot" type="button" data-dot="18" data-tip="Single Day / Weekly" aria-label="Schritt 18"></button>
             <button class="tl-dot" type="button" data-dot="19" data-tip="Once oder Repeat" aria-label="Schritt 19"></button>
-            <button class="tl-dot" type="button" data-dot="20" data-tip="Mehrere Uhrzeiten" aria-label="Schritt 20"></button>
+            <button class="tl-dot" type="button" data-dot="20" data-tip="Beispielschedule" aria-label="Schritt 20"></button>
             <button class="tl-dot" type="button" data-dot="21" data-tip="Absenden" aria-label="Schritt 21"></button>
             <button class="tl-dot" type="button" data-dot="22" data-tip="Best Practice" aria-label="Schritt 22"></button>
           </div>
