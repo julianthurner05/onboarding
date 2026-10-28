@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="/css/home.css">
   <link rel="stylesheet" href="/css/login.css">
   <link rel="stylesheet" href="/css/account.css">
-  <link rel="stylesheet" href="/css/tutorial.css?v=15">
+  <link rel="stylesheet" href="/css/tutorial.css?v=16">
 </head>
 <body>
 
@@ -431,8 +431,8 @@ Lebe Smart!</textarea>
       <header class="tut__head">
         <h1 class="tut__title">Das Mini-Menü</h1>
         <ul class="tut__list">
-          <li data-part="m-receive"><strong>Receive</strong> schickt dir die fertige Audiodatei per E-Mail.</li>
-          <li data-part="m-schedule"><strong>Schedule</strong> öffnet den Scheduler mit diesem Spot.</li>
+          <li data-part="m-receive"><strong>Receive</strong> schickt dir die fertige Audiodatei per E-Mail. Das geht auch <strong>mehrmals</strong>.</li>
+          <li data-part="m-schedule"><strong>Schedule</strong> öffnet den Scheduler mit diesem Spot. Du kannst denselben Spot auch <strong>mehrmals</strong> einplanen.</li>
           <li data-part="m-reuse"><strong>Re-Use</strong> übernimmt Titel und Text als Vorlage für einen neuen Spot.</li>
           <li data-part="m-delete"><strong>Delete</strong> löscht den Spot aus der History.</li>
         </ul>
@@ -503,14 +503,40 @@ Lebe Smart!</textarea>
       </header>
       <div class="tut__stage">
         <div class="exhibit exhibit--tags exhibit--soft">
-          <span class="badge badge--scheduled" data-part="tag-sched">
-            <svg class="icon"><use href="#i-gantt"/></svg>
-            Scheduled
-          </span>
-          <span class="badge badge--received" data-part="tag-rec">
-            <svg class="icon"><use href="#i-send"/></svg>
-            Received
-          </span>
+          <div class="zoom">
+            <article class="card">
+              <div class="card__top">
+                <span class="card__date">Today, 09:41</span>
+                <span class="badge badge--scheduled" data-part="tag-sched">
+                  <svg class="icon"><use href="#i-gantt"/></svg>
+                  Scheduled
+                </span>
+                <span class="badge badge--received" data-part="tag-rec">
+                  <svg class="icon"><use href="#i-send"/></svg>
+                  Received
+                </span>
+                <div class="card__menu-wrap">
+                  <button class="kebab" aria-label="Options">
+                    <svg class="icon"><use href="#i-kebab"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="card__title-row">
+                <h2 class="card__title">IKEA Family Angebot RIAN Beistelltisch</h2>
+              </div>
+              <div class="card__player">
+                <button class="play-btn" aria-label="Play">
+                  <svg class="icon icon--filled"><use href="#i-play"/></svg>
+                </button>
+                <div class="slider">
+                  <div class="slider__track"></div>
+                  <div class="slider__progress" style="width: 30%"></div>
+                  <div class="slider__thumb" style="left: 30%"></div>
+                </div>
+                <span class="card__time">00:19</span>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -683,8 +709,53 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
-    <!-- 12 · Single Day / Weekly -->
+    <!-- Scheduling Title -->
     <section class="step" data-group="scheduler" data-dot="17">
+      <header class="tut__head">
+        <h1 class="tut__title">Scheduling Title</h1>
+        <ul class="tut__list">
+          <li data-part="title">Mit dem <strong>Scheduling Title</strong> gibst du deiner Planung einen Namen.</li>
+          <li data-part="title spot">Er ist <strong>unabhängig vom Spot-Titel</strong>. Planst du denselben Spot mehrmals ein, hängst du zum Beispiel ein <strong>_2</strong> an.</li>
+          <li data-part="plans">Du willst um <strong>10:00, 12:00 und 15:00</strong>? Der Abstand bei <strong>Repeat</strong> ist starr, also legst du <strong>zwei Schedules</strong> an: einen für 10 und 12 Uhr, einen für 15 Uhr.</li>
+          <li data-part="plans spot">Einen zweiten Spot brauchst du dafür nicht: Jeden Spot aus dem <strong>SpotTool</strong> kannst du <strong>mehrmals einplanen</strong>.</li>
+        </ul>
+      </header>
+      <div class="tut__stage">
+        <div class="exhibit exhibit--schedtitle">
+          <div class="title-field" data-part="title">
+            <label class="title-field__label">Scheduling Title</label>
+            <input class="title-field__input" type="text" value="IKEA Family RIAN_2" readonly>
+          </div>
+          <div class="schedtitle__group">
+            <p class="sched-form__label">Spot</p>
+            <div class="picker-row is-current" data-part="spot">
+              <div class="picker-row__info">
+                <p class="picker-row__title">IKEA Family Angebot RIAN Beistelltisch</p>
+                <p class="picker-row__meta">Today, 14:02</p>
+              </div>
+            </div>
+          </div>
+          <div class="schedtitle__group">
+            <p class="sched-form__label">Schedules</p>
+            <div class="picker-row" data-part="plans">
+              <div class="picker-row__info">
+                <p class="picker-row__title">IKEA Family RIAN</p>
+                <p class="picker-row__meta">Repeat · 10:00 – 12:00 · every 2 h</p>
+              </div>
+            </div>
+            <div class="picker-row" data-part="plans">
+              <div class="picker-row__info">
+                <p class="picker-row__title">IKEA Family RIAN_2</p>
+                <p class="picker-row__meta">Once per Day · 15:00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 · Single Day / Weekly -->
+    <section class="step" data-group="scheduler" data-dot="18">
       <header class="tut__head">
         <h1 class="tut__title">Single Day oder Weekly</h1>
         <ul class="tut__list">
@@ -741,13 +812,13 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- 13 · Die Zeit -->
-    <section class="step" data-group="scheduler" data-dot="18">
+    <section class="step" data-group="scheduler" data-dot="19">
       <header class="tut__head">
         <h1 class="tut__title">Once per Day oder Repeat</h1>
         <ul class="tut__list">
           <li data-part="mode time" data-state="once"><strong>Once per Day</strong>: eine feste Uhrzeit.</li>
           <li data-part="mode interval"><strong>Repeat</strong>: im Intervall, hier zum Beispiel alle 2 Stunden von 10 bis 18 Uhr.</li>
-          <li data-part="interval">Alle Zeiten liegen im <strong>30-Minuten-Raster</strong>, und jeder Slot hält genau <strong>einen</strong> Spot.</li>
+          <li data-part="interval">Alle Zeiten liegen im <strong>15-Minuten-Raster</strong>, und jeder Slot hält genau <strong>einen</strong> Spot.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -792,7 +863,7 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- 14 · Absenden -->
-    <section class="step" data-group="scheduler" data-dot="19">
+    <section class="step" data-group="scheduler" data-dot="20">
       <header class="tut__head">
         <h1 class="tut__title">Absenden</h1>
         <ul class="tut__list">
@@ -812,7 +883,7 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- 15 · Best Practices Scheduler -->
-    <section class="step" data-group="scheduler" data-dot="20">
+    <section class="step" data-group="scheduler" data-dot="21">
       <header class="tut__head">
         <h1 class="tut__title">Best Practice</h1>
       </header>
@@ -855,7 +926,7 @@ Lebe Smart!</textarea>
 
     <!-- Calendar · Raster / Slots / Woche und Jetzt -->
 
-    <section class="step" data-group="calendar" data-dot="21">
+    <section class="step" data-group="calendar" data-dot="22">
       <header class="tut__head">
         <h1 class="tut__title">Die Slots</h1>
         <ul class="tut__list">
@@ -980,7 +1051,7 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
-    <section class="step" data-group="calendar" data-dot="22">
+    <section class="step" data-group="calendar" data-dot="23">
       <header class="tut__head">
         <h1 class="tut__title">Die Expanded-Ansicht</h1>
         <ul class="tut__list">
@@ -1111,7 +1182,7 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- 17 · Konto & Sicherheit -->
-    <section class="step" data-group="account" data-dot="23">
+    <section class="step" data-group="account" data-dot="24">
       <header class="tut__head">
         <h1 class="tut__title">Konto &amp; Sicherheit</h1>
         <ul class="tut__list">
@@ -1156,7 +1227,7 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- MFA verwalten -->
-    <section class="step" data-group="account" data-dot="24">
+    <section class="step" data-group="account" data-dot="25">
       <header class="tut__head">
         <h1 class="tut__title">MFA verwalten</h1>
         <ul class="tut__list">
@@ -1233,24 +1304,25 @@ Lebe Smart!</textarea>
         <div class="tl-group" data-group="scheduler">
           <div class="tl-group__dots">
             <button class="tl-dot" type="button" data-dot="16" data-tip="Spot wählen" aria-label="Schritt 16"></button>
-            <button class="tl-dot" type="button" data-dot="17" data-tip="Single Day / Weekly" aria-label="Schritt 17"></button>
-            <button class="tl-dot" type="button" data-dot="18" data-tip="Once oder Repeat" aria-label="Schritt 18"></button>
-            <button class="tl-dot" type="button" data-dot="19" data-tip="Absenden" aria-label="Schritt 19"></button>
-            <button class="tl-dot" type="button" data-dot="20" data-tip="Best Practice" aria-label="Schritt 20"></button>
+            <button class="tl-dot" type="button" data-dot="17" data-tip="Scheduling Title" aria-label="Schritt 17"></button>
+            <button class="tl-dot" type="button" data-dot="18" data-tip="Single Day / Weekly" aria-label="Schritt 18"></button>
+            <button class="tl-dot" type="button" data-dot="19" data-tip="Once oder Repeat" aria-label="Schritt 19"></button>
+            <button class="tl-dot" type="button" data-dot="20" data-tip="Absenden" aria-label="Schritt 20"></button>
+            <button class="tl-dot" type="button" data-dot="21" data-tip="Best Practice" aria-label="Schritt 21"></button>
           </div>
           <span class="tl-group__label">Scheduler</span>
         </div>
         <div class="tl-group" data-group="calendar">
           <div class="tl-group__dots">
-            <button class="tl-dot" type="button" data-dot="21" data-tip="Die Slots" aria-label="Schritt 21"></button>
-            <button class="tl-dot" type="button" data-dot="22" data-tip="Expanded-Ansicht" aria-label="Schritt 22"></button>
+            <button class="tl-dot" type="button" data-dot="22" data-tip="Die Slots" aria-label="Schritt 22"></button>
+            <button class="tl-dot" type="button" data-dot="23" data-tip="Expanded-Ansicht" aria-label="Schritt 23"></button>
           </div>
           <span class="tl-group__label">Calendar</span>
         </div>
         <div class="tl-group" data-group="account">
           <div class="tl-group__dots">
-            <button class="tl-dot" type="button" data-dot="23" data-tip="Konto &amp; Sicherheit" aria-label="Schritt 23"></button>
-            <button class="tl-dot" type="button" data-dot="24" data-tip="MFA verwalten" aria-label="Schritt 24"></button>
+            <button class="tl-dot" type="button" data-dot="24" data-tip="Konto &amp; Sicherheit" aria-label="Schritt 24"></button>
+            <button class="tl-dot" type="button" data-dot="25" data-tip="MFA verwalten" aria-label="Schritt 25"></button>
           </div>
           <span class="tl-group__label">Account</span>
         </div>

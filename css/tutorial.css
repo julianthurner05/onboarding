@@ -388,6 +388,7 @@ body.is-cover .tut__footer { display: none; }
    zoom statt transform: kein Subpixel-Versatz, Icons wackeln nicht */
 @media (min-width: 1241px) {
   .exhibit--title,
+  .exhibit--schedtitle,
   .exhibit--create,
   .exhibit--send,
   .exhibit--duration,
@@ -396,6 +397,7 @@ body.is-cover .tut__footer { display: none; }
 
 @media (min-width: 1500px) {
   .exhibit--title,
+  .exhibit--schedtitle,
   .exhibit--create,
   .exhibit--send,
   .exhibit--duration,
@@ -487,6 +489,26 @@ body.is-cover .tut__footer { display: none; }
 
 /* ---- Titel ---- */
 .exhibit--title { width: min(480px, 100%); }
+
+/* ---- Scheduling Title: Titel, gewählter Spot, daraus zwei Schedules ---- */
+.exhibit--schedtitle {
+  width: min(480px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.schedtitle__group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Zeilen ohne Player und Button: der Titel bekommt die ganze Breite */
+.exhibit--schedtitle .picker-row {
+  grid-template-columns: minmax(0, 1fr);
+  background: var(--white-6);
+}
 
 /* ---- Text ---- */
 .exhibit--text {
@@ -583,14 +605,25 @@ body.is-cover .tut__footer { display: none; }
 .exhibit--send .schedule-actions { margin-top: 0; justify-content: center; }
 
 /* ---- Tags ---- */
-.exhibit--tags {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  zoom: 1.4;
+/* Tags groß an ihrer echten Stelle in der Spot-Karte; der Rest der Karte
+   tritt zurück, rechts läuft sie aus dem Bild */
+.exhibit--tags { width: min(640px, 100%); }
+
+.exhibit--tags .zoom {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 70px), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 70px), transparent);
 }
 
-@media (min-width: 1241px) { .exhibit--tags { zoom: 1.8; } }
+.exhibit--tags .card {
+  width: 420px;
+  zoom: 1.4;
+  pointer-events: none;
+}
+
+.exhibit.exhibit--tags .is-dim { opacity: 0.2; }
+
+@media (min-width: 1241px) { .exhibit--tags .card { zoom: 1.8; } }
 
 /* ---- Kalender (reine Ansicht) – Live-calendar.css, im Ausschnitt mit
         fester Slot-Höhe statt der Viewport-Formel des IFrames ---- */
@@ -893,6 +926,14 @@ body.is-cover .tut__footer { display: none; }
   .exhibit--cal .cal-grid { grid-template-columns: 50px minmax(0, 1fr); }
   .exhibit--cal .cal-col__head { display: none; }
   .exhibit--cal .cal-col:not(.cal-col--time):not(.cal-col--today) { display: none; }
+
+  /* Tags am Handy so groß wie am Tablet: das Datum fällt weg, damit beide
+     Tags vor dem Auslaufen der Karte Platz haben */
+  .exhibit--tags .card__date { display: none; }
+  .exhibit--tags .zoom {
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 50px), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 50px), transparent);
+  }
 
   .exhibit--menu .zoom { height: 300px; }
   .exhibit--menu .card { width: 340px; zoom: 1.2; }
