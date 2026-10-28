@@ -388,7 +388,6 @@ body.is-cover .tut__footer { display: none; }
    zoom statt transform: kein Subpixel-Versatz, Icons wackeln nicht */
 @media (min-width: 1241px) {
   .exhibit--title,
-  .exhibit--schedtitle,
   .exhibit--create,
   .exhibit--send,
   .exhibit--duration,
@@ -397,7 +396,6 @@ body.is-cover .tut__footer { display: none; }
 
 @media (min-width: 1500px) {
   .exhibit--title,
-  .exhibit--schedtitle,
   .exhibit--create,
   .exhibit--send,
   .exhibit--duration,
@@ -490,25 +488,11 @@ body.is-cover .tut__footer { display: none; }
 /* ---- Titel ---- */
 .exhibit--title { width: min(480px, 100%); }
 
-/* ---- Scheduling Title: Titel, gewählter Spot, daraus zwei Schedules ---- */
-.exhibit--schedtitle {
-  width: min(480px, 100%);
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-}
-
-.schedtitle__group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-/* Zeilen ohne Player und Button: der Titel bekommt die ganze Breite */
-.exhibit--schedtitle .picker-row {
-  grid-template-columns: minmax(0, 1fr);
-  background: var(--white-6);
-}
+/* ---- Mehrere Uhrzeiten: Titel und Startzeit wechseln mit dem Bullet ---- */
+.exhibit--times .title-field { margin-bottom: 34px; }
+.exhibit--times .val--once,
+.exhibit--times[data-state="once"] .val--repeat { display: none; }
+.exhibit--times[data-state="once"] .val--once { display: inline; }
 
 /* ---- Text ---- */
 .exhibit--text {
