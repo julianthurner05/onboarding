@@ -82,6 +82,14 @@
       if (exhibit) {
         exhibit.classList.add('has-focus');
         exhibit.dataset.state = bullets[sub].dataset.state || '';
+
+        /* Expand/Collapse folgt dem Bullet, der Schalter selbst ist nicht klickbar */
+        const cal = exhibit.querySelector('.calendar-view');
+        const density = bullets[sub].dataset.density;
+        if (cal && density) {
+          cal.dataset.density = density;
+          cal.querySelector('.density-toggle')?.setAttribute('aria-checked', density === 'expanded');
+        }
         exhibit.querySelectorAll('[data-part]').forEach(el => {
           el.classList.toggle('is-hot', el.dataset.part.split(/\s+/).some(p => active.includes(p)));
         });
@@ -173,16 +181,6 @@
       if (e.target.closest('.cal-slot, .cal-col__head')) setLit(null);
     });
     grid.addEventListener('mouseleave', () => setLit(null));
-  });
-
-  /* Expand/Collapse: der Schalter funktioniert wie im Live-Kalender */
-  document.querySelectorAll('.exhibit--cal .density-toggle').forEach(t => {
-    t.addEventListener('click', () => {
-      const on = t.getAttribute('aria-checked') !== 'true';
-      t.setAttribute('aria-checked', on);
-      t.dataset.tip = on ? 'Collapse' : 'Expand';
-      t.closest('.calendar-view').dataset.density = on ? 'expanded' : 'collapsed';
-    });
   });
 
   render();

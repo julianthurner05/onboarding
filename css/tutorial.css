@@ -409,12 +409,9 @@ body.is-cover .tut__footer { display: none; }
 .exhibit .ghost-btn--sm { color: var(--text-100); border-color: var(--white-25); }
 
 /* Exponate sind Anschauung, nichts ist klickbar: keine Hover,
-   keine Tooltips. Nur Kalender-Slots und der Expand/Collapse-Schalter
-   reagieren auf die Maus. */
+   keine Tooltips. Nur die Kalender-Slots reagieren auf die Maus. */
 .exhibit, .exhibit * { pointer-events: none; }
-.exhibit--cal .cal-slot,
-.exhibit .density-toggle { pointer-events: auto; }
-.exhibit .density-toggle { cursor: pointer; }
+.exhibit--cal .cal-slot { pointer-events: auto; }
 
 /* Aufbau-Choreografie des Scheduler-Formulars neutralisieren */
 /* ohne !important bei opacity, sonst greifen Abdunkeln und
@@ -491,12 +488,6 @@ body.is-cover .tut__footer { display: none; }
 /* ---- Scheduling Title: das _2 kommt erst mit dem zweiten Bullet ---- */
 .exhibit--title .val--suffix { display: none; }
 .exhibit--title[data-state="suffix"] .val--suffix { display: inline; }
-
-/* ---- Beispielschedule: Titel und Startzeit wechseln mit dem Bullet ---- */
-.exhibit--times .title-field { margin-bottom: 34px; }
-.exhibit--times .val--once,
-.exhibit--times[data-state="once"] .val--repeat { display: none; }
-.exhibit--times[data-state="once"] .val--once { display: inline; }
 
 /* ---- Text ---- */
 .exhibit--text {
