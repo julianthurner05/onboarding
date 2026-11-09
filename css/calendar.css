@@ -435,6 +435,74 @@
   color: var(--text-25);
 }
 
+/* ---- Hinweise: geplante Spots, die nicht übernommen werden konnten ----
+   Leiste über dem Raster (aufklappbar) + gestrichelte Markierung im Raster.
+   Farben: --fehler / --fehler-text („Fehler & Konflikte – bewusst anders als Special“) */
+/* Sticky unter dem Kopf (--cal-head-h), die Tageszeile klebt darunter (--cal-notices-h);
+   Abstand als padding mit Hintergrund, damit beim Scrollen nichts durchscheint;
+   z-index zwischen Kopf (200) und Tageszeile (160) */
+.cal-notices {
+  position: sticky;
+  top: var(--cal-head-h, 0px);
+  z-index: 180;
+  padding-bottom: 16px;
+  background: var(--dunkelblau);
+}
+
+.cal-notices__box {
+  padding: 12px var(--pad-box);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--fehler) var(--cat-tint), var(--cat-base));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--fehler) var(--cat-tint-strong), transparent);
+}
+
+.cal-notices__summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  list-style: none;
+  font-size: var(--fs-base);
+  letter-spacing: var(--ls-base);
+  color: var(--text-100);
+}
+.cal-notices__summary::-webkit-details-marker { display: none; }
+.cal-notices__icon { width: 14px; height: 14px; flex: none; color: var(--fehler-text); }
+.cal-notices__toggle { margin-left: auto; font-size: var(--fs-small); letter-spacing: var(--ls-small); color: var(--text-55); }
+.cal-notices__toggle::after { content: 'Details'; }
+.cal-notices__box[open] .cal-notices__toggle::after { content: 'Ausblenden'; }
+.cal-notices__summary:hover .cal-notices__toggle { color: var(--text-100); }
+
+.cal-notices__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.cal-notices__item { padding-top: 10px; border-top: var(--hairline); }
+.cal-notices__title { font-size: var(--fs-menu); letter-spacing: var(--ls-menu); color: var(--text-100); }
+.cal-notices__plan { font-size: var(--fs-menu); letter-spacing: var(--ls-menu); color: var(--text-55); }   /* in Klammern rechts neben dem Titel */
+.cal-notices__problem,
+.cal-notices__fix { margin-top: 4px; font-size: var(--fs-label); letter-spacing: var(--ls-label); }
+.cal-notices__problem { color: var(--fehler-text); }
+.cal-notices__fix { color: var(--text-80); }
+.cal-notices__fix::before { content: '→ '; color: var(--text-55); }
+
+/* Markierung: freier Slot, auf den der nicht übernommene Spot fallen sollte */
+.cal-slot--notice .cal-slot__inner {
+  background: color-mix(in srgb, var(--fehler) var(--cat-tint), transparent);
+  outline: 1px dashed var(--fehler-text);
+  outline-offset: -1px;
+}
+[data-density="expanded"] .cal-slot--notice .cal-slot__text { color: var(--fehler-text); }
+/* belegter Slot, auf den der nicht übernommene Spot fallen sollte (Überschneidung) */
+.cal-slot--conflict .cal-slot__inner {
+  outline: 1px dashed var(--fehler-text);
+  outline-offset: -1px;
+}
+
 @media (max-width: 1600px) {
   .cal-hint { display: none; }
 }
@@ -447,6 +515,7 @@
 @media (max-width: 980px) {
   /* am Handy bricht der Kopf auf mehrere Zeilen um – sticky würde zu viel Platz fressen */
   .cal-head { position: static; flex-wrap: wrap; gap: 12px; }
+  .cal-notices { position: static; }
   .cal-days { display: flex; }
   .cal-grid { grid-template-columns: 50px minmax(0, 1fr); padding-right: 12px; }
   .cal-col__head { display: none; }

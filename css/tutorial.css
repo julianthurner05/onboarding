@@ -617,10 +617,65 @@ body.is-cover .tut__footer { display: none; }
 .exhibit--cal .cal-head { background: none; }
 .exhibit--cal .density-toggle { margin-left: auto; }
 
-/* Collapse/Expand gleitet weich (der Live-Kalender macht das per FLIP) */
-.exhibit--cal .cal-slot,
-.exhibit--cal .cal-time { transition: height var(--density-dur) var(--ease); }
-.exhibit--cal .cal-col__body { transition: gap var(--density-dur) var(--ease); }
+/* Collapse/Expand gleitet wie im Live-Kalender per FLIP (morphDensity in
+   tutorial.js); die Jetzt-Linie wartet das Gleiten ab */
+.exhibit--cal .cal-slot { transform-origin: top; }
+.exhibit--cal .cal-grid.is-morphing .cal-now { opacity: 0; transition: none; }
+
+/* .exhibit * lässt nur Deckkraft-Übergänge zu – Knopf und Icons des
+   Schalters gleiten bzw. blenden trotzdem wie im Live-Kalender */
+.exhibit--cal .density-toggle .density-toggle__knob { transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease); }
+.exhibit--cal .density-toggle .density-toggle__icon { transition: color var(--dur) var(--ease), opacity var(--dur) var(--ease); }
+
+/* der Kalender steht beim Gleiten kurz über – keine Scrollleiste dafür */
+.tut__stage:has(.cal-grid.is-morphing) { overflow: hidden; }
+
+/* ---- Kalender: Fehlermeldung (Hinweisleiste des Live-Kalenders) ---- */
+.exhibit--cal .cal-notices { position: static; background: none; }
+
+/* sobald der Spot richtig geschedult ist, klappt die Leiste weich weg */
+.exhibit.exhibit--notices .cal-notices {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition:
+    grid-template-rows var(--dur-slow) var(--ease),
+    padding-bottom var(--dur-slow) var(--ease),
+    opacity var(--dur) var(--ease);
+}
+.exhibit--notices .cal-notices__clip { min-height: 0; overflow: hidden; }
+.exhibit.exhibit--notices[data-state="fixed"] .cal-notices {
+  grid-template-rows: 0fr;
+  padding-bottom: 0;
+  opacity: 0;
+}
+
+/* „Ausblenden“ klappt die Details weich zu, der Schalter heißt dann „Details“ */
+.exhibit--notices .cal-notices__list { margin-top: 0; min-height: 0; overflow: hidden; }
+.exhibit.exhibit--notices .cal-notices__body {
+  display: grid;
+  grid-template-rows: 1fr;
+  padding-top: 12px;
+  transition:
+    grid-template-rows var(--dur-slow) var(--ease),
+    padding-top var(--dur-slow) var(--ease),
+    opacity var(--dur) var(--ease);
+}
+.exhibit.exhibit--notices:is([data-state="closed"], [data-state="fixed"]) .cal-notices__body {
+  grid-template-rows: 0fr;
+  padding-top: 0;
+  opacity: 0;
+}
+.exhibit--notices[data-state="closed"] .cal-notices__toggle::after { content: 'Details'; }
+
+/* die gestrichelte Markierung geht mit weg */
+.exhibit--notices .cal-slot--conflict .cal-slot__inner {
+  transition: background var(--dur) var(--ease), bottom var(--dur) var(--ease), box-shadow var(--dur) var(--ease), outline-color var(--dur) var(--ease);
+}
+.exhibit--notices[data-state="fixed"] .cal-slot--conflict .cal-slot__inner { outline-color: transparent; }
+
+/* der richtig geschedulte Spot: vorher ein leerer Slot, dann in seiner Kategoriefarbe */
+.exhibit--notices:not([data-state="fixed"]) .cal-slot--fixed { pointer-events: none; }
+.exhibit--notices:not([data-state="fixed"]) .cal-slot--fixed .cal-slot__inner { background: var(--white-3); }
 
 /* ---- MFA Setup / MFA Configuration (Vollbild-Ansichten des Portals) ---- */
 .exhibit--mfa-setup,

@@ -67,8 +67,84 @@
     })(root);
   }
 
+  /* Expand/Collapse wie im Live-Kalender (embed.js, morphDensity): das
+     Layout springt sofort in den Zielzustand, sichtbar gleiten die Zeilen
+     per transform von ihrer alten Position und Höhe aus, das Raster wird
+     per clip-path auf- bzw. zugedeckt. Weil der Kalender hier mittig auf
+     der Bühne steht, gleitet er zusätzlich als Ganzes an seinen neuen Platz. */
+  const morphs = new WeakMap();
+
+  function morphDensity(cal, value) {
+    const grid = cal.querySelector('.cal-grid');
+    const rows = [...grid.querySelectorAll('.cal-col__body > .cal-time, .cal-col__body > .cal-slot')];
+    const view0 = cal.getBoundingClientRect().top;
+    const top0 = grid.getBoundingClientRect().top;
+    const first = rows.map(el => el.getBoundingClientRect());
+
+    const prev = morphs.get(cal);
+    if (prev) { prev.anims.forEach(a => a.cancel()); clearTimeout(prev.timer); }
+    grid.style.minHeight = '';
+    const gridFirst = grid.getBoundingClientRect().height;
+    cal.dataset.density = value;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    /* Zielplatz nach dem Wechsel merken, dann das Raster für die Dauer
+       auf der größeren der beiden Höhen halten */
+    const viewEnd = cal.getBoundingClientRect().top;
+    const gridLast = grid.getBoundingClientRect().height;
+    const gridMax = Math.max(gridFirst, gridLast);
+    grid.style.minHeight = `${gridMax}px`;
+    const view1 = cal.getBoundingClientRect().top;
+    const top1 = grid.getBoundingClientRect().top;
+    const last = rows.map(el => el.getBoundingClientRect());
+
+    const css = getComputedStyle(cal);
+    const timing = {
+      duration: parseFloat(css.getPropertyValue('--density-dur')) || 560,
+      easing: css.getPropertyValue('--ease').trim() || 'ease',
+    };
+    const anims = [];
+
+    grid.classList.add('is-morphing', 'is-hiding-titles');
+    const timer = setTimeout(() => grid.classList.remove('is-hiding-titles'), timing.duration * 0.6);
+    rows.forEach((el, i) => {
+      const a = first[i], b = last[i];
+      let from;
+      if (el.classList.contains('cal-time')) {
+        /* Uhrzeiten nur verschieben (mittig), nie stauchen */
+        const dy = (a.top - top0 + a.height / 2) - (b.top - top1 + b.height / 2);
+        if (Math.abs(dy) < 0.5) return;
+        from = `translateY(${dy}px)`;
+      } else {
+        const dy = (a.top - top0) - (b.top - top1);
+        const sy = b.height ? a.height / b.height : 1;
+        from = `translateY(${dy}px) scaleY(${sy})`;
+      }
+      anims.push(el.animate([{ transform: from }, { transform: 'none' }], timing));
+    });
+
+    const radius = getComputedStyle(grid).borderTopLeftRadius;
+    const clip = h => `inset(0px 0px ${gridMax - h}px 0px round ${radius})`;
+    const gridAnim = grid.animate([{ clipPath: clip(gridFirst) }, { clipPath: clip(gridLast) }], timing);
+    anims.push(gridAnim);
+    anims.push(cal.animate([
+      { transform: `translateY(${view0 - view1}px)` },
+      { transform: `translateY(${viewEnd - view1}px)` },
+    ], { ...timing, fill: 'forwards' }));
+    morphs.set(cal, { anims, timer });
+
+    gridAnim.finished.then(() => {
+      /* Höhe freigeben und Verschiebung lösen im selben Moment – der
+         Kalender steht dann ohne Sprung auf seinem neuen Platz */
+      grid.style.minHeight = '';
+      grid.classList.remove('is-morphing');
+      anims.forEach(a => a.cancel());
+    }, () => {});                                   /* abgebrochen: der nächste Wechsel übernimmt */
+  }
+
   function render() {
     const sec = sections[current];
+    const wasActive = sec.classList.contains('is-active');
     sections.forEach((s, i) => s.classList.toggle('is-active', i === current));
     document.body.classList.toggle('is-cover', current === 0);
 
@@ -83,11 +159,13 @@
         exhibit.classList.add('has-focus');
         exhibit.dataset.state = bullets[sub].dataset.state || '';
 
-        /* Expand/Collapse folgt dem Bullet, der Schalter selbst ist nicht klickbar */
+        /* Expand/Collapse folgt dem Bullet, der Schalter selbst ist nicht
+           klickbar; innerhalb des Schritts gleitet es, beim Betreten nicht */
         const cal = exhibit.querySelector('.calendar-view');
         const density = bullets[sub].dataset.density;
-        if (cal && density) {
-          cal.dataset.density = density;
+        if (cal && density && cal.dataset.density !== density) {
+          if (wasActive) morphDensity(cal, density);
+          else cal.dataset.density = density;
           cal.querySelector('.density-toggle')?.setAttribute('aria-checked', density === 'expanded');
         }
         exhibit.querySelectorAll('[data-part]').forEach(el => {
