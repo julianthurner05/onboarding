@@ -621,6 +621,9 @@ body.is-cover .tut__footer { display: none; }
    tutorial.js); die Jetzt-Linie wartet das Gleiten ab */
 .exhibit--cal .cal-slot { transform-origin: top; }
 .exhibit--cal .cal-grid.is-morphing .cal-now { opacity: 0; transition: none; }
+/* Titel sofort weg, sonst sieht man sie beim Zuklappen kurz gestreckt
+   (die Slots werden per scaleY gestaucht) */
+.exhibit--cal .cal-grid.is-hiding-titles .cal-slot__title { opacity: 0; transition: none; }
 
 /* .exhibit * lässt nur Deckkraft-Übergänge zu – Knopf und Icons des
    Schalters gleiten bzw. blenden trotzdem wie im Live-Kalender */
