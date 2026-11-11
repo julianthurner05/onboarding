@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="/css/home.css">
   <link rel="stylesheet" href="/css/login.css">
   <link rel="stylesheet" href="/css/account.css">
-  <link rel="stylesheet" href="/css/tutorial.css?v=22">
+  <link rel="stylesheet" href="/css/tutorial.css?v=23">
 </head>
 <body>
 
@@ -797,7 +797,7 @@ Lebe Smart!</textarea>
           <li data-part="mode time" data-state="once"><strong>Once per Day</strong>: eine feste Uhrzeit.</li>
           <li data-part="mode interval"><strong>Repeat</strong>: im Intervall, hier zum Beispiel alle 2 Stunden von 10 bis 18 Uhr.</li>
           <li data-part="interval">Alle Zeiten liegen im <strong>15-Minuten-Raster</strong>, und jeder Slot hält genau <strong>einen</strong> Spot.</li>
-          <li data-part="interval">Soll dein Spot einen bestehenden <strong>ersetzen</strong>, schreib das beim Schedulen unter <strong>Special Notes</strong> dazu, zum Beispiel „ersetzt IKEA Geschenkkarte Durchsage“. Ohne diesen Vermerk wird dein Spot bei einer Überschneidung <strong>nicht eingetragen</strong>.</li>
+          <li data-part="notes">Soll dein Spot einen bestehenden <strong>ersetzen</strong>, schreib das unter <strong>Special Notes</strong> dazu, etwa „ersetzt IKEA Geschenkkarte Durchsage“. Sonst wird er bei einer Überschneidung <strong>nicht eingetragen</strong>.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -836,6 +836,12 @@ Lebe Smart!</textarea>
                 </div>
               </div>
             </div>
+            <div class="sched-form__group">
+              <p class="sched-form__label">Special Notes</p>
+              <div class="field field--notes" data-part="notes">
+                <span>ersetzt IKEA Geschenkkarte Durchsage</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -848,7 +854,7 @@ Lebe Smart!</textarea>
         <ul class="tut__list">
           <li data-part="send"><strong>Send to Schedule</strong> schickt deine Planung ab.</li>
           <li data-part="send">Deine Schedule wird automatisch geprüft und steht nach <strong>1–2 Minuten</strong> im <strong>Kalender</strong>.</li>
-          <li data-part="send">Passt etwas nicht, zum Beispiel eine Überschneidung mit einem anderen Spot oder eine Uhrzeit außerhalb der Öffnungszeiten, wird der Spot nicht eingetragen. Der Kalender zeigt dir dann eine <strong>Fehlermeldung</strong>: was nicht passt und wie du den Spot im Scheduler richtig schedulst.</li>
+          <li data-part="send">Passt etwas nicht, erscheint im Kalender eine <strong>Fehlermeldung</strong>. Dazu mehr im Punkt Fehlermeldungen.</li>
           <li data-part="send"><strong>Wichtig:</strong> Bis ein Spot wirklich <strong>im Store läuft</strong>, braucht es <strong>72 Stunden Vorlauf</strong>. Plane ihn also mindestens drei Tage vor dem ersten Termin ein.</li>
         </ul>
       </header>
@@ -869,17 +875,16 @@ Lebe Smart!</textarea>
       <header class="tut__head">
         <h1 class="tut__title">Planung ändern</h1>
         <ul class="tut__list">
-          <li data-part="all">Um eine bestehende Planung zu ändern, schedulest du den Spot einfach <strong>neu</strong>. Der Kalender übernimmt die Änderung automatisch. Was schon gespielt wurde, bleibt unverändert.</li>
-          <li data-part="time"><strong>Uhrzeit ändern:</strong> den Spot mit denselben Wochentagen und der neuen Uhrzeit neu schedulen.</li>
-          <li data-part="end"><strong>Zeitraum ändern:</strong> den Spot mit gleichen Tagen, gleicher Uhrzeit und dem neuen Enddatum neu schedulen, etwa um ihn früher zu beenden oder zu verlängern.</li>
-          <li data-part="days" data-state="modo"><strong>Tage ändern:</strong> den Spot mit gleicher Uhrzeit und den neuen Wochentagen neu schedulen, zum Beispiel Mo bis Do statt Mo bis Fr.</li>
-          <li data-part="add"><strong>Zusätzliche Termine:</strong> denselben Spot einfach noch einmal schedulen, etwa samstags zu einer anderen Uhrzeit. Der bisherige Termin bleibt, eine eigene Audiodatei pro Tag brauchst du nicht.</li>
-          <li data-part="days time add" data-state="modo"><strong>Beispiel</strong> freitags 21:00 statt 20:00: erst den Spot ohne Freitag neu schedulen (Mo bis Do 20:00), dann denselben Spot für Freitag 21:00.</li>
+          <li data-part="time"><strong>Uhrzeit ändern:</strong> mit gleichen Wochentagen und neuer Uhrzeit neu schedulen.</li>
+          <li data-part="end"><strong>Zeitraum ändern:</strong> mit neuem Enddatum neu schedulen, um den Spot früher zu beenden oder zu verlängern.</li>
+          <li data-part="days" data-state="modo"><strong>Tage ändern:</strong> mit gleicher Uhrzeit und neuen Wochentagen neu schedulen, etwa Mo bis Do statt Mo bis Fr.</li>
+          <li data-part="add"><strong>Zusätzliche Termine:</strong> denselben Spot noch einmal schedulen, etwa samstags zu einer anderen Uhrzeit. Der bisherige bleibt, eine neue Audiodatei brauchst du nicht.</li>
+          <li data-part="days time add" data-state="modo"><strong>Beispiel</strong> freitags 21:00 statt 20:00: erst ohne Freitag neu schedulen (Mo bis Do 20:00), dann denselben Spot für Freitag 21:00.</li>
         </ul>
       </header>
       <div class="tut__stage">
         <div class="exhibit exhibit--form">
-          <div class="sched-form" data-part="all">
+          <div class="sched-form">
             <div class="sched-form__group">
               <div class="sched-form__row">
                 <div>
@@ -923,7 +928,7 @@ Lebe Smart!</textarea>
               </div>
             </div>
           </div>
-          <div class="schedule-actions" data-part="all add">
+          <div class="schedule-actions" data-part="add">
             <button class="primary-btn" type="button">
               <span>Send to Schedule</span>
               <svg class="icon"><use href="#i-arrow-up-right"/></svg>
@@ -933,40 +938,8 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
-    <!-- Gut zu wissen -->
-    <section class="step" data-group="scheduler" data-dot="22">
-      <header class="tut__head">
-        <h1 class="tut__title">Gut zu wissen</h1>
-      </header>
-      <div class="tut__stage">
-        <div class="exhibit">
-          <div class="finale">
-            <p class="finale__title">Gut zu wissen · Scheduler</p>
-            <div class="finale__list">
-              <div class="finale__row">
-                <svg class="icon"><use href="#i-check"/></svg>
-                <span><strong>Zeitfenster:</strong> Durchsagen sind an jedem offenen Tag zwischen 9 und 21 Uhr möglich, auch an Late-Night-Tagen.</span>
-              </div>
-              <div class="finale__row">
-                <svg class="icon"><use href="#i-check"/></svg>
-                <span><strong>Sonderwünsche:</strong> unter <strong>Special Notes</strong> dazuschreiben, sound.dna setzt sie dann von Hand um.</span>
-              </div>
-              <div class="finale__row">
-                <svg class="icon"><use href="#i-check"/></svg>
-                <span><strong>Planung ganz entfernen:</strong> geht im Scheduler nicht. Schreib dafür kurz eine Mail an sound.dna.</span>
-              </div>
-              <div class="finale__row">
-                <svg class="icon"><use href="#i-check"/></svg>
-                <span><strong>Hinweis im Kalender:</strong> kann etwas nicht übernommen werden, zeigt der Kalender den Grund und einen Tipp zur Korrektur.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- 15 · Best Practices Scheduler -->
-    <section class="step" data-group="scheduler" data-dot="23">
+    <section class="step" data-group="scheduler" data-dot="22">
       <header class="tut__head">
         <h1 class="tut__title">Best Practice</h1>
       </header>
@@ -1009,7 +982,7 @@ Lebe Smart!</textarea>
 
     <!-- Calendar · Raster / Slots / Woche und Jetzt -->
 
-    <section class="step" data-group="calendar" data-dot="24">
+    <section class="step" data-group="calendar" data-dot="23">
       <header class="tut__head">
         <h1 class="tut__title">Die Slots</h1>
         <ul class="tut__list">
@@ -1134,7 +1107,7 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
-    <section class="step" data-group="calendar" data-dot="25">
+    <section class="step" data-group="calendar" data-dot="24">
       <header class="tut__head">
         <h1 class="tut__title">Die Expanded-Ansicht</h1>
         <ul class="tut__list">
@@ -1259,7 +1232,7 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- Calendar · Fehlermeldungen (Hinweise aus dem Live-Kalender) -->
-    <section class="step" data-group="calendar" data-dot="26">
+    <section class="step" data-group="calendar" data-dot="25">
       <header class="tut__head">
         <h1 class="tut__title">Fehlermeldungen</h1>
         <ul class="tut__list">
@@ -1408,7 +1381,7 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- 17 · Konto & Sicherheit -->
-    <section class="step" data-group="account" data-dot="27">
+    <section class="step" data-group="account" data-dot="26">
       <header class="tut__head">
         <h1 class="tut__title">Konto &amp; Sicherheit</h1>
         <ul class="tut__list">
@@ -1453,7 +1426,7 @@ Lebe Smart!</textarea>
     </section>
 
     <!-- MFA verwalten -->
-    <section class="step" data-group="account" data-dot="28">
+    <section class="step" data-group="account" data-dot="27">
       <header class="tut__head">
         <h1 class="tut__title">MFA verwalten</h1>
         <ul class="tut__list">
@@ -1535,23 +1508,22 @@ Lebe Smart!</textarea>
             <button class="tl-dot" type="button" data-dot="19" data-tip="Once oder Repeat" aria-label="Schritt 19"></button>
             <button class="tl-dot" type="button" data-dot="20" data-tip="Absenden" aria-label="Schritt 20"></button>
             <button class="tl-dot" type="button" data-dot="21" data-tip="Planung ändern" aria-label="Schritt 21"></button>
-            <button class="tl-dot" type="button" data-dot="22" data-tip="Gut zu wissen" aria-label="Schritt 22"></button>
-            <button class="tl-dot" type="button" data-dot="23" data-tip="Best Practice" aria-label="Schritt 23"></button>
+            <button class="tl-dot" type="button" data-dot="22" data-tip="Best Practice" aria-label="Schritt 22"></button>
           </div>
           <span class="tl-group__label">Scheduler</span>
         </div>
         <div class="tl-group" data-group="calendar">
           <div class="tl-group__dots">
-            <button class="tl-dot" type="button" data-dot="24" data-tip="Die Slots" aria-label="Schritt 24"></button>
-            <button class="tl-dot" type="button" data-dot="25" data-tip="Expanded-Ansicht" aria-label="Schritt 25"></button>
-            <button class="tl-dot" type="button" data-dot="26" data-tip="Fehlermeldungen" aria-label="Schritt 26"></button>
+            <button class="tl-dot" type="button" data-dot="23" data-tip="Die Slots" aria-label="Schritt 23"></button>
+            <button class="tl-dot" type="button" data-dot="24" data-tip="Expanded-Ansicht" aria-label="Schritt 24"></button>
+            <button class="tl-dot" type="button" data-dot="25" data-tip="Fehlermeldungen" aria-label="Schritt 25"></button>
           </div>
           <span class="tl-group__label">Calendar</span>
         </div>
         <div class="tl-group" data-group="account">
           <div class="tl-group__dots">
-            <button class="tl-dot" type="button" data-dot="27" data-tip="Konto &amp; Sicherheit" aria-label="Schritt 27"></button>
-            <button class="tl-dot" type="button" data-dot="28" data-tip="MFA verwalten" aria-label="Schritt 28"></button>
+            <button class="tl-dot" type="button" data-dot="26" data-tip="Konto &amp; Sicherheit" aria-label="Schritt 26"></button>
+            <button class="tl-dot" type="button" data-dot="27" data-tip="MFA verwalten" aria-label="Schritt 27"></button>
           </div>
           <span class="tl-group__label">Account</span>
         </div>

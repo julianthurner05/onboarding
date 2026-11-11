@@ -979,3 +979,13 @@ body.is-cover .tut__footer { display: none; }
 /* Planung ändern: Freitag wird abgewählt (Mo bis Do statt Mo bis Fr) */
 .exhibit .day-chips .day-chip { transition: background var(--dur) var(--ease), color var(--dur) var(--ease), opacity var(--dur) var(--ease); }
 .exhibit[data-state="modo"] .day-chips .day-chip--fr { background: var(--mittelblau); color: var(--text-60); }
+
+/* Special Notes: Freitextfeld im Scheduler, höher als ein einzeiliges Feld,
+   der Text steht oben an derselben Stelle wie in den anderen Feldern */
+.exhibit .field--notes {
+  height: auto;
+  min-height: 64px;
+  align-items: flex-start;
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
