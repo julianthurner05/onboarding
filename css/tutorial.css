@@ -813,7 +813,7 @@ body.is-cover .tut__footer { display: none; }
 
 .finale {
   width: 100%;
-  min-height: 352px;
+  min-height: 372px;
   padding: var(--pad-panel);
   background: var(--card-new-bg);
   color: var(--text-inverse);
@@ -975,3 +975,7 @@ body.is-cover .tut__footer { display: none; }
   .exhibit--form .day-chips { grid-template-columns: repeat(7, minmax(0, 1fr)); }
   .exhibit--form .day-chip { width: auto; }
 }
+
+/* Planung ändern: Freitag wird abgewählt (Mo bis Do statt Mo bis Fr) */
+.exhibit .day-chips .day-chip { transition: background var(--dur) var(--ease), color var(--dur) var(--ease), opacity var(--dur) var(--ease); }
+.exhibit[data-state="modo"] .day-chips .day-chip--fr { background: var(--mittelblau); color: var(--text-60); }
