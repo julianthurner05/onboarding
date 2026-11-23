@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="/css/home.css">
   <link rel="stylesheet" href="/css/login.css">
   <link rel="stylesheet" href="/css/account.css">
-  <link rel="stylesheet" href="/css/tutorial.css?v=24">
+  <link rel="stylesheet" href="/css/tutorial.css?v=25">
 </head>
 <body>
 
@@ -36,6 +36,7 @@
     <symbol id="i-user" viewBox="0 0 24 24"><path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><circle cx="12" cy="12" r="10"/></symbol>
     <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
     <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
     <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
     <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
@@ -797,7 +798,8 @@ Lebe Smart!</textarea>
           <li data-part="mode time" data-state="once"><strong>Once per Day</strong>: eine feste Uhrzeit.</li>
           <li data-part="mode interval"><strong>Repeat</strong>: im Intervall, hier zum Beispiel alle 2 Stunden von 10 bis 18 Uhr.</li>
           <li data-part="interval">Alle Zeiten liegen im <strong>15-Minuten-Raster</strong>, und jeder Slot hält genau <strong>einen</strong> Spot.</li>
-          <li data-part="notes">Soll dein Spot einen bestehenden <strong>ersetzen</strong>, schreib das unter <strong>Special Notes</strong> dazu, etwa „ersetzt IKEA Geschenkkarte Durchsage“. Sonst wird er bei einer Überschneidung <strong>nicht eingetragen</strong>.</li>
+          <li data-part="replace" data-state="replace">Soll dein Spot einen bestehenden <strong>ersetzen</strong>, aktiviere <strong>Replace current spot</strong>. Ohne den Button wird er bei einer Überschneidung <strong>nicht eingetragen</strong>.</li>
+          <li data-part="replace-info" data-state="replace">Dein Spot muss dabei <strong>alle kommenden Zeiten</strong> des aktuellen Spots übernehmen, danach läuft der alte nirgends mehr. Die Regeln findest du auch unter dem <strong>i</strong> daneben.</li>
         </ul>
       </header>
       <div class="tut__stage">
@@ -837,9 +839,12 @@ Lebe Smart!</textarea>
               </div>
             </div>
             <div class="sched-form__group">
-              <p class="sched-form__label">Special Notes</p>
-              <div class="field field--notes" data-part="notes">
-                <span>ersetzt IKEA Geschenkkarte Durchsage</span>
+              <div class="replace-row">
+                <button class="replace-btn" type="button" data-part="replace">
+                  <span class="replace-btn__box"><svg class="icon"><use href="#i-check"/></svg></span>
+                  Replace current spot
+                </button>
+                <span class="replace-info" data-part="replace-info"><svg class="icon"><use href="#i-info"/></svg></span>
               </div>
             </div>
           </div>
@@ -1266,8 +1271,9 @@ Lebe Smart!</textarea>
                     <ul class="cal-notices__list">
                       <li class="cal-notices__item" data-part="notice detail">
                         <div class="cal-notices__title">IKEA Family Angebot RIAN Beistelltisch KW 43 <span class="cal-notices__plan">(Mi 21.10.2026 · 11:00)</span></div>
-                        <div class="cal-notices__problem">Überschneidung mit „IKEA Geschenkkarte Durchsage (Mittwoch)“: 11:00 (Mi)</div>
-                        <div class="cal-notices__fix">Kollision mit „IKEA Geschenkkarte Durchsage (Mittwoch)“ um 11:00 (Mi): im Scheduler zu einer anderen Zeit neu schedulen – oder, wenn dieser Spot „IKEA Geschenkkarte Durchsage (Mittwoch)“ ersetzen soll, neu schedulen und unter „Special Notes“ eine Ersatz-Anweisung schreiben (z. B. „ersetzt IKEA Geschenkkarte Durchsage (Mittwoch)“).</div>
+                        <div class="cal-notices__problem">11:00 (Mi) ist schon mit „IKEA Geschenkkarte Durchsage (Mittwoch)“ belegt.</div>
+                        <div class="cal-notices__fix">Im Scheduler mit einer anderen Zeit neu einplanen.</div>
+                        <div class="cal-notices__fix">Oder: mit „Replace Current Spot“ neu einplanen, wenn dieser Spot „IKEA Geschenkkarte Durchsage (Mittwoch)“ ersetzen soll.</div>
                       </li>
                     </ul>
                   </div>

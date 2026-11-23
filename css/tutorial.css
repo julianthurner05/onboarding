@@ -983,12 +983,34 @@ body.is-cover .tut__footer { display: none; }
 .exhibit .day-chips .day-chip { transition: background var(--dur) var(--ease), color var(--dur) var(--ease), opacity var(--dur) var(--ease); }
 .exhibit[data-state="modo"] .day-chips .day-chip--fr { background: var(--mittelblau); color: var(--text-60); }
 
-/* Special Notes: Freitextfeld im Scheduler, höher als ein einzeiliges Feld,
-   der Text steht oben an derselben Stelle wie in den anderen Feldern */
-.exhibit .field--notes {
-  height: auto;
-  min-height: 64px;
-  align-items: flex-start;
-  padding-top: 11px;
-  padding-bottom: 11px;
+/* Replace current spot (wie im Service-Portal-Dummy): Umschalter mit
+   Häkchen-Box und Info-Symbol daneben; der Bullet schaltet ihn ein */
+.exhibit .replace-row { display: flex; align-items: center; gap: 8px; }
+.exhibit .replace-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 42px;
+  padding: 0 16px 0 13px;
+  border-radius: var(--radius-md);
+  background: var(--mittelblau);
+  color: var(--text-60);
+  font-size: var(--fs-base);
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease), opacity var(--dur) var(--ease);
 }
+.exhibit .replace-btn__box {
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 5px;
+  border: 1px solid var(--white-25);
+  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+.exhibit .replace-btn__box .icon { width: 10px; height: 10px; stroke-width: 2.5; opacity: 0; color: var(--nav-active); }
+.exhibit[data-state="replace"] .replace-btn { background: var(--nav-active); color: var(--text-inverse); }
+.exhibit[data-state="replace"] .replace-btn__box { background: var(--text-inverse); border-color: var(--text-inverse); }
+.exhibit[data-state="replace"] .replace-btn__box .icon { opacity: 1; }
+.exhibit .replace-info { display: grid; place-items: center; width: 30px; height: 30px; color: var(--text-40); }
+.exhibit .replace-info.is-hot { color: var(--text-80); }
+.exhibit .replace-info > .icon { width: 16px; height: 16px; }
