@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="/css/home.css">
   <link rel="stylesheet" href="/css/login.css">
   <link rel="stylesheet" href="/css/account.css">
-  <link rel="stylesheet" href="/css/tutorial.css?v=26">
+  <link rel="stylesheet" href="/css/tutorial.css?v=27">
 </head>
 <body>
 
@@ -851,33 +851,32 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
-    <!-- Spot ersetzen: die Regeln hinter dem i neben Replace current spot -->
+    <!-- Spot ersetzen: die Regeln zu Replace current spot -->
     <section class="step" data-group="scheduler" data-dot="20">
       <header class="tut__head">
         <h1 class="tut__title">Spot ersetzen</h1>
-        <ul class="tut__list">
-          <li data-part="rule1" data-state="replace">Dein neuer Spot ersetzt den Spot, der <strong>aktuell zu diesen Zeiten</strong> läuft.</li>
-          <li data-part="rule2" data-state="replace">Er muss <strong>alle kommenden Zeiten</strong> des aktuellen Spots übernehmen. Danach läuft der aktuelle Spot <strong>nirgends mehr</strong>.</li>
-          <li data-part="rule3" data-state="replace"><strong>Außerhalb der Öffnungszeiten</strong> oder in einer <strong>Quiet Hour</strong> wird nichts ersetzt.</li>
-          <li data-part="rule4" data-state="replace">Was der aktuelle Spot <strong>schon gespielt</strong> hat, bleibt in der History.</li>
-        </ul>
       </header>
       <div class="tut__stage">
-        <div class="exhibit exhibit--form exhibit--rules" data-state="replace">
-          <div class="replace-rules">
-            <div class="replace-info__pop">
-              <span class="replace-info__title">Replace current spot</span>
-              <span class="replace-info__rule" data-part="rule1">Your new spot replaces the spot that currently runs at these times.</span>
-              <span class="replace-info__rule" data-part="rule2">It has to take over all upcoming times of the current spot – afterwards the current spot doesn't run anywhere.</span>
-              <span class="replace-info__rule" data-part="rule3">Outside opening hours or in a quiet hour, nothing is replaced.</span>
-              <span class="replace-info__rule" data-part="rule4">What the current spot already played stays in the history.</span>
-            </div>
-            <div class="replace-row">
-              <button class="replace-btn" type="button">
-                <span class="replace-btn__box"><svg class="icon"><use href="#i-check"/></svg></span>
-                Replace current spot
-              </button>
-              <span class="replace-info is-hot"><svg class="icon"><use href="#i-info"/></svg></span>
+        <div class="exhibit">
+          <div class="finale">
+            <p class="finale__title">Regeln · Replace current spot</p>
+            <div class="finale__list">
+              <div class="finale__row">
+                <svg class="icon"><use href="#i-check"/></svg>
+                <span>Dein neuer Spot ersetzt den Spot, der <strong>aktuell zu diesen Zeiten</strong> läuft.</span>
+              </div>
+              <div class="finale__row">
+                <svg class="icon"><use href="#i-check"/></svg>
+                <span>Er muss <strong>alle kommenden Zeiten</strong> des aktuellen Spots übernehmen. Danach läuft der aktuelle Spot <strong>nirgends mehr</strong>.</span>
+              </div>
+              <div class="finale__row">
+                <svg class="icon"><use href="#i-check"/></svg>
+                <span><strong>Außerhalb der Öffnungszeiten</strong> oder in einer <strong>Quiet Hour</strong> wird nichts ersetzt.</span>
+              </div>
+              <div class="finale__row">
+                <svg class="icon"><use href="#i-check"/></svg>
+                <span>Was der aktuelle Spot <strong>schon gespielt</strong> hat, bleibt in der History.</span>
+              </div>
             </div>
           </div>
         </div>
