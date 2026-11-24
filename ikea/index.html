@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="/css/home.css">
   <link rel="stylesheet" href="/css/login.css">
   <link rel="stylesheet" href="/css/account.css">
-  <link rel="stylesheet" href="/css/tutorial.css?v=27">
+  <link rel="stylesheet" href="/css/tutorial.css?v=28">
 </head>
 <body>
 
@@ -851,31 +851,79 @@ Lebe Smart!</textarea>
       </div>
     </section>
 
-    <!-- Spot ersetzen: die Regeln zu Replace current spot -->
+    <!-- Schedule-Regeln: alles, wofür im Kalender eine Fehlermeldung kommt
+         (Prüfung der Kalender-Automation, notices.js / replace.js) -->
     <section class="step" data-group="scheduler" data-dot="20">
       <header class="tut__head">
-        <h1 class="tut__title">Spot ersetzen</h1>
+        <h1 class="tut__title">Schedule-Regeln</h1>
       </header>
       <div class="tut__stage">
         <div class="exhibit">
-          <div class="finale">
-            <p class="finale__title">Regeln · Replace current spot</p>
-            <div class="finale__list">
-              <div class="finale__row">
-                <svg class="icon"><use href="#i-check"/></svg>
-                <span>Dein neuer Spot ersetzt den Spot, der <strong>aktuell zu diesen Zeiten</strong> läuft.</span>
+          <div class="finale finale--rules">
+            <p class="finale__title">Regeln · Scheduler</p>
+            <div class="finale__cols">
+              <div class="finale__list">
+                <p class="finale__rubric">Zeiten</p>
+                <div class="finale__row">
+                  <svg class="icon"><use href="#i-check"/></svg>
+                  <span>Spots laufen nur zwischen <strong>09:00 und 21:00</strong>.</span>
+                </div>
+                <div class="finale__row">
+                  <svg class="icon"><use href="#i-check"/></svg>
+                  <span>Jede Zeit liegt in der <strong>Öffnungszeit</strong>, an geschlossenen Tagen läuft nichts.</span>
+                </div>
+                <div class="finale__row">
+                  <svg class="icon"><use href="#i-check"/></svg>
+                  <span>Keine Zeit fällt in eine <strong>Quiet Hour</strong>.</span>
+                </div>
+                <div class="finale__row">
+                  <svg class="icon"><use href="#i-check"/></svg>
+                  <span>Zwei Zeiten liegen mindestens <strong>15 Minuten</strong> auseinander.</span>
+                </div>
+                <div class="finale__row">
+                  <svg class="icon"><use href="#i-check"/></svg>
+                  <span>Bei Repeat fällt das <strong>Ende genau auf eine Durchsage</strong>, etwa 10:00 bis 18:00 alle 2 Stunden.</span>
+                </div>
+                <div class="finale__row">
+                  <svg class="icon"><use href="#i-check"/></svg>
+                  <span>Ein <strong>belegter Slot</strong> geht nur mit Replace current spot.</span>
+                </div>
               </div>
-              <div class="finale__row">
-                <svg class="icon"><use href="#i-check"/></svg>
-                <span>Er muss <strong>alle kommenden Zeiten</strong> des aktuellen Spots übernehmen. Danach läuft der aktuelle Spot <strong>nirgends mehr</strong>.</span>
-              </div>
-              <div class="finale__row">
-                <svg class="icon"><use href="#i-check"/></svg>
-                <span><strong>Außerhalb der Öffnungszeiten</strong> oder in einer <strong>Quiet Hour</strong> wird nichts ersetzt.</span>
-              </div>
-              <div class="finale__row">
-                <svg class="icon"><use href="#i-check"/></svg>
-                <span>Was der aktuelle Spot <strong>schon gespielt</strong> hat, bleibt in der History.</span>
+              <div class="finale__list">
+                <p class="finale__rubric">Planung</p>
+                <div class="finale__row">
+                  <svg class="icon"><use href="#i-check"/></svg>
+                  <span>Jede Planung hat einen <strong>Titel</strong>.</span>
+                </div>
+                <div class="finale__row">
+                  <svg class="icon"><use href="#i-check"/></svg>
+                  <span>Bei Weekly ist mindestens <strong>ein Wochentag</strong> markiert.</span>
+                </div>
+                <div class="finale__row">
+                  <svg class="icon"><use href="#i-check"/></svg>
+                  <span>Nennt der Titel Wochentage, sind <strong>genau diese</strong> markiert.</span>
+                </div>
+                <div class="finale__row">
+                  <svg class="icon"><use href="#i-check"/></svg>
+                  <span>Ein Titel gehört zu <strong>einer Audiodatei</strong>. Gibt es ihn schon mit einer anderen, wähle einen eigenen.</span>
+                </div>
+                <p class="finale__rubric">Spot ersetzen</p>
+                <div class="finale__row">
+                  <svg class="icon"><use href="#i-check"/></svg>
+                  <span>Ersetzt wird der Spot, der <strong>zu diesen Zeiten läuft</strong>. Läuft dort keiner, gibt es nichts zu ersetzen.</span>
+                </div>
+                <div class="finale__row">
+                  <svg class="icon"><use href="#i-check"/></svg>
+                  <span>Dein Spot übernimmt <strong>alle kommenden Zeiten</strong> des alten, danach läuft der alte nirgends mehr.</span>
+                </div>
+                <div class="finale__row">
+                  <svg class="icon"><use href="#i-check"/></svg>
+                  <span><strong>Außerhalb der Öffnungszeiten</strong> oder in einer <strong>Quiet Hour</strong> wird nichts ersetzt.</span>
+                </div>
+                <div class="finale__row">
+                  <svg class="icon"><use href="#i-check"/></svg>
+                  <span>Was der alte Spot <strong>schon gespielt</strong> hat, bleibt in der History.</span>
+                </div>
               </div>
             </div>
           </div>
@@ -1543,7 +1591,7 @@ Lebe Smart!</textarea>
             <button class="tl-dot" type="button" data-dot="17" data-tip="Scheduling Title" aria-label="Schritt 17"></button>
             <button class="tl-dot" type="button" data-dot="18" data-tip="Single Day / Weekly" aria-label="Schritt 18"></button>
             <button class="tl-dot" type="button" data-dot="19" data-tip="Once oder Repeat" aria-label="Schritt 19"></button>
-            <button class="tl-dot" type="button" data-dot="20" data-tip="Spot ersetzen" aria-label="Schritt 20"></button>
+            <button class="tl-dot" type="button" data-dot="20" data-tip="Schedule-Regeln" aria-label="Schritt 20"></button>
             <button class="tl-dot" type="button" data-dot="21" data-tip="Absenden" aria-label="Schritt 21"></button>
             <button class="tl-dot" type="button" data-dot="22" data-tip="Planung ändern" aria-label="Schritt 22"></button>
             <button class="tl-dot" type="button" data-dot="23" data-tip="Best Practice" aria-label="Schritt 23"></button>

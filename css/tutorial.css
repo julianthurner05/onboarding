@@ -855,6 +855,28 @@ body.is-cover .tut__footer { display: none; }
   flex-shrink: 0;
 }
 
+/* Schedule-Regeln: dieselbe Karte, breiter, Regeln in Rubriken auf zwei Spalten */
+.exhibit:has(> .finale--rules) { width: min(860px, 100%); }
+.finale--rules { min-height: 0; }
+.finale__cols {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 36px;
+  align-items: start;
+}
+.finale__cols .finale__list { margin-top: 0; }
+.finale__rubric {
+  margin-top: 18px;
+  padding-bottom: 2px;
+  font-size: var(--fs-small);
+  letter-spacing: var(--ls-small);
+  color: var(--ink-50);
+}
+.finale--rules .finale__row { padding: 9px 0; font-size: var(--fs-base); letter-spacing: var(--ls-base, normal); }
+.finale__rubric + .finale__row { border-top: none; }
+@media (max-width: 1240px) { .finale__cols { grid-template-columns: minmax(0, 1fr); } }
+
 /* ================================================================
    RESPONSIVE
    ================================================================ */
